@@ -26,7 +26,7 @@ export function Hero() {
         <motion.div {...fadeUp(0)} className="mb-8">
           <span className="inline-flex items-center gap-2 text-label text-accent bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            AI-Powered Delivery Intelligence System
+            AI-Powered Delivery Decision Intelligence System
           </span>
         </motion.div>
 
