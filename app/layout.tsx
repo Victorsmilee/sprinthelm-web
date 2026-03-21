@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SprintHelm — AI-Powered Delivery Intelligence",
+  title: "SprintHelm — AI-Powered Delivery Intelligence System",
   description:
     "Score your backlog across six weighted factors, run a Monte Carlo simulation, and generate a C-level summary — before the sprint begins. Stop guessing. Start delivering.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "SprintHelm" }],
   openGraph: {
-    title: "SprintHelm — AI-Powered Delivery Intelligence",
+    title: "SprintHelm — AI-Powered Delivery Intelligence System",
     description:
       "Your sprint plan looks fine. Your deadline doesn't know that yet.",
     url: "https://sprinthelm.com",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SprintHelm — AI-Powered Delivery Intelligence",
+    title: "SprintHelm — AI-Powered Delivery Intelligence System",
     description:
       "Your sprint plan looks fine. Your deadline doesn't know that yet.",
   },

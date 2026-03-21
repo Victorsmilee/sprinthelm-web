@@ -34,7 +34,7 @@ export function Cta() {
               </a>
             </Button>
             <Button size="xl" variant="ghost" asChild>
-              <a href="#demo">See a live demo</a>
+              <a href="https://sprinthelm.streamlit.app/?demo=true" target="_blank" rel="noopener noreferrer">See a live demo</a>
             </Button>
           </div>
           <p className="text-caption text-text-disabled mt-6">

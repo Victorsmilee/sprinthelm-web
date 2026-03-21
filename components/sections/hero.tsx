@@ -26,7 +26,7 @@ export function Hero() {
         <motion.div {...fadeUp(0)} className="mb-8">
           <span className="inline-flex items-center gap-2 text-label text-accent bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            AI-Powered Delivery Intelligence
+            AI-Powered Delivery Intelligence System
           </span>
         </motion.div>
 
@@ -54,7 +54,7 @@ export function Hero() {
             </a>
           </Button>
           <Button size="xl" variant="secondary" asChild>
-            <a href="#demo" className="flex items-center gap-2">
+            <a href="https://sprinthelm.streamlit.app/?demo=true" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <Play size={16} />
               See a live demo
             </a>
