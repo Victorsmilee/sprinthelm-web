@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     "agile",
   ],
   authors: [{ name: "SprintHelm" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "SprintHelm — AI-Powered Delivery Intelligence System",
     description:
