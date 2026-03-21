@@ -35,7 +35,7 @@ export function Problem() {
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             The Velocity Trap is real.{" "}
             <span className="text-danger">
-              And it is costing you sprints.
+              And it is costing your organisation money.
             </span>
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
