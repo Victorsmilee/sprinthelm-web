@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0F1117;
+    color: #E8EAF6;
+    font-family: var(--font-inter);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #5C6BC0;
+    color: #fff;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0F1117;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2D3148;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4A5280;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Grid background used in hero */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(45, 49, 72, 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45, 49, 72, 0.4) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #E8EAF6 0%, #9E9FBF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Accent gradient text */
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #5C6BC0 0%, #26C6DA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Frosted glass nav */
+  .nav-frosted {
+    background: rgba(15, 17, 23, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #2D3148;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-24 md:py-16 px-6;
+  }
+}
