@@ -53,7 +53,7 @@ export default function SignupPage() {
                 Free forever
               </span>
               <h1 className="text-h1 font-bold text-text-primary mb-4 text-balance">
-                Run your first simulation in under 60 seconds.
+                AI-powered delivery intelligence. Results in under 60 seconds.
               </h1>
               <p className="text-text-secondary mb-8 leading-relaxed">
                 SprintHelm shows you exactly where your sprint will break —
