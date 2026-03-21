@@ -18,7 +18,6 @@ const PRODUCT_LINKS = [
 const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing",      href: "#pricing" },
-  { label: "Changelog",    href: "/changelog" },
 ];
 
 export function Nav() {
