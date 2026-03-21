@@ -100,7 +100,7 @@ export function HeroDashboard() {
         <div className="w-3 h-3 rounded-full bg-warning/60" />
         <div className="w-3 h-3 rounded-full bg-success/60" />
         <span className="ml-3 text-caption text-text-disabled font-mono">
-          SprintHelm — Delivery Intelligence System
+          SprintHelm — Delivery Decision Intelligence
         </span>
       </div>
 
