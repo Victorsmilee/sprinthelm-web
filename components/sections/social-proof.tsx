@@ -82,7 +82,7 @@ export function SocialProof() {
                   to={stat.value}
                   suffix={stat.suffix}
                   prefix={stat.prefix}
-                  decimal={stat.decimal}
+
                 />
               </p>
               <p className="text-caption text-text-secondary mt-1">{stat.label}</p>
