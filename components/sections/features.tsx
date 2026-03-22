@@ -9,7 +9,7 @@ const FEATURES = [
     icon: BarChart2,
     title: "Backlog Scoring Engine",
     headline: "Stop ranking tickets by gut feel.",
-    body: "Six weighted factors, configurable scoring, objective priority rank that accounts for technical risk — not just business value.",
+    body: "Rank every ticket by revenue impact, technical risk, and customer severity — and walk into planning with a defensible, objective priority list your stakeholders can read in 30 seconds.",
     color: "#5C6BC0",
     soon: false,
   },
@@ -17,7 +17,7 @@ const FEATURES = [
     icon: Cpu,
     title: "Monte Carlo Simulation",
     headline: "Know your completion odds before you commit.",
-    body: "1,000 simulated sprints against real capacity, adjusted for ramp rates and rolling instability. A probability distribution, not a point estimate.",
+    body: "Run 1,000 simulated sprints before your team runs one. Get a probability score — not a plan that falls apart on day three — so you only commit to what the team can actually finish.",
     color: "#26C6DA",
     soon: false,
   },
@@ -25,7 +25,7 @@ const FEATURES = [
     icon: Gauge,
     title: "Pressure Index",
     headline: "One number that tells you how dangerous this sprint is.",
-    body: "Effort load + incident risk + deadline sensitivity = a float value mapped to green/yellow/red. Surfaces structural unsafety before kickoff ends.",
+    body: "Know if this sprint is structurally safe before a single line of code is written. Red means renegotiate scope. Yellow means watch closely. Green means go with confidence.",
     color: "#FFA726",
     soon: false,
   },
@@ -33,7 +33,7 @@ const FEATURES = [
     icon: Sparkles,
     title: "AI Executive Summary",
     headline: "The briefing your stakeholders will actually read.",
-    body: "Simulation results → Claude → 3–4 sentence C-level summary. Paste into your planning deck, Slack update, or weekly report. No editing required.",
+    body: "Simulation results distilled into a 3–4 sentence C-level briefing by Claude. Paste it into your planning deck, the stakeholder Slack channel, or the board update. No editing required.",
     color: "#9B59B6",
     soon: false,
   },
@@ -41,7 +41,7 @@ const FEATURES = [
     icon: Calendar,
     title: "Epic Forecasting",
     headline: "See the quarter before it surprises you.",
-    body: "Map epics across 90 days, flag delivery risks before they compound, identify underscoped initiatives.",
+    body: "Map your epics across 90 days and spot delivery risks before they compound into missed milestones. Identify underscoped initiatives while there is still time to adjust.",
     color: "#66BB6A",
     soon: true,
   },
@@ -49,7 +49,7 @@ const FEATURES = [
     icon: TrendingUp,
     title: "Team Benchmarking",
     headline: "Know how your team compares — and what good looks like.",
-    body: "Benchmarks Pressure Index, completion rates, and scoring against anonymised industry data by team size and vertical.",
+    body: "See your Pressure Index, completion rates, and sprint scores against anonymised industry benchmarks by team size and vertical. Stop measuring yourself against last sprint.",
     color: "#EF5350",
     soon: true,
   },
@@ -67,7 +67,7 @@ export function Features() {
           className="text-center mb-16"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            Every tool your delivery team has been missing.
+            Ship the right things. Finish what you start.
           </h2>
         </motion.div>
 
