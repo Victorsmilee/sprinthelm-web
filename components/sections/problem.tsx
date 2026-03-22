@@ -6,7 +6,7 @@ import { AlertTriangle, Users, TrendingDown } from "lucide-react";
 const PROBLEMS = [
   {
     icon: TrendingDown,
-    title: "You are making £500k decisions on spreadsheet intuition.",
+    title: "You are making $500k decisions on spreadsheet intuition.",
     body: "Every sprint plan is a bet on incomplete information. Teams commit without a simulation layer, without a trade-off model, without mathematical confidence. Two weeks later: spillover, an incident, a missed commitment, a conversation nobody wanted to have.",
   },
   {
