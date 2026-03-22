@@ -32,17 +32,17 @@ export function Hero() {
 
         {/* Headline */}
         <motion.h1 {...fadeUp(0.1)} className="text-display font-bold text-text-primary text-balance mb-6 leading-tight max-w-4xl mx-auto">
-          Your sprint plan looks fine.{" "}
+          &ldquo;If we add this, what breaks?&rdquo;{" "}
           <span className="text-gradient-accent">
-            Your deadline doesn&apos;t know that yet.
+            Know before you commit.
           </span>
         </motion.h1>
 
         {/* Subheadline */}
         <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-prose mx-auto mb-10 text-balance">
-          SprintHelm answers the question every PM fears: &ldquo;If we add this, what breaks?&rdquo;
-          Simulate the trade-off before you make the commitment — and walk into planning
-          with mathematical proof, not a gut feeling. Results in under 60 seconds.
+          SprintHelm simulates the trade-off before you make the commitment — so you walk
+          into planning with a delivery forecast you can stand behind. No guesswork.
+          No surprises. Results in under 60 seconds.
         </motion.p>
 
         {/* CTAs */}
