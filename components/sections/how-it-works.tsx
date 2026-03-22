@@ -25,7 +25,7 @@ const STEPS = [
     icon: FileText,
     title: "Decide",
     headline: "Walk into planning with a C-level summary, not a spreadsheet.",
-    body: "SprintHelm turns the simulation output into a 3–4 sentence C-level briefing, written by Claude. Share it in planning, the stakeholder Slack channel, or the board update — before the sprint kicks off, not after it fails.",
+    body: "SprintHelm turns the simulation output into a 3–4 sentence C-level briefing, written by Claude. Share it in planning, the stakeholder Slack, or the board update — before the sprint kicks off, not after it fails. The PM no longer argues from intuition. The maths speaks.",
     color: "#66BB6A",
   },
 ];

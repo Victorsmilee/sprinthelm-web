@@ -40,9 +40,9 @@ export function Hero() {
 
         {/* Subheadline */}
         <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-prose mx-auto mb-10 text-balance">
-          Know your sprint&apos;s real completion odds before kickoff. SprintHelm surfaces
-          hidden delivery risk, ranks what matters, and writes the stakeholder briefing
-          — in under 60 seconds.
+          SprintHelm answers the question every PM fears: &ldquo;If we add this, what breaks?&rdquo;
+          Simulate the trade-off before you make the commitment — and walk into planning
+          with mathematical proof, not a gut feeling. Results in under 60 seconds.
         </motion.p>
 
         {/* CTAs */}

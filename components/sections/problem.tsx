@@ -6,18 +6,18 @@ import { AlertTriangle, Users, TrendingDown } from "lucide-react";
 const PROBLEMS = [
   {
     icon: TrendingDown,
-    title: "Hidden tech debt compounds silently.",
-    body: "You know debt exists. You do not know which tickets are sitting on a foundation of it. By the time a bug surfaces mid-sprint, the damage to your timeline is already done.",
+    title: "You are making £500k decisions on spreadsheet intuition.",
+    body: "Every sprint plan is a bet on incomplete information. Teams commit without a simulation layer, without a trade-off model, without mathematical confidence. Two weeks later: spillover, an incident, a missed commitment, a conversation nobody wanted to have.",
   },
   {
     icon: Users,
-    title: "Team instability is invisible until it is not.",
-    body: "A new hire at 60% ramp, a senior engineer carrying three dependencies, a single point of failure on your most complex service. Your capacity model pretends none of this exists.",
+    title: "Stakeholder pressure moves faster than any team can reason through.",
+    body: "The CEO walks in and asks to add the new feature. No one does the maths on whether the sprint is actually survivable. The team says yes. The sprint says no.",
   },
   {
     icon: AlertTriangle,
-    title: "Stakeholder pressure overrides delivery reality.",
-    body: "A deadline lands in Slack. The sprint fills up. No one does the maths on whether it is actually survivable. Three weeks later, you are writing a post-mortem instead of shipping.",
+    title: "45% of product launches miss their target date. 20% miss revenue targets entirely.",
+    body: "These are not exceptional teams having an exceptional bad year. This is the default operating condition for every software company between seed and Series C. — PMI / State of Product Leadership, 2025",
   },
 ];
 
@@ -39,7 +39,7 @@ export function Problem() {
             </span>
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            Most teams track velocity. Few teams understand what is actually destroying it.
+            These are not execution failures. They are information failures.
           </p>
         </motion.div>
 

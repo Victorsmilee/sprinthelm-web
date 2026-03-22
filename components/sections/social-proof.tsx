@@ -7,10 +7,10 @@ import { useRef, useState, useEffect } from "react";
 const INTEGRATIONS = ["Jira", "Linear", "GitHub", "Slack", "Notion", "Confluence"];
 
 const STATS = [
-  { value: 10000, suffix: "+", label: "Tickets scored" },
-  { value: 3.2,   suffix: "M+", label: "Simulations run", decimal: true },
-  { value: 94,    suffix: "%",  label: "Adjust scope after first run" },
-  { value: 60,    suffix: "s",  label: "Time to first insight", prefix: "<" },
+  { value: 78,    suffix: "%",  label: "of PMs say stakeholder alignment is their #1 challenge" },
+  { value: 45,    suffix: "%",  label: "of product launches miss their target date" },
+  { value: 20,    suffix: "%",  label: "miss revenue targets entirely" },
+  { value: 60,    suffix: "s",  label: "for SprintHelm to surface the risk", prefix: "<" },
 ];
 
 function CountUp({ to, suffix, prefix, decimal }: {
@@ -52,7 +52,7 @@ export function SocialProof() {
         {/* Integration logos */}
         <div className="text-center">
           <p className="text-caption text-text-disabled mb-6 uppercase tracking-wider">
-            Integrates with tools your team already uses
+            Works with tools your team already uses
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">
             {INTEGRATIONS.map((name) => (
@@ -89,6 +89,9 @@ export function SocialProof() {
             </motion.div>
           ))}
         </div>
+        <p className="text-caption text-text-disabled text-center pt-4">
+          First three figures: PMI / State of Product Leadership, 2025
+        </p>
       </div>
     </section>
   );

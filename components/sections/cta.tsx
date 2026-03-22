@@ -20,11 +20,11 @@ export function Cta() {
           }}
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4 text-balance">
-            Your next sprint starts with a simulation.
+            Stop making £500k delivery decisions on intuition.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto mb-8">
-            Join engineering teams who stopped guessing and started delivering.
-            Free forever. No credit card required.
+            SprintHelm doesn&apos;t sell a tool. It sells the prevention of a £500k–£5M delivery miss.
+            Free to start. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild>
