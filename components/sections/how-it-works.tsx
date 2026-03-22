@@ -9,7 +9,7 @@ const STEPS = [
     icon: BarChart2,
     title: "Score",
     headline: "Score every ticket against what actually matters.",
-    body: "Paste your backlog or connect Jira. SprintHelm evaluates each ticket across six weighted factors — revenue impact, technical debt risk, dependency count, customer severity, delivery confidence, and strategic alignment — and produces a ranked priority score in seconds.",
+    body: "Paste your backlog or connect Jira. SprintHelm evaluates every ticket against what actually moves the business — revenue impact, incident risk, customer severity, and strategic alignment — and produces a ranked priority list in seconds. No more gut-feel debates in planning.",
     color: "#5C6BC0",
   },
   {
@@ -17,7 +17,7 @@ const STEPS = [
     icon: Cpu,
     title: "Simulate",
     headline: "Run a thousand sprints before your team runs one.",
-    body: "Our Monte Carlo engine simulates your sprint 1,000 times using real team capacity, ramp modifiers, and rolling instability data. You get a probability score: how likely is this sprint to complete on time?",
+    body: "Our Monte Carlo engine runs 1,000 simulated sprints against your actual team capacity — accounting for new joiners, leave, and past delivery patterns. You get a probability score: how likely is this sprint to complete on time? Ship it if the odds are good. Adjust scope if they are not.",
     color: "#26C6DA",
   },
   {
@@ -25,7 +25,7 @@ const STEPS = [
     icon: FileText,
     title: "Decide",
     headline: "Walk into planning with a C-level summary, not a spreadsheet.",
-    body: "SprintHelm synthesises the simulation results, Pressure Index, and risk flags into a 3–4 sentence executive summary. Share it in planning, the stakeholder Slack channel, or the board update.",
+    body: "SprintHelm turns the simulation output into a 3–4 sentence C-level briefing, written by Claude. Share it in planning, the stakeholder Slack channel, or the board update — before the sprint kicks off, not after it fails.",
     color: "#66BB6A",
   },
 ];

@@ -40,9 +40,9 @@ export function Hero() {
 
         {/* Subheadline */}
         <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-prose mx-auto mb-10 text-balance">
-          SprintHelm scores your backlog across six weighted factors, runs a Monte Carlo
-          simulation, and generates a C-level summary — before the sprint begins.
-          Stop guessing. Start delivering.
+          Know your sprint&apos;s real completion odds before kickoff. SprintHelm surfaces
+          hidden delivery risk, ranks what matters, and writes the stakeholder briefing
+          — in under 60 seconds.
         </motion.p>
 
         {/* CTAs */}
