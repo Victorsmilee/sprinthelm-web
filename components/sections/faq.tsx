@@ -101,6 +101,25 @@ export function Faq() {
             <FaqItem key={faq.q} q={faq.q} a={faq.a} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mx-auto max-w-3xl mt-10 p-8 rounded-xl border border-border-subtle bg-bg-surface text-center"
+        >
+          <p className="text-text-primary font-semibold mb-1">Still have questions?</p>
+          <p className="text-sm text-text-secondary mb-6">
+            Our team is happy to walk you through SprintHelm, discuss your use case, or help you evaluate the right plan.
+          </p>
+          <a
+            href="mailto:hello@sprinthelm.com"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
+          >
+            Talk to us — hello@sprinthelm.com
+          </a>
+        </motion.div>
       </div>
     </section>
   );
