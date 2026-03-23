@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp } from "lucide-react";
+import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const FEATURES = [
@@ -36,6 +36,14 @@ const FEATURES = [
     body: "Simulation results distilled into a 3–4 sentence C-level summary, written by Claude. Paste it into the planning deck, the Slack channel, or the board update — no editing required.",
     color: "#9B59B6",
     soon: false,
+  },
+  {
+    icon: AlertTriangle,
+    title: "Estimation Risk",
+    headline: "See which tickets will blow their estimates — before the sprint starts.",
+    body: "Every ticket is scored for hidden complexity using tech debt severity, estimate size, and ticket type. Junior teams get wider risk buffers automatically. The simulation adjusts — so your completion probability reflects real delivery risk, not just the plan.",
+    color: "#FF7043",
+    soon: true,
   },
   {
     icon: Calendar,
