@@ -32,7 +32,7 @@ export function Hero() {
 
         {/* Headline */}
         <motion.h1 {...fadeUp(0.1)} className="text-display font-bold text-text-primary text-balance mb-6 leading-tight max-w-4xl mx-auto">
-          &ldquo;If we add this feature, do we ship on time?&rdquo;{" "}
+          If we add this feature, do we ship on time?{" "}
           <span className="text-gradient-accent">
             Know before you commit.
           </span>
