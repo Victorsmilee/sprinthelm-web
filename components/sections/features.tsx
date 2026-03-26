@@ -43,7 +43,7 @@ const FEATURES = [
     headline: "See which tickets will blow their estimates — before the sprint starts.",
     body: "Every ticket is scored for hidden complexity using tech debt severity, estimate size, and ticket type. Junior teams get wider risk buffers automatically. The simulation adjusts — so your completion probability reflects real delivery risk, not just the plan.",
     color: "#FF7043",
-    soon: true,
+    soon: false,
   },
   {
     icon: Calendar,
@@ -51,7 +51,7 @@ const FEATURES = [
     headline: "See the quarter before it surprises you.",
     body: "Map every epic across 90 days and surface delivery risks before they compound into missed milestones. Spot underscoped initiatives while there is still time to adjust.",
     color: "#66BB6A",
-    soon: true,
+    soon: false,
   },
   {
     icon: TrendingUp,
@@ -59,7 +59,7 @@ const FEATURES = [
     headline: "Know what good looks like — not just what you did last sprint.",
     body: "See your completion rates, sprint health scores, and delivery accuracy against anonymised benchmarks by team size and vertical. Stop measuring yourself against your own floor.",
     color: "#EF5350",
-    soon: true,
+    soon: false,
   },
 ];
 
