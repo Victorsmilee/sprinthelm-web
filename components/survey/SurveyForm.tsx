@@ -494,9 +494,9 @@ export function SurveyForm(): React.ReactElement {
               <SectionTitle>Tell us about your role and team</SectionTitle>
             </div>
 
-            {/* q1 — Role */}
+            {/* q1 — Role (multi-select, max 3) */}
             <QBlock>
-              <QLabel required>What is your primary role?</QLabel>
+              <QLabel required>What is your role? (select all that apply, up to 3)</QLabel>
               <div className="flex flex-col gap-1.5">
                 {[
                   "Product Manager / Senior PM",
@@ -507,15 +507,15 @@ export function SurveyForm(): React.ReactElement {
                   "Scrum Master / Agile Coach",
                   "CEO / Founder",
                 ].map((opt) => (
-                  <RadioOpt
+                  <CheckOpt
                     key={opt}
                     label={opt}
-                    selected={answers["q1"] === opt}
-                    onClick={() => setRadio("q1", opt)}
+                    selected={isChecked("q1", opt)}
+                    onClick={() => toggleCheck("q1", opt, 3)}
                   />
                 ))}
               </div>
-              <ErrorMsg show={!!errors["q1"]} msg="Please select your role to continue." />
+              <ErrorMsg show={!!errors["q1"]} msg="Please select at least one role to continue." />
             </QBlock>
 
             {/* q_teams — How many teams */}
@@ -945,6 +945,16 @@ export function SurveyForm(): React.ReactElement {
                 className="w-full bg-bg-elevated border border-border-subtle rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:border-accent transition-colors duration-200"
               />
             </QBlock>
+
+            <p className="text-xs text-text-disabled mt-6 text-center">
+              Have a question before you submit?{" "}
+              <a
+                href="mailto:hello@sprinthelm.com"
+                className="text-accent hover:underline"
+              >
+                hello@sprinthelm.com
+              </a>
+            </p>
 
             <div className="flex justify-between mt-4">
               <Button variant="secondary" onClick={() => goNext(4)}>

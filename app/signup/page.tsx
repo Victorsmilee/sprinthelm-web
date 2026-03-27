@@ -53,7 +53,7 @@ export default function SignupPage() {
                 Free forever
               </span>
               <h1 className="text-h1 font-bold text-text-primary mb-4 text-balance">
-                AI-powered delivery intelligence. Results in under 60 seconds.
+                Delivery intelligence that gives you a real forecast before the sprint begins.
               </h1>
               <p className="text-text-secondary mb-8 leading-relaxed">
                 SprintHelm shows you exactly where your sprint will break —
