@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Check, Loader2 } from "lucide-react"; // Check used in PERKS list
 import { Button } from "@/components/ui/button";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 
-const STREAMLIT_URL = "https://sprinthelm.streamlit.app";
+const APP_URL = "https://app.sprinthelm.com";
 
 const PERKS = [
   "Backlog scoring across 6 weighted factors",
@@ -19,21 +19,14 @@ const PERKS = [
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    // Simulate brief loading then redirect to the live app
-    setTimeout(() => {
-      setSubmitted(true);
-      setLoading(false);
-      setTimeout(() => {
-        window.location.href = STREAMLIT_URL;
-      }, 1500);
-    }, 800);
+    // Redirect to app signup with email pre-filled
+    window.location.href = `${APP_URL}/signup?email=${encodeURIComponent(email)}`;
   }
 
   return (
@@ -76,71 +69,55 @@ export default function SignupPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div className="bg-bg-surface border border-border-subtle rounded-2xl p-8 md:p-10">
-                {submitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-6"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
-                      <Check size={24} className="text-success" />
-                    </div>
-                    <h2 className="text-lg font-bold text-text-primary mb-2">You&apos;re in.</h2>
-                    <p className="text-text-secondary text-sm">Redirecting you to SprintHelm…</p>
-                  </motion.div>
-                ) : (
-                  <>
-                    <h2 className="text-xl font-bold text-text-primary mb-2">
-                      Get started free
-                    </h2>
-                    <p className="text-text-secondary text-sm mb-6">
-                      Enter your work email and we&apos;ll take you straight to the app.
-                    </p>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-text-secondary mb-1.5">
-                          Work email
-                        </label>
-                        <input
-                          id="email"
-                          type="email"
-                          required
-                          placeholder="you@company.com"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          className="w-full bg-bg-elevated border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:border-accent transition-colors duration-200"
-                        />
-                      </div>
-                      <Button type="submit" size="lg" className="w-full" disabled={loading}>
-                        {loading ? (
-                          <Loader2 size={16} className="animate-spin" />
-                        ) : (
-                          <>
-                            Start for free
-                            <ArrowRight size={16} className="ml-2" />
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                    <p className="text-caption text-text-disabled mt-4 text-center">
-                      No credit card. No Jira required. Results in under 60 seconds.
-                    </p>
+                <h2 className="text-xl font-bold text-text-primary mb-2">
+                  Get started free
+                </h2>
+                <p className="text-text-secondary text-sm mb-6">
+                  Enter your work email and we&apos;ll take you straight to the app.
+                </p>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-text-secondary mb-1.5">
+                      Work email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      placeholder="you@company.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full bg-bg-elevated border border-border-subtle rounded-lg px-4 py-2.5 text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:border-accent transition-colors duration-200"
+                    />
+                  </div>
+                  <Button type="submit" size="lg" className="w-full" disabled={loading}>
+                    {loading ? (
+                      <Loader2 size={16} className="animate-spin" />
+                    ) : (
+                      <>
+                        Start for free
+                        <ArrowRight size={16} className="ml-2" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+                <p className="text-caption text-text-disabled mt-4 text-center">
+                  No credit card. No Jira required. Results in under 60 seconds.
+                </p>
 
-                    <div className="mt-6 pt-6 border-t border-border-subtle">
-                      <p className="text-xs text-text-disabled text-center mb-3">Or jump straight in</p>
-                      <Button variant="secondary" size="md" className="w-full" asChild>
-                        <a href={STREAMLIT_URL} target="_blank" rel="noopener noreferrer">
-                          Open SprintHelm app
-                        </a>
-                      </Button>
-                    </div>
-                  </>
-                )}
+                <div className="mt-6 pt-6 border-t border-border-subtle">
+                  <p className="text-xs text-text-disabled text-center mb-3">Or jump straight in</p>
+                  <Button variant="secondary" size="md" className="w-full" asChild>
+                    <a href={APP_URL}>
+                      Open SprintHelm app
+                    </a>
+                  </Button>
+                </div>
               </div>
 
               <p className="text-center text-caption text-text-disabled mt-4">
                 Already have an account?{" "}
-                <a href="/login" className="text-accent hover:underline">
+                <a href={`${APP_URL}/login`} className="text-accent hover:underline">
                   Sign in
                 </a>
               </p>
