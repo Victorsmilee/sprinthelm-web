@@ -101,11 +101,11 @@ export function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="/login" className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200">
+          <a href="https://app.sprinthelm.com/login" className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200">
             Sign in
           </a>
           <Button size="sm" asChild>
-            <a href="/signup">Try for free</a>
+            <a href="https://app.sprinthelm.com/signup">Try for free</a>
           </Button>
         </div>
 
@@ -155,11 +155,11 @@ export function Nav() {
                 </a>
               ))}
               <div className="border-t border-border-subtle my-1" />
-              <a href="/login" className="text-text-secondary hover:text-text-primary transition-colors duration-150">
+              <a href="https://app.sprinthelm.com/login" className="text-text-secondary hover:text-text-primary transition-colors duration-150">
                 Sign in
               </a>
               <Button size="lg" className="w-full" asChild>
-                <a href="/signup">Try for free</a>
+                <a href="https://app.sprinthelm.com/signup">Try for free</a>
               </Button>
             </div>
           </motion.div>
