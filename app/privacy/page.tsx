@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "SprintHelm Privacy Policy. How we collect, use, and protect your data.",
 };
 
-export const PRIVACY_EFFECTIVE_DATE = "2 April 2026";
-export const PRIVACY_VERSION = "1.0";
+const PRIVACY_EFFECTIVE_DATE = "2 April 2026";
+const PRIVACY_VERSION = "1.0";
 
 export default function PrivacyPage() {
   return (

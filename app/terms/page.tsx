@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "SprintHelm Terms of Service. Read our terms before using the platform.",
 };
 
-export const TERMS_EFFECTIVE_DATE = "2 April 2026";
-export const TERMS_VERSION = "1.0";
+const TERMS_EFFECTIVE_DATE = "2 April 2026";
+const TERMS_VERSION = "1.0";
 
 export default function TermsPage() {
   return (
