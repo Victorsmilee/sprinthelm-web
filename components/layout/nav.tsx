@@ -105,7 +105,7 @@ export function Nav() {
             Sign in
           </a>
           <Button size="sm" asChild>
-            <a href="https://app.sprinthelm.com/signup">Try for free</a>
+            <a href="https://app.sprinthelm.com/signup?plan=free">Try for free</a>
           </Button>
         </div>
 
@@ -159,7 +159,7 @@ export function Nav() {
                 Sign in
               </a>
               <Button size="lg" className="w-full" asChild>
-                <a href="https://app.sprinthelm.com/signup">Try for free</a>
+                <a href="https://app.sprinthelm.com/signup?plan=free">Try for free</a>
               </Button>
             </div>
           </motion.div>
