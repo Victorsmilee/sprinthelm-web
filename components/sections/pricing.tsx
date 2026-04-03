@@ -13,7 +13,7 @@ const TIERS = [
     annual: 0,
     tagline: "Run unlimited simulations. See your delivery risk for free.",
     cta: "Get started free",
-    ctaHref: "/signup",
+    ctaHref: "https://app.sprinthelm.com/signup?plan=free",
     ctaVariant: "secondary" as const,
     popular: false,
     features: [
@@ -39,7 +39,7 @@ const TIERS = [
     annual: 23,
     tagline: "Full access. Ship more sprints on time, every sprint.",
     cta: "Start Pro — 14 days free",
-    ctaHref: "/signup?plan=pro",
+    ctaHref: "https://app.sprinthelm.com/signup?plan=pro",
     ctaVariant: "primary" as const,
     popular: true,
     features: [
@@ -64,7 +64,7 @@ const TIERS = [
     annual: 47,
     tagline: "Multi-squad visibility. One view of delivery risk across the org.",
     cta: "Start Team — 14 days free",
-    ctaHref: "/signup?plan=team",
+    ctaHref: "https://app.sprinthelm.com/signup?plan=team",
     ctaVariant: "secondary" as const,
     popular: false,
     features: [
