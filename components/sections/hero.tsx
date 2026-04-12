@@ -48,7 +48,7 @@ export function Hero() {
         {/* CTAs */}
         <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
           <Button size="xl" asChild>
-            <a href="/signup" className="flex items-center gap-2">
+            <a href="https://app.sprinthelm.com/signup" className="flex items-center gap-2">
               Run your first simulation — it&apos;s free
               <ArrowRight size={18} />
             </a>
