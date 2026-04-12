@@ -31,7 +31,7 @@ const DEMO_HIGHLIGHTS = [
   },
 ];
 
-const DEMO_URL = "https://sprinthelm.streamlit.app/?demo=true";
+const DEMO_URL = "https://app.sprinthelm.com/?source=website";
 
 export function Demo() {
   return (
@@ -71,7 +71,7 @@ export function Demo() {
             </div>
             <div className="flex-1 mx-4">
               <div className="mx-auto max-w-xs bg-bg-primary rounded px-3 py-1 text-caption text-text-disabled font-mono text-center">
-                sprinthelm.streamlit.app
+                app.sprinthelm.com
               </div>
             </div>
           </div>

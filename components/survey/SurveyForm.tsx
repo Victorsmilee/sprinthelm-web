@@ -6,7 +6,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const DEMO_URL =
-  "https://sprinthelm.streamlit.app/?demo=true&utm_source=survey&utm_medium=web";
+  "https://app.sprinthelm.com/?source=website&utm_source=survey&utm_medium=web";
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? "";
 const LS_KEY = "sh_survey_last_submit";

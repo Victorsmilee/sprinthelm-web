@@ -54,7 +54,7 @@ export function Hero() {
             </a>
           </Button>
           <Button size="xl" variant="secondary" asChild>
-            <a href="https://sprinthelm.streamlit.app/?demo=true" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <a href="https://app.sprinthelm.com/?source=website" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <Play size={16} />
               See a live demo
             </a>
