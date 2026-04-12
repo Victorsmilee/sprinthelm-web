@@ -28,7 +28,7 @@ export function Cta() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild>
-              <a href="/signup" className="flex items-center gap-2">
+              <a href="https://app.sprinthelm.com/signup" className="flex items-center gap-2">
                 Run your first simulation — it&apos;s free
                 <ArrowRight size={18} />
               </a>
