@@ -7,6 +7,7 @@ const PRODUCT_LINKS = [
   { label: "AI Executive Summary",   href: "#features" },
   { label: "Epic Forecasting",       href: "#features", soon: true },
   { label: "Team Benchmarking",      href: "#features", soon: true },
+  { label: "Pricing",                 href: "#pricing" },
   { label: "Roadmap",                href: "/roadmap" },
 ];
 
