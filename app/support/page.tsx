@@ -1,11 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
+import { DocModal, type DocEntry } from "@/components/ui/doc-modal";
+import { SUPPORT_CONTENT } from "@/lib/support-content";
 import { MessageCircle, Mail, Clock, ArrowRight } from "lucide-react";
 
-export const metadata = {
-  title: "Help Centre — SprintHelm",
-  description: "Get help with SprintHelm. Documentation, support contacts, and SLAs by plan.",
-};
+export const dynamic = "force-dynamic";
 
 const SLAS = [
   {
@@ -34,46 +36,59 @@ const SLAS = [
   },
 ];
 
-const TOPICS = [
+type TopicLink = { label: string; section: string };
+
+const TOPICS: { title: string; links: TopicLink[] }[] = [
   {
     title: "Getting started",
     links: [
-      { label: "How to import your backlog (CSV / JSON)", href: "#" },
-      { label: "Understanding priority scores", href: "#" },
-      { label: "Running your first simulation", href: "#" },
-      { label: "Reading the Pressure Index", href: "#" },
+      { label: "How to import your backlog (CSV / JSON)", section: "Getting started" },
+      { label: "Understanding priority scores", section: "Getting started" },
+      { label: "Running your first simulation", section: "Getting started" },
+      { label: "Reading the Pressure Index", section: "Getting started" },
     ],
   },
   {
     title: "Plans & billing",
     links: [
-      { label: "What&apos;s included in Free vs Pro", href: "#pricing" },
-      { label: "How to upgrade your plan", href: "https://app.sprinthelm.com/signup" },
-      { label: "Cancellation and refund policy", href: "#" },
-      { label: "Enterprise pricing", href: "/contact/enterprise" },
+      { label: "What\u2019s included in Free vs Pro", section: "Plans & billing" },
+      { label: "How to upgrade your plan", section: "Plans & billing" },
+      { label: "Cancellation and refund policy", section: "Plans & billing" },
+      { label: "Enterprise pricing", section: "Plans & billing" },
     ],
   },
   {
     title: "Integrations",
     links: [
-      { label: "Connecting Jira (Pro+)", href: "#" },
-      { label: "Slack notifications setup (Team+)", href: "#" },
-      { label: "CSV export format", href: "#" },
-      { label: "API access (Enterprise)", href: "/docs" },
+      { label: "Connecting Jira (Pro+)", section: "Integrations" },
+      { label: "Slack notifications setup (Team+)", section: "Integrations" },
+      { label: "CSV export format", section: "Integrations" },
+      { label: "API access (Enterprise)", section: "Integrations" },
     ],
   },
   {
     title: "Account & security",
     links: [
-      { label: "Changing your email or password", href: "#" },
-      { label: "Team member roles explained", href: "#" },
-      { label: "Data retention and deletion", href: "/privacy" },
-      { label: "Security overview", href: "/security" },
+      { label: "Changing your email or password", section: "Account & security" },
+      { label: "Team member roles explained", section: "Account & security" },
+      { label: "Data retention and deletion", section: "Account & security" },
+      { label: "Security overview", section: "Account & security" },
     ],
   },
 ];
 
-export default function SupportPage() {
+function findEntry(label: string): DocEntry | undefined {
+  return SUPPORT_CONTENT.find((e) => e.label === label);
+}
+
+export default function SupportPage(): React.JSX.Element {
+  const [activeDoc, setActiveDoc] = useState<DocEntry | null>(null);
+
+  const openDoc = (label: string) => {
+    const entry = findEntry(label);
+    if (entry) setActiveDoc(entry);
+  };
+
   return (
     <>
       <Nav />
@@ -101,14 +116,13 @@ export default function SupportPage() {
                   <ul className="space-y-2.5">
                     {topic.links.map((link) => (
                       <li key={link.label}>
-                        <a
-                          href={link.href}
-                          className="flex items-center justify-between text-sm text-text-secondary hover:text-text-primary transition-colors duration-150 group"
-                          dangerouslySetInnerHTML={undefined}
+                        <button
+                          onClick={() => openDoc(link.label)}
+                          className="w-full flex items-center justify-between text-sm text-text-secondary hover:text-text-primary transition-colors duration-150 group text-left"
                         >
-                          <span dangerouslySetInnerHTML={{ __html: link.label }} />
+                          <span>{link.label}</span>
                           <ArrowRight size={13} className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex-shrink-0 ml-2" />
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -171,14 +185,16 @@ export default function SupportPage() {
               <p className="text-sm text-text-secondary leading-relaxed mb-5">
                 SLA-backed support with a dedicated Customer Success Manager.
               </p>
-              <a href="mailto:enterprise@sprinthelm.io" className="text-sm font-semibold text-accent hover:text-accent/80 transition-colors duration-200">
-                enterprise@sprinthelm.io
+              <a href="mailto:enterprise@sprinthelm.com" className="text-sm font-semibold text-accent hover:text-accent/80 transition-colors duration-200">
+                enterprise@sprinthelm.com
               </a>
             </div>
           </div>
         </section>
       </main>
       <Footer />
+
+      <DocModal entry={activeDoc} onClose={() => setActiveDoc(null)} />
     </>
   );
 }

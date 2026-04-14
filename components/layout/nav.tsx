@@ -7,17 +7,17 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const PRODUCT_LINKS = [
-  { label: "Backlog Scoring",        href: "#features" },
-  { label: "Monte Carlo Simulation", href: "#features" },
-  { label: "Pressure Index",         href: "#features" },
-  { label: "AI Executive Summary",   href: "#features" },
-  { label: "Epic Forecasting",       href: "#features", soon: true },
-  { label: "Team Benchmarking",      href: "#features", soon: true },
+  { label: "Backlog Scoring",        href: "/#features" },
+  { label: "Monte Carlo Simulation", href: "/#features" },
+  { label: "Pressure Index",         href: "/#features" },
+  { label: "AI Executive Summary",   href: "/#features" },
+  { label: "Epic Forecasting",       href: "/#features", soon: true },
+  { label: "Team Benchmarking",      href: "/#features", soon: true },
 ];
 
 const NAV_LINKS = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing",      href: "#pricing" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Pricing",      href: "/#pricing" },
 ];
 
 export function Nav() {

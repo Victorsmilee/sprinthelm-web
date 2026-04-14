@@ -1,13 +1,13 @@
 import { Zap, Github, Linkedin, Twitter } from "lucide-react";
 
 const PRODUCT_LINKS = [
-  { label: "Backlog Scoring",        href: "#features" },
-  { label: "Monte Carlo Simulation", href: "#features" },
-  { label: "Pressure Index",         href: "#features" },
-  { label: "AI Executive Summary",   href: "#features" },
-  { label: "Epic Forecasting",       href: "#features", soon: true },
-  { label: "Team Benchmarking",      href: "#features", soon: true },
-  { label: "Pricing",                 href: "#pricing" },
+  { label: "Backlog Scoring",        href: "/#features" },
+  { label: "Monte Carlo Simulation", href: "/#features" },
+  { label: "Pressure Index",         href: "/#features" },
+  { label: "AI Executive Summary",   href: "/#features" },
+  { label: "Epic Forecasting",       href: "/#features", soon: true },
+  { label: "Team Benchmarking",      href: "/#features", soon: true },
+  { label: "Pricing",                href: "/#pricing" },
   { label: "Roadmap",                href: "/roadmap" },
 ];
 

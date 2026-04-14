@@ -43,7 +43,7 @@ const PILLARS = [
     items: [
       "GDPR-compliant data processing for all EU users",
       "SOC 2 Type II report available to Enterprise customers under NDA",
-      "Data Processing Agreement (DPA) available — contact enterprise@sprinthelm.io",
+      "Data Processing Agreement (DPA) available — contact enterprise@sprinthelm.com",
       "Audit logs available on Enterprise for compliance review",
     ],
   },
@@ -113,10 +113,10 @@ export default function SecurityPage() {
               Security questionnaires, DPAs, SOC 2 reports, and custom compliance reviews available for enterprise prospects.
             </p>
             <a
-              href="mailto:enterprise@sprinthelm.io"
+              href="mailto:enterprise@sprinthelm.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
-              Contact enterprise@sprinthelm.io
+              Contact enterprise@sprinthelm.com
             </a>
           </div>
         </section>

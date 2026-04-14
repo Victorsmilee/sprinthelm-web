@@ -33,18 +33,29 @@ describe("Navigation — footer links resolve", () => {
   });
 });
 
-describe("Navigation — footer anchor links scroll homepage sections", () => {
-  it("footer #features link scrolls to features section", () => {
+describe("Navigation — footer anchor links use absolute hash paths", () => {
+  it("footer Backlog Scoring link uses /#features (absolute hash)", () => {
     cy.visit("/");
-    cy.get("footer").find('a[href="#features"]').first().click();
-    cy.get("#features").should("be.visible");
+    cy.get("footer").find('a[href="/#features"]').first().should("exist");
   });
 
-  it("footer #pricing link scrolls to pricing section", () => {
+  it("footer Pricing link uses /#pricing (absolute hash)", () => {
     cy.visit("/");
-    cy.get("footer").find('a[href="#pricing"]').first().click();
-    // Section exists in DOM (may be below viewport after anchor scroll)
+    cy.get("footer").find('a[href="/#pricing"]').first().should("exist");
+  });
+
+  it("footer Pricing link from /roadmap navigates to homepage pricing section", () => {
+    cy.visit("/roadmap");
+    cy.get("footer").find('a[href="/#pricing"]').first().click();
+    cy.url().should("match", /\/#pricing$|\/$/);
     cy.get("#pricing").should("exist");
+  });
+
+  it("footer product links from /blog navigate to homepage features section", () => {
+    cy.visit("/blog");
+    cy.get("footer").find('a[href="/#features"]').first().click();
+    cy.url().should("match", /\/#features$|\/$/);
+    cy.get("#features").should("exist");
   });
 });
 
@@ -71,18 +82,35 @@ describe("Navigation — in-page CTAs", () => {
       .and("include", "mailto:hello@sprinthelm.com");
   });
 
-  it("security page enterprise CTA has correct mailto", () => {
+  it("security page enterprise CTA has correct mailto (.com)", () => {
     cy.visit("/security");
-    // Use direct attribute selector — contains() can match non-link text first
-    cy.get('a[href="mailto:enterprise@sprinthelm.io"]').should("exist");
+    cy.get('a[href="mailto:enterprise@sprinthelm.com"]').should("exist");
   });
 
-  it("dpa page request CTA has correct mailto", () => {
+  it("dpa page request CTA has correct mailto (.com)", () => {
     cy.visit("/dpa");
     cy.contains("Request DPA")
       .closest("a")
       .should("have.attr", "href")
-      .and("include", "mailto:enterprise@sprinthelm.io");
+      .and("include", "mailto:enterprise@sprinthelm.com");
+  });
+
+  it("contact/enterprise page uses enterprise@sprinthelm.com (.com)", () => {
+    cy.visit("/contact/enterprise");
+    cy.get('a[href="mailto:enterprise@sprinthelm.com"]').should("exist");
+  });
+
+  it("support page enterprise contact uses enterprise@sprinthelm.com (.com)", () => {
+    cy.visit("/support");
+    cy.get('a[href="mailto:enterprise@sprinthelm.com"]').should("exist");
+  });
+
+  it("no .io email addresses exist anywhere on the site", () => {
+    const PAGES = ["/", "/support", "/docs", "/contact/enterprise", "/security", "/dpa"];
+    PAGES.forEach((page) => {
+      cy.visit(page);
+      cy.get("body").should("not.contain.text", "sprinthelm.io");
+    });
   });
 
   it("support page email has correct mailto", () => {
