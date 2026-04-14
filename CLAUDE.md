@@ -36,6 +36,20 @@ Built with Next.js, Tailwind CSS, and Framer Motion. No backend — static/SSG.
 
 ---
 
+## Code Review Requirements
+
+For every new feature, bug fix, or update:
+
+- **Always add at least 2 senior Code Reviewer Agents** to every PR.
+- **Backend changes:** Add 2 additional backend-specialist Code Reviewer Agents (total 4 reviewers).
+- **Frontend changes:** Add 2 additional frontend-specialist Code Reviewer Agents (total 4 reviewers).
+- **Design changes:** Add 2 additional design-specialist Code Reviewer Agents (total 4 reviewers).
+- **Security updates:** Add 2 additional security-specialist Code Reviewer Agents (total 4 reviewers).
+
+Reviewer agents must check for: correctness, security vulnerabilities, performance regressions, accessibility, and adherence to project coding standards. No PR may be merged without all reviewer agents completing their review and any raised issues being resolved.
+
+---
+
 ## Coding Standards
 
 ### Constants and configuration

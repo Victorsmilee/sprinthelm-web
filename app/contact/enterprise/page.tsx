@@ -59,10 +59,10 @@ export default function EnterpriseContactPage() {
                   We&apos;ll come back with a tailored response — not a sales deck.
                 </p>
                 <a
-                  href="mailto:enterprise@sprinthelm.io"
+                  href="mailto:enterprise@sprinthelm.com"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
                 >
-                  enterprise@sprinthelm.io
+                  enterprise@sprinthelm.com
                   <ArrowRight size={14} />
                 </a>
               </div>
