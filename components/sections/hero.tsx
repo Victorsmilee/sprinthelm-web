@@ -30,8 +30,13 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1 {...fadeUp(0.1)} className="text-display font-bold text-text-primary text-balance mb-6 leading-tight max-w-4xl mx-auto">
+        {/* Headline — blur-in entrance */}
+        <motion.h1
+          initial={{ opacity: 0, filter: "blur(8px)", y: 12 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          transition={{ duration: 0.7, ease: [0, 0, 0.2, 1], delay: 0.1 }}
+          className="text-display font-bold text-text-primary text-balance mb-6 leading-tight max-w-4xl mx-auto"
+        >
           If we add this feature, do we ship on time?{" "}
           <span className="text-gradient-accent">
             Know before you commit.
@@ -39,10 +44,9 @@ export function Hero() {
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-prose mx-auto mb-10 text-balance">
-          SprintHelm simulates the trade-off before you make the commitment — so you walk
-          into planning with a delivery forecast you can stand behind. No guesswork.
-          No surprises. Results in under 60 seconds.
+        <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-xl mx-auto mb-10 text-balance">
+          SprintHelm runs 1,000 simulated sprints before your team runs one.
+          Surface delivery risk in under 60 seconds. Ship with confidence.
         </motion.p>
 
         {/* CTAs */}

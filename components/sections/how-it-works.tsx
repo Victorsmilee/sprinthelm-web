@@ -9,24 +9,27 @@ const STEPS = [
     icon: BarChart2,
     title: "Score",
     headline: "Score every ticket against what actually matters.",
-    body: "Paste your backlog or connect Jira. SprintHelm evaluates every ticket against what actually moves the business — revenue impact, incident risk, customer severity, and strategic alignment — and produces a ranked priority list in seconds. No more gut-feel debates in planning.",
+    body: "Paste your backlog or connect Jira. SprintHelm scores every ticket against revenue impact, incident risk, and strategic alignment. A ranked priority list — in seconds.",
     color: "#5C6BC0",
+    xOffset: -40,
   },
   {
     step: "02",
     icon: Cpu,
     title: "Simulate",
     headline: "Run a thousand sprints before your team runs one.",
-    body: "Our Monte Carlo engine runs 1,000 simulated sprints against your actual team capacity — accounting for new joiners, leave, and past delivery patterns. You get a probability score: how likely is this sprint to complete on time? Ship it if the odds are good. Adjust scope if they are not.",
+    body: "Our Monte Carlo engine runs 1,000 simulated sprints against your actual team capacity. You get a probability score: how likely is this sprint to complete on time?",
     color: "#26C6DA",
+    xOffset: 0,
   },
   {
     step: "03",
     icon: FileText,
     title: "Decide",
     headline: "Walk into planning with a C-level summary, not a spreadsheet.",
-    body: "SprintHelm turns the simulation output into a 3–4 sentence C-level briefing, written by Claude. Share it in planning, the stakeholder Slack, or the board update — before the sprint kicks off, not after it fails. The PM no longer argues from intuition. The maths speaks.",
+    body: "SprintHelm turns simulation output into a 3-sentence C-level briefing, written by Claude. Share it in planning or Slack — before the sprint kicks off, not after it fails.",
     color: "#66BB6A",
+    xOffset: 40,
   },
 ];
 
@@ -45,8 +48,7 @@ export function HowItWorks() {
             From backlog to briefing in three steps.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            No configuration marathons. No new process to explain to the team. Paste your
-            backlog, run the simulation, share the summary.
+            No configuration marathons. Paste your backlog, run the simulation, share the summary.
           </p>
         </motion.div>
 
@@ -57,10 +59,10 @@ export function HowItWorks() {
           {STEPS.map((step, i) => (
             <motion.div
               key={step.step}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: step.xOffset }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: [0, 0, 0.2, 1] }}
               className="flex flex-col items-start"
             >
               {/* Step number + icon */}

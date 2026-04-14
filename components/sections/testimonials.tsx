@@ -37,10 +37,10 @@ export function Testimonials() {
           {FINDINGS.map((finding, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, filter: "blur(6px)", y: 16 }}
+              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
+              transition={{ duration: 0.55, delay: i * 0.12 }}
               className="p-6 rounded-xl bg-bg-elevated border border-border-subtle relative"
             >
               <span className="text-4xl text-accent/20 font-serif absolute top-4 left-5 leading-none select-none">

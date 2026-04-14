@@ -9,7 +9,7 @@ const FEATURES = [
     icon: BarChart2,
     title: "Priority Score",
     headline: "Know which tickets move the business before planning starts.",
-    body: "Every ticket scored across six weighted factors — revenue impact, incident risk, technical debt, customer severity, strategic alignment, and deadline sensitivity. Walk into planning with a defensible priority list your stakeholders can read in 30 seconds.",
+    body: "Every ticket scored across six weighted factors — revenue impact, incident risk, tech debt, customer severity, strategic alignment, deadline sensitivity. Walk into planning with a defensible list stakeholders read in 30 seconds.",
     color: "#5C6BC0",
     soon: false,
   },
@@ -17,7 +17,7 @@ const FEATURES = [
     icon: Cpu,
     title: "Completion Probability",
     headline: "When the CEO asks to add the feature, you'll know what breaks.",
-    body: "SprintHelm runs 1,000 simulated sprints before your team runs one. Add a ticket and watch the completion probability drop from 76% to 41% in real time. The PM no longer argues from intuition. The numbers speak.",
+    body: "SprintHelm runs 1,000 simulated sprints before your team runs one. Add a ticket and watch the completion probability drop from 76% to 41% in real time.",
     color: "#26C6DA",
     soon: false,
   },
@@ -25,7 +25,7 @@ const FEATURES = [
     icon: Gauge,
     title: "Pressure Index",
     headline: "Green, Yellow, or Red — before a line of code is written.",
-    body: "A single signal that tells you whether this sprint is healthy, stretched, or overloaded. Red means renegotiate scope now. Yellow means watch closely. Green means go with confidence.",
+    body: "A single signal: this sprint is healthy, stretched, or overloaded. Red means renegotiate scope now. Green means go with confidence.",
     color: "#FFA726",
     soon: false,
   },
@@ -33,7 +33,7 @@ const FEATURES = [
     icon: Sparkles,
     title: "Stakeholder Briefing",
     headline: "The update your stakeholders will actually read.",
-    body: "Simulation results distilled into a 3–4 sentence C-level summary, written by Claude. Paste it into the planning deck, the Slack channel, or the board update — no editing required.",
+    body: "Simulation results distilled into a 3-sentence C-level summary by Claude. Paste it into the planning deck or Slack — no editing required.",
     color: "#9B59B6",
     soon: false,
   },
@@ -41,7 +41,7 @@ const FEATURES = [
     icon: AlertTriangle,
     title: "Estimation Risk",
     headline: "See which tickets will blow their estimates — before the sprint starts.",
-    body: "Every ticket is scored for hidden complexity using tech debt severity, estimate size, and ticket type. Junior teams get wider risk buffers automatically. The simulation adjusts — so your completion probability reflects real delivery risk, not just the plan.",
+    body: "Every ticket scored for hidden complexity — tech debt severity, estimate size, ticket type. The simulation adjusts so your completion probability reflects real delivery risk.",
     color: "#FF7043",
     soon: false,
   },
@@ -49,7 +49,7 @@ const FEATURES = [
     icon: Calendar,
     title: "Quarterly View",
     headline: "See the quarter before it surprises you.",
-    body: "Map every epic across 90 days and surface delivery risks before they compound into missed milestones. Spot underscoped initiatives while there is still time to adjust.",
+    body: "Map epics across 90 days and surface delivery risks before they compound. Spot underscoped initiatives while there's still time to adjust.",
     color: "#66BB6A",
     soon: false,
   },
@@ -57,7 +57,7 @@ const FEATURES = [
     icon: TrendingUp,
     title: "Performance Benchmarks",
     headline: "Know what good looks like — not just what you did last sprint.",
-    body: "See your completion rates, sprint health scores, and delivery accuracy against anonymised benchmarks by team size and vertical. Stop measuring yourself against your own floor.",
+    body: "Completion rates and delivery accuracy benchmarked against teams by size and vertical. Stop measuring yourself against your own floor.",
     color: "#EF5350",
     soon: false,
   },
@@ -83,10 +83,10 @@ export function Features() {
           {FEATURES.map((feature, i) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20, delay: i * 0.07 }}
               className={`p-6 rounded-xl border transition-all duration-200 hover:-translate-y-1 ${
                 feature.soon
                   ? "bg-bg-surface border-border-subtle opacity-70 hover:opacity-90"
