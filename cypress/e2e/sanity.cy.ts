@@ -97,7 +97,7 @@ describe("Sanity — new pages content", () => {
   it("/contact/enterprise has sales content", () => {
     cy.visit("/contact/enterprise");
     cy.contains("delivery challenges").should("exist");
-    cy.contains("enterprise@sprinthelm.io").should("exist");
+    cy.contains("enterprise@sprinthelm.com").should("exist");
   });
 
   it("/roadmap has all three columns", () => {
@@ -130,7 +130,7 @@ describe("Sanity — new pages content", () => {
     cy.contains("Data Processing Agreement").should("exist");
     cy.contains("Parties").should("exist");
     cy.contains("Scope of Processing").should("exist");
-    cy.contains("enterprise@sprinthelm.io").should("exist");
+    cy.contains("enterprise@sprinthelm.com").should("exist");
   });
 
   it("/privacy renders with content", () => {

@@ -38,7 +38,7 @@ const SECTIONS = [
   },
   {
     title: "8. Data Subject Rights",
-    body: "SprintHelm will assist the Controller in responding to Data Subject rights requests (access, rectification, erasure, portability, restriction) within the timescales required by applicable law. Requests should be submitted to enterprise@sprinthelm.io.",
+    body: "SprintHelm will assist the Controller in responding to Data Subject rights requests (access, rectification, erasure, portability, restriction) within the timescales required by applicable law. Requests should be submitted to enterprise@sprinthelm.com.",
   },
 ];
 
@@ -91,10 +91,10 @@ export default function DpaPage() {
               Contact us with your legal entity name and billing email. We&apos;ll send a countersigned DPA within 5 business days.
             </p>
             <a
-              href="mailto:enterprise@sprinthelm.io?subject=DPA Request"
+              href="mailto:enterprise@sprinthelm.com?subject=DPA Request"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
-              Request DPA — enterprise@sprinthelm.io
+              Request DPA — enterprise@sprinthelm.com
               <ArrowRight size={14} />
             </a>
           </div>
