@@ -7,7 +7,6 @@ const PRODUCT_LINKS = [
   { label: "AI Executive Summary",   href: "#features" },
   { label: "Epic Forecasting",       href: "#features", soon: true },
   { label: "Team Benchmarking",      href: "#features", soon: true },
-  { label: "Changelog",              href: "/changelog" },
   { label: "Roadmap",                href: "/roadmap" },
 ];
 
@@ -16,14 +15,12 @@ const COMPANY_LINKS = [
   { label: "Blog",     href: "/blog" },
   { label: "Careers",  href: "/careers" },
   { label: "Security", href: "/security" },
-  { label: "Status",   href: "https://status.sprinthelm.com" },
   { label: "Contact",  href: "/contact" },
 ];
 
 const SUPPORT_LINKS = [
   { label: "Documentation",              href: "/docs" },
   { label: "Help Centre",               href: "/support" },
-  { label: "Support",                   href: "/support" },
   { label: "Privacy Policy",            href: "/privacy" },
   { label: "Terms of Service",          href: "/terms" },
   { label: "Data Processing Agreement", href: "/dpa", enterprise: true },

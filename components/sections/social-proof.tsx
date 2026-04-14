@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-const INTEGRATIONS = ["Jira", "Linear", "GitHub", "Slack", "Notion", "Confluence"];
+const INTEGRATIONS = ["Jira", "Linear", "GitHub", "Slack", "Notion", "Confluence", "Azure DevOps"];
 
 const STATS = [
   { value: 78,    suffix: "%",  label: "of PMs say stakeholder alignment is their #1 challenge" },
@@ -47,22 +47,24 @@ function CountUp({ to, suffix, prefix, decimal }: {
 
 export function SocialProof() {
   return (
-    <section className="border-y border-border-subtle bg-bg-surface py-12">
+    <section className="border-y border-border-subtle bg-bg-surface py-12 overflow-hidden">
       <div className="mx-auto max-w-content px-6 space-y-10">
-        {/* Integration logos */}
+        {/* Integration logos — marquee */}
         <div className="text-center">
           <p className="text-caption text-text-disabled mb-6 uppercase tracking-wider">
             Works with tools your team already uses
           </p>
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            {INTEGRATIONS.map((name) => (
-              <span
-                key={name}
-                className="text-sm font-semibold text-text-disabled opacity-40 hover:opacity-70 transition-opacity duration-200"
-              >
-                {name}
-              </span>
-            ))}
+          <div className="overflow-hidden">
+            <div className="flex gap-16 animate-marquee whitespace-nowrap">
+              {[...INTEGRATIONS, ...INTEGRATIONS].map((name, i) => (
+                <span
+                  key={i}
+                  className="text-sm font-semibold text-text-disabled opacity-40 hover:opacity-70 transition-opacity duration-200 inline-block"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -82,7 +84,6 @@ export function SocialProof() {
                   to={stat.value}
                   suffix={stat.suffix}
                   prefix={stat.prefix}
-
                 />
               </p>
               <p className="text-caption text-text-secondary mt-1">{stat.label}</p>

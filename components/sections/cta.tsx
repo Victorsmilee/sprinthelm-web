@@ -23,8 +23,8 @@ export function Cta() {
             Stop making $500k delivery decisions on intuition.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto mb-8">
-            SprintHelm doesn&apos;t sell a tool. It sells the prevention of a $500k–$5M delivery miss.
-            Free to start. No credit card required.
+            Start free — no credit card, no Jira required.
+            Upgrade when the simulation saves your first sprint.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild>

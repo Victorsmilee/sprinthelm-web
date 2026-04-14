@@ -7,17 +7,17 @@ const PROBLEMS = [
   {
     icon: TrendingDown,
     title: "You are making $500k decisions on spreadsheet intuition.",
-    body: "Every sprint plan is a bet on incomplete information. Teams commit without a simulation layer, without a trade-off model, without mathematical confidence. Two weeks later: spillover, an incident, a missed commitment, a conversation nobody wanted to have.",
+    body: "Every sprint plan is a bet on incomplete information. Teams commit without a simulation layer. Two weeks later: missed scope, an incident, a conversation nobody wanted.",
   },
   {
     icon: Users,
     title: "Stakeholder pressure moves faster than any team can reason through.",
-    body: "The CEO walks in and asks to add the new feature. No one does the maths on whether the sprint is actually survivable. The team says yes. The sprint says no.",
+    body: "The CEO asks to add the feature. No one checks if the sprint survives it. The team says yes. The sprint says no.",
   },
   {
     icon: AlertTriangle,
-    title: "45% of product launches miss their target date. 20% miss revenue targets entirely.",
-    body: "These are not exceptional teams having an exceptional bad year. This is the default operating condition for every software company between seed and Series C. — PMI / State of Product Leadership, 2025",
+    title: "45% of product launches miss their target date. 20% miss revenue targets.",
+    body: "This is the default for every software company between seed and Series C — not an exceptional bad year. — PMI 2025",
   },
 ];
 
@@ -47,10 +47,10 @@ export function Problem() {
           {PROBLEMS.map((problem, i) => (
             <motion.div
               key={problem.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
+              whileInView={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.15, ease: [0, 0, 0.2, 1] }}
               className="relative group p-6 rounded-xl bg-bg-surface border border-border-subtle hover:border-border-active transition-all duration-200 hover:-translate-y-1 overflow-hidden"
             >
               {/* Left border that grows on entrance */}
