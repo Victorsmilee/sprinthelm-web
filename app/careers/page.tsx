@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ReactNode } from "react";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { ArrowRight, MapPin, Clock, X } from "lucide-react";
@@ -11,7 +11,7 @@ interface Role {
   location: string;
   type: string;
   summary: string;
-  description: React.ReactNode;
+  description: ReactNode;
   applyEmail: string;
   applySubject: string;
 }
