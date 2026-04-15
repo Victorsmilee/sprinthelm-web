@@ -133,10 +133,10 @@ describe("Careers — intern roles", () => {
     cy.contains("button", "Product Manager Intern").should("exist");
   });
 
-  it("roles show Remote location and Internship type", () => {
+  it("roles show Remote location and Part-time type", () => {
     cy.get("section").contains("Open roles").closest("section").within(() => {
       cy.contains("Remote").should("exist");
-      cy.contains("Internship").should("exist");
+      cy.contains("Part-time").should("exist");
     });
   });
 

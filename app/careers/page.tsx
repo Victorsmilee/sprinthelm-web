@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, type ReactNode } from "react";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
-import { ArrowRight, MapPin, Clock, X } from "lucide-react";
+import { ArrowRight, MapPin, Clock, X, Wifi, Globe } from "lucide-react";
 
 interface Role {
   title: string;
@@ -21,7 +21,7 @@ const OPEN_ROLES: Role[] = [
     title: "QA / Quality Assurance Intern",
     team: "Quality",
     location: "Remote",
-    type: "Internship",
+    type: "Part-time",
     summary:
       "Test live features across the SprintHelm platform, write test cases, and learn how AI changes the quality workflow in fast-moving product teams.",
     applyEmail: "training@victoribrahim.com",
@@ -79,7 +79,7 @@ const OPEN_ROLES: Role[] = [
     title: "Product Owner Intern",
     team: "Product",
     location: "Remote",
-    type: "Internship",
+    type: "Part-time",
     summary:
       "Own and prioritise a real product backlog, write user stories, and learn how AI-powered delivery intelligence changes the way product owners make decisions.",
     applyEmail: "training@victoribrahim.com",
@@ -137,7 +137,7 @@ const OPEN_ROLES: Role[] = [
     title: "Scrum Master / Project Manager Intern",
     team: "Delivery",
     location: "Remote",
-    type: "Internship",
+    type: "Part-time",
     summary:
       "Facilitate real sprint delivery, model completion probability with SprintHelm, and learn how AI delivery intelligence is replacing gut-feel project management.",
     applyEmail: "training@victoribrahim.com",
@@ -195,7 +195,7 @@ const OPEN_ROLES: Role[] = [
     title: "Product Manager Intern",
     team: "Product",
     location: "Remote",
-    type: "Internship",
+    type: "Part-time",
     summary:
       "Analyse user needs, shape the roadmap, and learn how AI is transforming the product management workflow — from insight generation to delivery decisions.",
     applyEmail: "training@victoribrahim.com",
@@ -334,21 +334,56 @@ function JobModal({ role, onClose }: JobModalProps) {
       </div>
 
       {/* Scrollable body */}
-      <div className="overflow-y-auto px-8 py-6" style={{ maxHeight: "calc(90vh - 180px)" }}>
+      <div className="overflow-y-auto px-8 py-6" style={{ maxHeight: "calc(90vh - 200px)" }}>
         {role.description}
+
+        {/* Shared commitment block — same for all roles */}
+        <div className="mt-6 space-y-3 rounded-xl border border-border-subtle bg-bg-elevated p-5">
+          <h3 className="text-sm font-bold text-text-primary">Commitment &amp; requirements</h3>
+          <ul className="space-y-2.5 text-sm text-text-secondary">
+            <li className="flex items-start gap-2.5">
+              <Clock size={14} className="mt-0.5 shrink-0 text-accent" />
+              <span>
+                <span className="font-medium text-text-primary">Part-time</span> — minimum 2–3 hours per day,
+                for a <span className="font-medium text-text-primary">3–6 month</span> engagement
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Globe size={14} className="mt-0.5 shrink-0 text-accent" />
+              <span>
+                Available within the <span className="font-medium text-text-primary">EU timezone</span> and able
+                to join scheduled team meetings
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Wifi size={14} className="mt-0.5 shrink-0 text-accent" />
+              <span>
+                <span className="font-medium text-text-primary">Stable internet connection</span> required for
+                meetings and async collaboration
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* Footer CTA */}
-      <div className="px-8 py-5 border-t border-border-subtle bg-bg-elevated">
-        <a
-          href={`mailto:${role.applyEmail}?subject=${encodeURIComponent(role.applySubject)}`}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
-        >
-          Apply via email <ArrowRight size={14} />
-        </a>
-        <p className="mt-2 text-xs text-text-disabled">
-          Send your CV to{" "}
-          <span className="text-text-secondary">{role.applyEmail}</span>
+      <div className="px-8 py-5 border-t border-border-subtle bg-bg-elevated flex items-center justify-between gap-4">
+        <div>
+          <button
+            type="button"
+            onClick={() => {
+              window.location.href = `mailto:${role.applyEmail}?subject=${encodeURIComponent(role.applySubject)}`;
+            }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
+          >
+            Apply via email <ArrowRight size={14} />
+          </button>
+          <p className="mt-1.5 text-xs text-text-disabled">
+            Sends to <span className="text-text-secondary">{role.applyEmail}</span>
+          </p>
+        </div>
+        <p className="text-xs text-text-disabled text-right hidden sm:block">
+          Attach your CV and a short note<br />about which role you&apos;re applying for.
         </p>
       </div>
     </dialog>
