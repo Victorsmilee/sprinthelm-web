@@ -224,8 +224,9 @@ describe("Support — topic link modal", () => {
   });
 
   it("all topic links are buttons (not dead # hrefs)", () => {
-    // Verify topic links are buttons that trigger modals, not anchor tags with href="#"
-    cy.contains("How to import your backlog").should("have.prop", "tagName", "BUTTON");
+    // cy.contains(selector, text) finds the element matching the selector that contains the text.
+    // Must use the two-arg form — cy.contains(text) returns the deepest match (a <span>), not the button.
+    cy.contains("button", "How to import your backlog").should("exist");
   });
 });
 
