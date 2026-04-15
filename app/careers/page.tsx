@@ -5,8 +5,6 @@ import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { ArrowRight, MapPin, Clock, X } from "lucide-react";
 
-export const metadata = undefined; // metadata moved to layout — page is now client
-
 interface Role {
   title: string;
   team: string;
