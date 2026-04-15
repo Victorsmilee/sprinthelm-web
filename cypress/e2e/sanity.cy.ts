@@ -72,11 +72,13 @@ describe("Sanity — new pages content", () => {
     cy.contains("45% of product launches").should("exist");
   });
 
-  it("/careers has open roles", () => {
+  it("/careers has intern roles", () => {
     cy.visit("/careers");
     cy.contains("Build the future of sprint planning").should("exist");
-    cy.contains("Senior Full-Stack Engineer").should("exist");
-    cy.contains("Product Designer").should("exist");
+    cy.contains("QA / Quality Assurance Intern").should("exist");
+    cy.contains("Product Owner Intern").should("exist");
+    cy.contains("Scrum Master / Project Manager Intern").should("exist");
+    cy.contains("Product Manager Intern").should("exist");
   });
 
   it("/security has security sections", () => {

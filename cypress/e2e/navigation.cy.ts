@@ -74,12 +74,12 @@ describe("Navigation — in-page CTAs", () => {
       .should("have.attr", "href", "https://app.sprinthelm.com/signup");
   });
 
-  it("careers page speculative CTA has correct mailto", () => {
+  it("careers page speculative CTA uses training@victoribrahim.com", () => {
     cy.visit("/careers");
     cy.contains("Send a speculative application")
       .closest("a")
       .should("have.attr", "href")
-      .and("include", "mailto:hello@sprinthelm.com");
+      .and("include", "mailto:training@victoribrahim.com");
   });
 
   it("security page enterprise CTA has correct mailto (.com)", () => {
@@ -144,5 +144,41 @@ describe("Navigation — nav is present on all new pages", () => {
       cy.visit(path);
       cy.get("footer").should("exist");
     });
+  });
+});
+
+describe("Navigation — Company dropdown in header", () => {
+  it("header contains a Company nav item", () => {
+    cy.visit("/");
+    cy.get("header").contains("Company").should("exist");
+  });
+
+  it("Company dropdown contains all five company links", () => {
+    cy.visit("/");
+    cy.get("header").contains("Company").trigger("mouseover");
+    cy.get("header").find('a[href="/about"]').should("exist");
+    cy.get("header").find('a[href="/blog"]').should("exist");
+    cy.get("header").find('a[href="/careers"]').should("exist");
+    cy.get("header").find('a[href="/security"]').should("exist");
+    cy.get("header").find('a[href="/contact"]').should("exist");
+  });
+
+  it("Company dropdown is present on non-homepage pages", () => {
+    cy.visit("/blog");
+    cy.get("header").contains("Company").should("exist");
+    cy.visit("/docs");
+    cy.get("header").contains("Company").should("exist");
+  });
+});
+
+describe("Navigation — footer Company column", () => {
+  it("footer has Company heading with all five links", () => {
+    cy.visit("/");
+    cy.get("footer").contains("Company").should("exist");
+    cy.get("footer").find('a[href="/about"]').should("exist");
+    cy.get("footer").find('a[href="/blog"]').should("exist");
+    cy.get("footer").find('a[href="/careers"]').should("exist");
+    cy.get("footer").find('a[href="/security"]').should("exist");
+    cy.get("footer").find('a[href="/contact"]').should("exist");
   });
 });
