@@ -15,15 +15,24 @@ const PRODUCT_LINKS = [
   { label: "Team Benchmarking",      href: "/#features", soon: true },
 ];
 
+const COMPANY_LINKS = [
+  { label: "About",    href: "/about" },
+  { label: "Blog",     href: "/blog" },
+  { label: "Careers",  href: "/careers" },
+  { label: "Security", href: "/security" },
+  { label: "Contact",  href: "/contact" },
+];
+
 const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Pricing",      href: "/#pricing" },
 ];
 
 export function Nav() {
-  const [scrolled, setScrolled]         = useState(false);
-  const [mobileOpen, setMobileOpen]     = useState(false);
-  const [productOpen, setProductOpen]   = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [mobileOpen, setMobileOpen]   = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -88,6 +97,40 @@ export function Nav() {
             </AnimatePresence>
           </div>
 
+          {/* Company dropdown */}
+          <div className="relative">
+            <button
+              className="flex items-center gap-1 text-text-secondary hover:text-text-primary transition-colors duration-200 text-sm"
+              onMouseEnter={() => setCompanyOpen(true)}
+              onMouseLeave={() => setCompanyOpen(false)}
+            >
+              Company <ChevronDown size={14} className={cn("transition-transform duration-200", companyOpen && "rotate-180")} />
+            </button>
+            <AnimatePresence>
+              {companyOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute left-0 top-full mt-2 w-44 rounded-lg bg-bg-surface border border-border-subtle shadow-elevated py-2"
+                  onMouseEnter={() => setCompanyOpen(true)}
+                  onMouseLeave={() => setCompanyOpen(false)}
+                >
+                  {COMPANY_LINKS.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-elevated transition-colors duration-150"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -130,11 +173,13 @@ export function Nav() {
             className="md:hidden bg-bg-surface border-t border-border-subtle overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
+              {/* Product links */}
+              <p className="text-xs font-semibold text-text-disabled uppercase tracking-wider">Product</p>
               {PRODUCT_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-text-secondary hover:text-text-primary transition-colors duration-150 flex items-center justify-between"
+                  className="text-text-secondary hover:text-text-primary transition-colors duration-150 flex items-center justify-between pl-2"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -143,7 +188,22 @@ export function Nav() {
                   )}
                 </a>
               ))}
-              <div className="border-t border-border-subtle my-1" />
+              <div className="border-t border-border-subtle" />
+
+              {/* Company links */}
+              <p className="text-xs font-semibold text-text-disabled uppercase tracking-wider">Company</p>
+              {COMPANY_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-text-secondary hover:text-text-primary transition-colors duration-150 pl-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="border-t border-border-subtle" />
+
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
@@ -154,7 +214,7 @@ export function Nav() {
                   {link.label}
                 </a>
               ))}
-              <div className="border-t border-border-subtle my-1" />
+              <div className="border-t border-border-subtle" />
               <a href="https://app.sprinthelm.com/login" className="text-text-secondary hover:text-text-primary transition-colors duration-150">
                 Sign in
               </a>
