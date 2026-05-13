@@ -22,18 +22,19 @@ export function Hero() {
       />
 
       <div className="relative z-10 w-full mx-auto max-w-content px-6 pt-16 pb-16">
+
+        {/* Badge — centered above split columns */}
+        <motion.div {...fadeUp(0)} className="flex justify-center mb-8">
+          <span className="inline-flex items-center gap-2 text-sm text-accent bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            Delivery Decision Intelligence System, built on AI
+          </span>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ── Left: copy ── */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-
-            {/* Badge */}
-            <motion.div {...fadeUp(0)} className="mb-8">
-              <span className="inline-flex items-center gap-2 text-sm text-accent bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Delivery Decision Intelligence System, built on AI
-              </span>
-            </motion.div>
 
             {/* Headline */}
             <motion.h1
