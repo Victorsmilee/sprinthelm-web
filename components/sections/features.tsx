@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp, AlertTriangle } from "lucide-react";
+import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp, AlertTriangle, DollarSign } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const FEATURES = [
@@ -43,6 +43,14 @@ const FEATURES = [
     headline: "See which tickets will blow their estimates — before the sprint starts.",
     body: "Every ticket scored for hidden complexity — tech debt severity, estimate size, ticket type. The simulation adjusts so your completion probability reflects real delivery risk.",
     color: "#FF7043",
+    soon: false,
+  },
+  {
+    icon: DollarSign,
+    title: "Sprint ROI Calculator",
+    headline: "Sprint planning speaks in points. Stakeholders speak in money. Now you speak both.",
+    body: "Enter your value per story point and instantly see total sprint value. Add your monthly team cost and SprintHelm calculates whether the sprint is profitable before a line of code is written. Don't know your value per point? SprintHelm shows you the cost floor — the break-even number — and lets you auto-fill it. Supports 8 currencies. All calculations stay in your browser.",
+    color: "#4CAF50",
     soon: false,
   },
   {
