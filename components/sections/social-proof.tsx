@@ -47,11 +47,11 @@ function CountUp({ to, suffix, prefix, decimal }: {
 
 export function SocialProof() {
   return (
-    <section className="border-y border-border-subtle bg-bg-surface py-12 overflow-hidden">
+    <section className="border-y border-border-subtle bg-bg-elevated py-14 overflow-hidden">
       <div className="mx-auto max-w-content px-6 space-y-10">
         {/* Integration logos — marquee */}
         <div className="text-center">
-          <p className="text-caption text-text-disabled mb-6 uppercase tracking-wider">
+          <p className="text-sm font-semibold text-text-secondary mb-6 uppercase tracking-widest">
             Works with tools your team already uses
           </p>
           <div className="overflow-hidden">
@@ -59,7 +59,7 @@ export function SocialProof() {
               {[...INTEGRATIONS, ...INTEGRATIONS].map((name, i) => (
                 <span
                   key={i}
-                  className="text-sm font-semibold text-text-disabled opacity-40 hover:opacity-70 transition-opacity duration-200 inline-block"
+                  className="text-sm font-semibold text-text-secondary opacity-70 hover:opacity-100 transition-opacity duration-200 inline-block"
                 >
                   {name}
                 </span>

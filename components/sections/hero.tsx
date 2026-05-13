@@ -13,7 +13,7 @@ const fadeUp = (delay = 0) => ({
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 overflow-hidden bg-grid">
+    <section className="relative flex flex-col items-center justify-center pt-16 overflow-hidden bg-grid">
       {/* Radial glow */}
       <div className="absolute inset-0 bg-radial-gradient pointer-events-none"
         style={{
@@ -21,7 +21,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 w-full mx-auto max-w-content px-6 pt-16 pb-24">
+      <div className="relative z-10 w-full mx-auto max-w-content px-6 pt-16 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ── Left: copy ── */}
