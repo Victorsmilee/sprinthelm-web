@@ -37,16 +37,16 @@ export function Hero() {
           transition={{ duration: 0.7, ease: [0, 0, 0.2, 1], delay: 0.1 }}
           className="text-display font-bold text-text-primary text-balance mb-6 leading-tight max-w-4xl mx-auto"
         >
-          If we add this feature, do we ship on time?{" "}
+          Every sprint that slips is{" "}
           <span className="text-gradient-accent">
-            Know before you commit.
+            a funding conversation you weren&apos;t ready for.
           </span>
         </motion.h1>
 
         {/* Subheadline */}
         <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-xl mx-auto mb-10 text-balance">
-          SprintHelm runs 1,000 simulated sprints before your team runs one.
-          Surface delivery risk in under 60 seconds. Ship with confidence.
+          A missed launch date isn&apos;t a retrospective item — it&apos;s a confidence crisis with the people writing your next check.
+          SprintHelm surfaces delivery risk before the sprint starts, while you can still change it.
         </motion.p>
 
         {/* CTAs */}
