@@ -10,7 +10,7 @@ export const metadata = {
 const WHAT_TO_EXPECT = [
   "Response within 24 hours — no automated qualification sequences",
   "A working demo tailored to your team size and sprint cadence",
-  "Honest answers about fit — we won&apos;t oversell",
+  "Honest answers about fit — we won’t oversell",
   "Pricing scoped to your org size with no hidden line items",
 ];
 
@@ -72,7 +72,7 @@ export default function EnterpriseContactPage() {
                 {WHAT_TO_EXPECT.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle size={16} className="text-success flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-text-secondary leading-relaxed" dangerouslySetInnerHTML={{ __html: item }} />
+                    <span className="text-sm text-text-secondary leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
