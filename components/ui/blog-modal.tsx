@@ -89,6 +89,15 @@ export function BlogModal({ post, onClose }: BlogModalProps): React.JSX.Element 
             <p className="text-base text-text-secondary leading-relaxed mb-6 italic border-l-2 border-accent/40 pl-4">
               {post.excerpt}
             </p>
+            {/*
+              CONTRACT: `post.content` MUST be authored as static HTML strings
+              in TypeScript (see app/blog/page.tsx → POSTS). It is NEVER sourced
+              from user input, URL params, fetched APIs, or a CMS. If that
+              changes — even to a "trusted" CMS — this dangerouslySetInnerHTML
+              becomes an XSS sink and the content MUST be sanitised (e.g.
+              isomorphic-dompurify) or migrated to react-markdown/JSX first.
+              Tracked: audit finding M4 follow-up.
+            */}
             <div
               className="prose prose-invert prose-sm max-w-none text-text-secondary leading-relaxed [&_h2]:text-text-primary [&_h2]:font-bold [&_h2]:text-lg [&_h2]:mt-8 [&_h2]:mb-3 [&_h3]:text-text-primary [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-2 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1.5 [&_strong]:text-text-primary [&_strong]:font-semibold [&_blockquote]:border-l-2 [&_blockquote]:border-accent/40 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-text-disabled [&_blockquote]:my-4"
               dangerouslySetInnerHTML={{ __html: post.content }}

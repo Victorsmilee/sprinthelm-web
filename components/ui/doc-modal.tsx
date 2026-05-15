@@ -73,6 +73,15 @@ export function DocModal({ entry, onClose }: DocModalProps): React.JSX.Element |
 
           {/* Scrollable body */}
           <div className="flex-1 overflow-y-auto p-8">
+            {/*
+              CONTRACT: `entry.content` MUST be authored as static HTML strings
+              in TypeScript (see lib/docs-content.ts). It is NEVER sourced from
+              user input, URL params, fetched APIs, or a CMS. If that changes —
+              even to a "trusted" CMS — this dangerouslySetInnerHTML becomes an
+              XSS sink and the content MUST be sanitised (e.g. isomorphic-
+              dompurify) or migrated to react-markdown/JSX first. Tracked:
+              audit finding M4 follow-up.
+            */}
             <div
               className="prose prose-invert prose-sm max-w-none text-text-secondary leading-relaxed [&_h2]:text-text-primary [&_h2]:font-bold [&_h2]:text-base [&_h2]:mt-8 [&_h2]:mb-3 [&_h3]:text-text-primary [&_h3]:font-semibold [&_h3]:mt-5 [&_h3]:mb-2 [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1.5 [&_strong]:text-text-primary [&_strong]:font-semibold [&_blockquote]:border-l-2 [&_blockquote]:border-accent/40 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-text-disabled [&_blockquote]:my-4 [&_code]:bg-bg-elevated [&_code]:text-accent [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-xs [&_pre]:bg-bg-elevated [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:overflow-x-auto [&_table]:w-full [&_table]:border-collapse [&_th]:text-left [&_th]:text-xs [&_th]:uppercase [&_th]:tracking-wider [&_th]:text-text-disabled [&_th]:pb-2 [&_th]:border-b [&_th]:border-border-subtle [&_td]:py-2.5 [&_td]:text-sm [&_td]:border-b [&_td]:border-border-subtle"
               dangerouslySetInnerHTML={{ __html: entry.content }}
