@@ -1,6 +1,7 @@
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { Mail, Building2, ArrowRight } from "lucide-react";
+import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
   title: "Contact — SprintHelm",
@@ -60,6 +61,18 @@ export default function ContactPage() {
                 <ArrowRight size={14} />
               </a>
             </div>
+          </div>
+        </section>
+
+        {/* Inline form — captures leads even when the visitor has no
+            configured mail client. Submits to Formspree (see ContactForm).
+            The mailto cards above remain as the explicit, no-friction path. */}
+        <section className="pb-20 px-6">
+          <div className="mx-auto max-w-2xl">
+            <p className="text-sm text-text-secondary leading-relaxed text-center mb-6">
+              Prefer not to leave the page? Send us a note directly:
+            </p>
+            <ContactForm />
           </div>
         </section>
 
