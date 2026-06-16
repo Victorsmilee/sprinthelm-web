@@ -18,6 +18,66 @@ interface Role {
 
 const OPEN_ROLES: Role[] = [
   {
+    title: "Product Designer Intern",
+    team: "Design",
+    location: "Remote",
+    type: "Part-time",
+    summary:
+      "Design real flows across two products, learn how AI is reshaping the designer's workflow, and ship work users see in the same week.",
+    applyEmail: "training@victoribrahim.com",
+    applySubject: "Product Designer Intern — SprintHelm Build Team",
+    description: (
+      <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
+        <div>
+          <h3 className="text-base font-bold text-text-primary mb-2">About the role</h3>
+          <p>
+            You&apos;ll design across two products — SprintHelm itself and a new product the team is
+            launching alongside it. That means you&apos;ll move between a mature, live product with real
+            users and an earlier-stage product where you help shape the visual identity and core
+            flows from scratch. You&apos;ll use AI tools every day as part of how you design, not as a
+            novelty bolted on at the end.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll do</h3>
+          <ul className="list-disc list-inside space-y-1.5">
+            <li>Design flows, screens, and components across two AI-native products</li>
+            <li>Translate product requirements into clear, testable interaction designs</li>
+            <li>Use AI tools to accelerate exploration, generate variants, and pressure-test ideas</li>
+            <li>Contribute to a small but coherent design system used by both products</li>
+            <li>Sit in on user feedback sessions and translate findings into design decisions</li>
+            <li>Ship visible work to live users in your first few weeks, not your last</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll learn</h3>
+          <ul className="list-disc list-inside space-y-1.5">
+            <li>How AI tools change the modern designer&apos;s workflow — from ideation to handoff</li>
+            <li>How to design across two products at once — one live, one early-stage</li>
+            <li>How a small team takes a feature from rough idea to live in production</li>
+            <li>Real exposure to designing AI-native products people pay for</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-base font-bold text-text-primary mb-2">Who this is for</h3>
+          <p>
+            Product designers, UX designers, or UI-focused folks who want hands-on experience designing
+            AI-native products. You should be opinionated about details, comfortable in Figma, and willing
+            to learn by shipping. Prior internship or freelance experience is a plus, but a strong
+            portfolio and curiosity matter more.
+          </p>
+        </div>
+        <div className="rounded-lg bg-bg-elevated border border-border-subtle p-4">
+          <p className="text-text-secondary">
+            <span className="font-semibold text-text-primary">Note:</span> This is an unpaid internship role
+            offering hands-on AI product experience, a strong portfolio story, and direct mentorship from the
+            founding team. Limited slots available.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
     title: "QA / Quality Assurance Intern",
     team: "Quality",
     location: "Remote",
@@ -133,122 +193,6 @@ const OPEN_ROLES: Role[] = [
       </div>
     ),
   },
-  {
-    title: "Scrum Master / Project Manager Intern",
-    team: "Delivery",
-    location: "Remote",
-    type: "Part-time",
-    summary:
-      "Facilitate real sprint delivery, model completion probability with SprintHelm, and learn how AI delivery intelligence is replacing gut-feel project management.",
-    applyEmail: "training@victoribrahim.com",
-    applySubject: "Scrum Master / PM Intern — SprintHelm Build Team",
-    description: (
-      <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">About the role</h3>
-          <p>
-            You&apos;ll help the team stay focused, unblocked, and on track — while learning how AI delivery
-            intelligence changes every aspect of sprint management. You&apos;ll use SprintHelm to model
-            completion probability before committing to scope, turning the tool into part of how you do
-            your job, not just something you help build.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll do</h3>
-          <ul className="list-disc list-inside space-y-1.5">
-            <li>Facilitate sprint planning, stand-ups, retrospectives, and reviews</li>
-            <li>Use Monte Carlo simulation to model sprint completion probability before committing</li>
-            <li>Identify delivery risks before they become blockers</li>
-            <li>Build and maintain delivery dashboards and status reports</li>
-            <li>Communicate progress and risk clearly to stakeholders</li>
-            <li>Help the team remove impediments and stay in flow</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll learn</h3>
-          <ul className="list-disc list-inside space-y-1.5">
-            <li>How AI delivery intelligence is changing the Scrum Master and PM role</li>
-            <li>How to use probabilistic simulation to predict sprint outcomes with data</li>
-            <li>How modern teams are replacing estimation guesswork with delivery intelligence</li>
-            <li>Real-world delivery management in a fast-moving, AI-native startup</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">Who this is for</h3>
-          <p>
-            Scrum Masters, project managers, or delivery leads who want to stay ahead in an AI-first delivery
-            world. You should be comfortable facilitating conversations, tracking dependencies, and thinking
-            about risk before it happens.
-          </p>
-        </div>
-        <div className="rounded-lg bg-bg-elevated border border-border-subtle p-4">
-          <p className="text-text-secondary">
-            <span className="font-semibold text-text-primary">Note:</span> This is an unpaid internship role
-            offering hands-on AI product experience, a strong portfolio story, and direct mentorship from the
-            founding team. Limited slots available.
-          </p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Product Manager Intern",
-    team: "Product",
-    location: "Remote",
-    type: "Part-time",
-    summary:
-      "Analyse user needs, shape the roadmap, and learn how AI is transforming the product management workflow — from insight generation to delivery decisions.",
-    applyEmail: "training@victoribrahim.com",
-    applySubject: "Product Manager Intern — SprintHelm Build Team",
-    description: (
-      <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">About the role</h3>
-          <p>
-            You&apos;ll work on the strategic and analytical side of SprintHelm&apos;s product development —
-            understanding users, synthesising feedback, shaping features, and measuring what ships. You&apos;ll
-            use AI tools as part of your daily workflow, not as a novelty, but as a core capability for doing
-            your job better and faster.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll do</h3>
-          <ul className="list-disc list-inside space-y-1.5">
-            <li>Conduct user research and synthesise feedback into actionable insights</li>
-            <li>Define features, write specs, and collaborate with engineering on requirements</li>
-            <li>Shape the product roadmap based on user needs and delivery data</li>
-            <li>Use AI to generate product insights from usage patterns and feedback</li>
-            <li>Measure the impact of features post-launch and iterate based on results</li>
-            <li>Make and communicate clear trade-off decisions under uncertainty</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll learn</h3>
-          <ul className="list-disc list-inside space-y-1.5">
-            <li>How AI is transforming the end-to-end product management workflow</li>
-            <li>How to generate and act on insights from delivery and usage data</li>
-            <li>How to make faster, better-informed product decisions with AI assistance</li>
-            <li>Real PM experience on a live, growing product with actual users</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-base font-bold text-text-primary mb-2">Who this is for</h3>
-          <p>
-            Product managers or aspiring PMs who want hands-on, AI-first product experience. You should be
-            analytical, user-focused, and comfortable working with ambiguity. Prior PM experience is a plus
-            but not required — what matters is curiosity and a drive to build something real.
-          </p>
-        </div>
-        <div className="rounded-lg bg-bg-elevated border border-border-subtle p-4">
-          <p className="text-text-secondary">
-            <span className="font-semibold text-text-primary">Note:</span> This is an unpaid internship role
-            offering hands-on AI product experience, a strong portfolio story, and direct mentorship from the
-            founding team. Limited slots available.
-          </p>
-        </div>
-      </div>
-    ),
-  },
 ];
 
 const VALUES = [
@@ -271,9 +215,9 @@ const VALUES = [
 ];
 
 const TEAM_COLORS: Record<string, string> = {
+  Design:   "text-pink-400 border-pink-400/30 bg-pink-400/10",
   Quality:  "text-emerald-400 border-emerald-400/30 bg-emerald-400/10",
   Product:  "text-blue-400 border-blue-400/30 bg-blue-400/10",
-  Delivery: "text-purple-400 border-purple-400/30 bg-purple-400/10",
 };
 
 interface JobModalProps {
@@ -411,8 +355,7 @@ export default function CareersPage() {
               modern teams build with AI, and leave with a portfolio story that sets you apart.
             </p>
             <p className="text-sm text-text-disabled">
-              Open to Product Owners, Scrum Masters, Project Managers, QA, and Product Managers.
-              Limited slots available.
+              Open to Product Designers, Product Owners, and QA. Limited slots available.
             </p>
           </div>
         </section>
@@ -437,7 +380,7 @@ export default function CareersPage() {
           <div className="mx-auto max-w-4xl">
             <h2 className="text-h2 font-bold text-text-primary mb-3">Open roles.</h2>
             <p className="text-sm text-text-secondary mb-10">
-              Click any role to read the full job description and apply.
+              Three open roles. Click any to read the full description and apply.
             </p>
             <div className="space-y-5">
               {OPEN_ROLES.map((role) => (
@@ -478,10 +421,9 @@ export default function CareersPage() {
         {/* Speculative */}
         <section className="py-20 px-6 text-center">
           <div className="mx-auto max-w-xl">
-            <h2 className="text-h3 font-bold text-text-primary mb-3">Not sure which role fits?</h2>
+            <h2 className="text-h3 font-bold text-text-primary mb-3">Don&apos;t see your role?</h2>
             <p className="text-sm text-text-secondary mb-6">
-              Tell us about yourself and what you want to learn. We&apos;ll find the right fit or keep you in
-              mind as new slots open up.
+              Tell us what you do and what you want to learn. We&apos;ll keep you in mind as new slots open up.
             </p>
             <a
               href="mailto:training@victoribrahim.com?subject=SprintHelm Build Team — Speculative application"
