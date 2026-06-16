@@ -119,18 +119,16 @@ describe("Careers — intern roles", () => {
     cy.contains("SprintHelm Build Team").should("exist");
   });
 
-  it("renders all 4 intern role cards", () => {
+  it("renders all 3 intern role cards", () => {
+    cy.contains("Product Designer Intern").should("exist");
     cy.contains("QA / Quality Assurance Intern").should("exist");
     cy.contains("Product Owner Intern").should("exist");
-    cy.contains("Scrum Master / Project Manager Intern").should("exist");
-    cy.contains("Product Manager Intern").should("exist");
   });
 
   it("role cards are buttons (not anchor tags)", () => {
+    cy.contains("button", "Product Designer Intern").should("exist");
     cy.contains("button", "QA / Quality Assurance Intern").should("exist");
     cy.contains("button", "Product Owner Intern").should("exist");
-    cy.contains("button", "Scrum Master / Project Manager Intern").should("exist");
-    cy.contains("button", "Product Manager Intern").should("exist");
   });
 
   it("roles show Remote location and Part-time type", () => {
@@ -140,8 +138,8 @@ describe("Careers — intern roles", () => {
     });
   });
 
-  it("speculative CTA uses training@victoribrahim.com", () => {
-    cy.get('a[href*="mailto:training@victoribrahim.com"]').should("exist");
+  it("speculative CTA uses hello@sprinthelm.com", () => {
+    cy.get('a[href*="mailto:hello@sprinthelm.com"]').should("exist");
   });
 });
 
@@ -169,16 +167,16 @@ describe("Careers — job description modal", () => {
     });
   });
 
-  it("modal has an Apply via email CTA with training@victoribrahim.com", () => {
+  it("modal has an Apply via email CTA showing hello@sprinthelm.com", () => {
     cy.contains("button", "QA / Quality Assurance Intern").click();
     cy.get("dialog[open]").within(() => {
-      cy.get('a[href*="mailto:training@victoribrahim.com"]').should("exist");
-      cy.contains("Apply via email").should("exist");
+      cy.contains("button", "Apply via email").should("exist");
+      cy.contains("hello@sprinthelm.com").should("exist");
     });
   });
 
   it("modal body is scrollable", () => {
-    cy.contains("button", "Product Manager Intern").click();
+    cy.contains("button", "Product Designer Intern").click();
     cy.get("dialog[open]").find(".overflow-y-auto").should("exist");
   });
 
@@ -203,19 +201,51 @@ describe("Careers — job description modal", () => {
     });
   });
 
-  it("Scrum Master modal shows delivery-specific content", () => {
-    cy.contains("button", "Scrum Master / Project Manager Intern").click();
+  it("Product Designer Intern modal shows design-specific content", () => {
+    cy.contains("button", "Product Designer Intern").click();
     cy.get("dialog[open]").within(() => {
-      cy.contains("Scrum Master / Project Manager Intern").should("be.visible");
-      cy.contains("Monte Carlo").should("exist");
+      cy.contains("Product Designer Intern").should("be.visible");
+      cy.contains("two products").should("exist");
     });
   });
 
-  it("apply email link includes the role title in the subject", () => {
-    cy.contains("button", "Product Manager Intern").click();
+  // ── Deep linking + Copy-link button (feat/careers-deeplink-email-cv) ──
+
+  it("clicking a role card updates the URL with ?role=<slug>", () => {
+    cy.get('[data-testid="role-card-product-designer"]').click();
+    cy.location("search").should("eq", "?role=product-designer");
+  });
+
+  it("visiting /careers?role=qa auto-opens the QA modal", () => {
+    cy.visit("/careers?role=qa");
     cy.get("dialog[open]")
-      .find('a[href*="mailto:training@victoribrahim.com"]')
-      .should("have.attr", "href")
-      .and("include", "Product%20Manager");
+      .should("exist")
+      .within(() => {
+        cy.contains("QA / Quality Assurance Intern").should("be.visible");
+      });
+  });
+
+  it("modal has a Copy link button that confirms with 'Copied' on click", () => {
+    cy.contains("button", "Product Owner Intern").click();
+    cy.get('[data-testid="copy-role-link"]').click();
+    cy.get('[data-testid="copy-role-link"]').should("contain.text", "Copied");
+  });
+
+  it("closing the modal clears the ?role= query param", () => {
+    cy.visit("/careers?role=qa");
+    cy.get("dialog[open]").should("exist");
+    cy.get("button[aria-label='Close job description']").click();
+    cy.location("search").should("eq", "");
+  });
+
+  it("modal shows the 'What to send' callout in the body (always visible, not hidden on mobile)", () => {
+    cy.contains("button", "QA / Quality Assurance Intern").click();
+    cy.get("dialog[open]").within(() => {
+      // Callout lives at the bottom of the scrollable body. Scroll to it
+      // before asserting visibility — its presence in the DOM proves it's
+      // no longer behind the desktop-only `hidden sm:block` of the old
+      // footer microcopy.
+      cy.contains("What to send:").scrollIntoView().should("be.visible");
+    });
   });
 });
