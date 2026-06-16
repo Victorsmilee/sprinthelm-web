@@ -3,9 +3,11 @@
 import { useState, useRef, useEffect, type ReactNode } from "react";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
-import { ArrowRight, MapPin, Clock, X, Wifi, Globe } from "lucide-react";
+import { ArrowRight, MapPin, Clock, X, Wifi, Globe, Link as LinkIcon, Check, FileText } from "lucide-react";
 
 interface Role {
+  /** URL slug — shown in `?role=<slug>` query param for deep linking. */
+  slug: string;
   title: string;
   team: string;
   location: string;
@@ -16,15 +18,18 @@ interface Role {
   applySubject: string;
 }
 
+const APPLY_EMAIL = "hello@sprinthelm.com";
+
 const OPEN_ROLES: Role[] = [
   {
+    slug: "product-designer",
     title: "Product Designer Intern",
     team: "Design",
     location: "Remote",
     type: "Part-time",
     summary:
       "Design real flows across two products, learn how AI is reshaping the designer's workflow, and ship work users see in the same week.",
-    applyEmail: "training@victoribrahim.com",
+    applyEmail: APPLY_EMAIL,
     applySubject: "Product Designer Intern — SprintHelm Build Team",
     description: (
       <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
@@ -78,13 +83,14 @@ const OPEN_ROLES: Role[] = [
     ),
   },
   {
+    slug: "qa",
     title: "QA / Quality Assurance Intern",
     team: "Quality",
     location: "Remote",
     type: "Part-time",
     summary:
       "Test live features across the SprintHelm platform, write test cases, and learn how AI changes the quality workflow in fast-moving product teams.",
-    applyEmail: "training@victoribrahim.com",
+    applyEmail: APPLY_EMAIL,
     applySubject: "QA / Quality Assurance Intern — SprintHelm Build Team",
     description: (
       <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
@@ -136,13 +142,14 @@ const OPEN_ROLES: Role[] = [
     ),
   },
   {
+    slug: "product-owner",
     title: "Product Owner Intern",
     team: "Product",
     location: "Remote",
     type: "Part-time",
     summary:
       "Own and prioritise a real product backlog, write user stories, and learn how AI-powered delivery intelligence changes the way product owners make decisions.",
-    applyEmail: "training@victoribrahim.com",
+    applyEmail: APPLY_EMAIL,
     applySubject: "Product Owner Intern — SprintHelm Build Team",
     description: (
       <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
@@ -227,6 +234,7 @@ interface JobModalProps {
 
 function JobModal({ role, onClose }: JobModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const el = dialogRef.current;
@@ -238,9 +246,28 @@ function JobModal({ role, onClose }: JobModalProps) {
     }
   }, [role]);
 
+  // Reset the "Copied!" badge whenever we switch to a different role.
+  useEffect(() => {
+    setCopied(false);
+  }, [role?.slug]);
+
   // Close on backdrop click
   const handleBackdrop = (e: React.MouseEvent<HTMLDialogElement>) => {
     if (e.target === dialogRef.current) onClose();
+  };
+
+  const handleCopyLink = async () => {
+    if (!role || typeof window === "undefined") return;
+    const shareUrl = `${window.location.origin}/careers?role=${role.slug}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API can fail in some browsers / contexts. Fall back to
+      // selecting the URL via prompt so the user can copy manually.
+      window.prompt("Copy link to this role:", shareUrl);
+    }
   };
 
   if (!role) return null;
@@ -267,18 +294,44 @@ function JobModal({ role, onClose }: JobModalProps) {
             </span>
           </div>
         </div>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close job description"
-          className="shrink-0 rounded-lg p-1.5 text-text-disabled hover:text-text-primary hover:bg-bg-elevated transition-colors duration-150"
-        >
-          <X size={18} />
-        </button>
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={handleCopyLink}
+            aria-label={copied ? "Link copied" : "Copy direct link to this role"}
+            title="Share this role"
+            data-testid="copy-role-link"
+            className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 ${
+              copied
+                ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                : "border-border-subtle text-text-disabled hover:text-text-primary hover:bg-bg-elevated hover:border-border-active"
+            }`}
+          >
+            {copied ? (
+              <>
+                <Check size={14} />
+                <span>Copied</span>
+              </>
+            ) : (
+              <>
+                <LinkIcon size={14} />
+                <span className="hidden sm:inline">Copy link</span>
+              </>
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close job description"
+            className="rounded-lg p-1.5 text-text-disabled hover:text-text-primary hover:bg-bg-elevated transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+          >
+            <X size={18} />
+          </button>
+        </div>
       </div>
 
       {/* Scrollable body */}
-      <div className="overflow-y-auto px-8 py-6" style={{ maxHeight: "calc(90vh - 200px)" }}>
+      <div className="overflow-y-auto px-8 py-6" style={{ maxHeight: "calc(90vh - 240px)" }}>
         {role.description}
 
         {/* Shared commitment block — same for all roles */}
@@ -308,26 +361,35 @@ function JobModal({ role, onClose }: JobModalProps) {
             </li>
           </ul>
         </div>
-      </div>
 
-      {/* Footer CTA */}
-      <div className="px-8 py-5 border-t border-border-subtle bg-bg-elevated flex items-center justify-between gap-4">
-        <div>
-          <button
-            type="button"
-            onClick={() => {
-              window.location.href = `mailto:${role.applyEmail}?subject=${encodeURIComponent(role.applySubject)}`;
-            }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
-          >
-            Apply via email <ArrowRight size={14} />
-          </button>
-          <p className="mt-1.5 text-xs text-text-disabled">
-            Sends to <span className="text-text-secondary">{role.applyEmail}</span>
+        {/* What to send — moved into the body so it's always visible and
+            doesn't compete for space with the Apply CTA on mobile. */}
+        <div className="mt-4 flex items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4">
+          <FileText size={16} className="mt-0.5 shrink-0 text-accent" />
+          <p className="text-sm text-text-primary leading-relaxed">
+            <span className="font-semibold">What to send:</span>{" "}
+            <span className="text-text-secondary">
+              attach your CV and a short note — why this role excites you, and what you want to learn.
+            </span>
           </p>
         </div>
-        <p className="text-xs text-text-disabled text-right hidden sm:block">
-          Attach your CV and a short note<br />about which role you&apos;re applying for.
+      </div>
+
+      {/* Footer CTA — Apply button on the left, "Sends to" caption on the
+          right so the row is visually balanced (Designer feedback: was empty
+          on the right after the CV microcopy moved into the body). */}
+      <div className="px-8 py-5 border-t border-border-subtle bg-bg-elevated flex items-center justify-between gap-4">
+        <button
+          type="button"
+          onClick={() => {
+            window.location.href = `mailto:${role.applyEmail}?subject=${encodeURIComponent(role.applySubject)}`;
+          }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        >
+          Apply via email <ArrowRight size={14} />
+        </button>
+        <p className="text-xs text-text-disabled text-right">
+          Sends to <span className="text-text-secondary">{role.applyEmail}</span>
         </p>
       </div>
     </dialog>
@@ -336,6 +398,36 @@ function JobModal({ role, onClose }: JobModalProps) {
 
 export default function CareersPage() {
   const [activeRole, setActiveRole] = useState<Role | null>(null);
+
+  // Auto-open a role's modal when the URL carries `?role=<slug>`. Lets us
+  // share a direct link to a specific job from anywhere — copying the URL
+  // (or clicking "Copy link" in the modal) gives a deep link that opens
+  // the same role for the next visitor.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("role");
+    if (!slug) return;
+    const match = OPEN_ROLES.find((r) => r.slug === slug);
+    if (match) setActiveRole(match);
+  }, []);
+
+  // Keep the URL in sync with which modal is open. Updating via
+  // history.replaceState avoids polluting browser back-stack — closing the
+  // modal returns to /careers without leaving an extra history entry.
+  const openRole = (role: Role) => {
+    setActiveRole(role);
+    if (typeof window !== "undefined") {
+      window.history.replaceState({}, "", `/careers?role=${role.slug}`);
+    }
+  };
+
+  const closeRole = () => {
+    setActiveRole(null);
+    if (typeof window !== "undefined") {
+      window.history.replaceState({}, "", "/careers");
+    }
+  };
 
   return (
     <>
@@ -385,9 +477,10 @@ export default function CareersPage() {
             <div className="space-y-5">
               {OPEN_ROLES.map((role) => (
                 <button
-                  key={role.title}
+                  key={role.slug}
                   type="button"
-                  onClick={() => setActiveRole(role)}
+                  data-testid={`role-card-${role.slug}`}
+                  onClick={() => openRole(role)}
                   className="w-full text-left block p-8 rounded-xl bg-bg-surface border border-border-subtle hover:border-border-active hover:-translate-y-0.5 transition-all duration-200 group cursor-pointer"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
@@ -426,7 +519,7 @@ export default function CareersPage() {
               Tell us what you do and what you want to learn. We&apos;ll keep you in mind as new slots open up.
             </p>
             <a
-              href="mailto:training@victoribrahim.com?subject=SprintHelm Build Team — Speculative application"
+              href={`mailto:${APPLY_EMAIL}?subject=SprintHelm Build Team — Speculative application`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
               Send a speculative application
@@ -436,7 +529,7 @@ export default function CareersPage() {
         </section>
       </main>
 
-      <JobModal role={activeRole} onClose={() => setActiveRole(null)} />
+      <JobModal role={activeRole} onClose={closeRole} />
       <Footer />
     </>
   );

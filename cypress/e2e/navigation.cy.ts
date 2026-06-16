@@ -74,12 +74,12 @@ describe("Navigation — in-page CTAs", () => {
       .should("have.attr", "href", "https://app.sprinthelm.com/signup");
   });
 
-  it("careers page speculative CTA uses training@victoribrahim.com", () => {
+  it("careers page speculative CTA uses hello@sprinthelm.com", () => {
     cy.visit("/careers");
     cy.contains("Send a speculative application")
       .closest("a")
       .should("have.attr", "href")
-      .and("include", "mailto:training@victoribrahim.com");
+      .and("include", "mailto:hello@sprinthelm.com");
   });
 
   it("security page enterprise CTA has correct mailto (.com)", () => {
