@@ -26,11 +26,11 @@ const SECTIONS = [
   },
   {
     title: "5. Sub-processors",
-    body: "SprintHelm uses the following categories of sub-processors in the delivery of its services: cloud infrastructure (AWS EU-West-1), authentication services, payment processing (Stripe), and AI inference (Anthropic). A full sub-processor list with entity names and processing locations is available to Enterprise customers on request. SprintHelm will provide 30 days' notice of material changes to sub-processors.",
+    body: "SprintHelm uses the following sub-processors in the delivery of its services: cloud infrastructure and database (Supabase, EU West Europe region); web hosting and edge network (Vercel, global CDN); payment processing (Stripe); AI inference (Anthropic, United States); and ticket-system integration (Atlassian — only when the Customer connects a Jira workspace, in which case Atlassian receives the API calls SprintHelm makes on the user's behalf). A full sub-processor list with entity names and processing locations is also reflected in the SprintHelm Privacy Policy at sprinthelm.com/privacy. SprintHelm will provide 30 days' notice of material changes to sub-processors.",
   },
   {
     title: "6. Data Transfers",
-    body: "Customer Data is stored and processed in the EU by default (AWS EU-West-1). If Customer requests processing in an alternative region, a separate addendum will be agreed. Where sub-processors are located outside the EEA, SprintHelm relies on Standard Contractual Clauses (SCCs) as the transfer mechanism.",
+    body: "Customer Data is stored and processed in the EU by default (Supabase, EU West Europe region). If Customer requests processing in an alternative region, a separate addendum will be agreed. Where sub-processors are located outside the EEA — including Anthropic (United States), Stripe, Vercel (global CDN), and Atlassian (where its OAuth and API servers are operated for the Customer's Jira site) — SprintHelm relies on Standard Contractual Clauses (SCCs) as the transfer mechanism. Atlassian's data-transfer disclosures additionally apply when the Customer has connected a Jira workspace.",
   },
   {
     title: "7. Data Retention & Deletion",
