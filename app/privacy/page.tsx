@@ -80,6 +80,43 @@ export default function PrivacyPage() {
                 from Google. We use the email address for account identification and the display name for
                 personalisation. We do not receive access to your Google Drive, Calendar, or other Google services.
               </p>
+
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">Jira (Atlassian) integration data (if used)</h3>
+              <p>
+                If you connect your Jira workspace to SprintHelm via{" "}
+                <strong className="text-text-primary">Account &rarr; Connect Jira Workspace</strong>, we receive
+                and store the following from Atlassian on your behalf:
+              </p>
+              <ul className="list-disc list-inside mt-2 space-y-1">
+                <li>
+                  <strong className="text-text-primary">Atlassian account identifier</strong> &mdash; the opaque
+                  account ID Atlassian provides during OAuth authorisation. We do not receive your Atlassian name,
+                  email, or profile photo through this flow.
+                </li>
+                <li>
+                  <strong className="text-text-primary">OAuth access and refresh tokens</strong> &mdash; stored
+                  encrypted at rest using AES-256-GCM envelope encryption. Encryption keys are managed per
+                  environment and never leave our server-side infrastructure. The encrypted tokens are never sent
+                  to your browser.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Connection audit log</strong> &mdash; we record an event
+                  log entry for each connection-related action (connect, disconnect, token refresh, sprint import).
+                  Each entry contains event type, timestamp, and a reference to your connection. We do not log the
+                  contents of any Jira ticket or sprint in this audit table.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Jira ticket and sprint data you choose to import</strong>
+                  {" "}&mdash; when you import a sprint, the ticket data you select is copied into your SprintHelm
+                  account so the simulator can analyse it. This data is owned by your SprintHelm account and is
+                  governed by the same retention and deletion rules as any other ticket data you enter into
+                  SprintHelm.
+                </li>
+              </ul>
+              <p className="mt-3">
+                See section 4a below for the full Jira integration data lifecycle, lawful basis, and erasure
+                pathway.
+              </p>
             </section>
 
             <section>
@@ -166,6 +203,29 @@ export default function PrivacyPage() {
                 <div className="rounded-lg border border-border-subtle p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
+                      <p className="font-semibold text-text-primary">Atlassian (Jira)</p>
+                      <p className="text-sm mt-1">
+                        If you connect your Jira workspace, SprintHelm uses Atlassian&apos;s OAuth 2.0 API to read
+                        sprint and ticket data on your behalf. We receive your Atlassian account identifier plus
+                        the OAuth tokens needed to make those API calls; tokens are envelope-encrypted at rest.
+                      </p>
+                      <p className="text-sm mt-1 text-text-disabled">
+                        Data: Atlassian account ID, encrypted OAuth access + refresh tokens, connection audit
+                        log, Jira ticket/sprint data you choose to import. Not transmitted to Atlassian: your
+                        SprintHelm email, name, or sprint analytics.
+                      </p>
+                      <p className="text-sm mt-1">
+                        Atlassian&apos;s privacy policy applies to data processing on Atlassian&apos;s side:{" "}
+                        <span className="text-accent">atlassian.com/legal/privacy-policy</span>
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Optional</span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border-subtle p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
                       <p className="font-semibold text-text-primary">Vercel</p>
                       <p className="text-sm mt-1">Hosting and edge network for the web application. May process request metadata (IP address, headers).</p>
                       <p className="text-sm mt-1 text-text-disabled">Data: request logs, IP addresses</p>
@@ -193,6 +253,91 @@ export default function PrivacyPage() {
             </section>
 
             <section>
+              <h2 className="text-lg font-semibold text-text-primary mb-3">4a. Jira Integration &mdash; Data Lifecycle and Erasure</h2>
+              <p>
+                This section applies only if you have connected a Jira workspace to your SprintHelm account.
+                It explains in full detail what we store on Atlassian&apos;s behalf, why we are permitted to
+                store it under UK GDPR / EU GDPR, and how you can remove it.
+              </p>
+
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">What we store</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>
+                  <strong className="text-text-primary">Atlassian account identifier.</strong> The opaque account
+                  ID Atlassian provides during OAuth authorisation. Atlassian considers this identifier personal
+                  data even though it is not a name or email, because it identifies you within Atlassian&apos;s
+                  systems. We store it solely to match incoming Jira events to your SprintHelm account.
+                </li>
+                <li>
+                  <strong className="text-text-primary">OAuth access and refresh tokens</strong> issued by
+                  Atlassian. We store these tokens encrypted at rest using AES-256-GCM envelope encryption.
+                  Encryption keys are managed per environment (staging and production use different keys)
+                  and never leave our server-side infrastructure. Encrypted tokens are never sent to your
+                  browser and are not visible to other users.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Connection audit log entries.</strong> For each
+                  connection-related action (connect, disconnect, token refresh, sprint import) we store an
+                  event-type label, a timestamp, and a reference to your connection. The audit log does not
+                  contain the contents of any Jira ticket, sprint, or user-identifying detail beyond your
+                  internal SprintHelm user ID.
+                </li>
+                <li>
+                  <strong className="text-text-primary">Jira ticket and sprint data you actively import.</strong>
+                  When you choose to import a Jira sprint or backlog, the ticket data you select is copied into
+                  your SprintHelm account. This data then lives under the same retention rules as any other
+                  ticket data you enter into SprintHelm directly.
+                </li>
+              </ul>
+
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">Lawful basis</h3>
+              <p>
+                We process the data above on the basis of{" "}
+                <strong className="text-text-primary">legitimate interest</strong>{" "}
+                under UK GDPR / EU GDPR Article 6(1)(f). The Jira integration cannot function without these
+                data items, and you actively choose to enable it by clicking{" "}
+                <strong className="text-text-primary">Connect Jira Workspace</strong>. You may withdraw the
+                processing at any time by disconnecting (see &ldquo;How to erase&rdquo; below).
+              </p>
+
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">How to erase your Jira data</h3>
+              <p>
+                You can permanently remove all the data above without contacting us:
+              </p>
+              <ol className="list-decimal list-inside mt-2 space-y-1">
+                <li>Sign in to SprintHelm and open your{" "}
+                  <a href="https://app.sprinthelm.com/account" className="text-accent hover:underline">Account page</a>.
+                </li>
+                <li>Find the &ldquo;Jira Integration&rdquo; section.</li>
+                <li>Click <strong className="text-text-primary">Disconnect Jira Workspace</strong>.</li>
+              </ol>
+              <p className="mt-3">When you disconnect:</p>
+              <ul className="list-disc list-inside mt-2 space-y-1">
+                <li>Your encrypted OAuth token rows are hard-deleted immediately.</li>
+                <li>Your workspace connection row is marked as &ldquo;disconnected&rdquo; and is purged within 30 days.</li>
+                <li>Connection audit log entries are retained for 12 months for security and incident-response purposes, then automatically purged. You can request expedited audit-log purge by emailing privacy@sprinthelm.com.</li>
+                <li>Jira ticket and sprint data you imported is NOT automatically deleted; it remains in your SprintHelm account under the standard retention rules and is deleted on full account deletion or on request.</li>
+              </ul>
+
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">Sub-processor relationship</h3>
+              <p>
+                Atlassian Pty Ltd (the operator of Jira) is a sub-processor for this feature under our Data
+                Processing Addendum (DPA). Atlassian&apos;s own privacy policy governs any processing that
+                occurs on Atlassian&apos;s side of the integration:{" "}
+                <span className="text-accent">atlassian.com/legal/privacy-policy</span>.
+              </p>
+
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">Personal data reporting</h3>
+              <p>
+                SprintHelm operates an internal endpoint that lets our support team look up which Atlassian
+                account identifiers we hold data about, in order to fulfil right-to-erasure requests promptly.
+                The endpoint requires a per-environment shared secret known only to authorised SprintHelm
+                personnel and is not publicly callable. We use it to honour your requests, not to share data
+                with third parties.
+              </p>
+            </section>
+
+            <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">5. International Data Transfers</h2>
               <p>
                 Your account data and sprint data are stored on Supabase servers in the EU (West Europe region).
@@ -207,6 +352,13 @@ export default function PrivacyPage() {
                 Vercel&apos;s global CDN may process request data at edge locations worldwide. This is limited
                 to technical routing data and does not include your account or sprint planning data.
               </p>
+              <p className="mt-3">
+                If you connect a Jira workspace, Atlassian&apos;s OAuth servers and Jira API may be operated
+                from the United States or other regions depending on your Atlassian site location. This
+                constitutes an international transfer under GDPR; you actively consent to it by clicking
+                Connect Jira Workspace. Atlassian&apos;s own data-transfer disclosures apply at{" "}
+                <span className="text-accent">atlassian.com/legal/privacy-policy</span>.
+              </p>
             </section>
 
             <section>
@@ -214,6 +366,19 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside space-y-2">
                 <li><strong className="text-text-primary">Active accounts:</strong> Data retained for as long as your account is active</li>
                 <li><strong className="text-text-primary">Deleted accounts:</strong> Personal data permanently deleted within 30 days of account deletion</li>
+                <li>
+                  <strong className="text-text-primary">Jira integration tokens:</strong> Hard-deleted immediately
+                  when you click Disconnect Jira Workspace
+                </li>
+                <li>
+                  <strong className="text-text-primary">Jira connection metadata:</strong> Marked disconnected
+                  on Disconnect and purged within 30 days
+                </li>
+                <li>
+                  <strong className="text-text-primary">Jira connection audit log:</strong> Retained 12 months
+                  after disconnect for security and incident-response purposes, then automatically purged.
+                  Expedited purge available on request to privacy@sprinthelm.com.
+                </li>
                 <li><strong className="text-text-primary">Anonymised aggregate data</strong> (e.g. usage statistics with no personally identifiable information) may be retained indefinitely for service improvement</li>
                 <li><strong className="text-text-primary">Legal obligations:</strong> Some data may be retained longer where required by applicable law (e.g. financial records)</li>
               </ul>
