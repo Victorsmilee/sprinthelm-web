@@ -1,20 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const CONTACT_SALES_HREF = "mailto:hello@sprinthelm.com";
+
 const TIERS = [
   {
     name: "Free",
-    monthly: 0,
-    annual: 0,
     tagline: "Run unlimited simulations. See your delivery risk for free.",
-    cta: "Get started free",
-    ctaHref: "https://app.sprinthelm.com/signup?plan=free",
-    ctaVariant: "secondary" as const,
     popular: false,
     features: [
       "Backlog CSV — up to 15 tickets",
@@ -36,12 +32,7 @@ const TIERS = [
   },
   {
     name: "Pro",
-    monthly: 29,
-    annual: 23,
     tagline: "Full access. Ship more sprints on time, every sprint.",
-    cta: "Start Pro — 14 days free",
-    ctaHref: "https://app.sprinthelm.com/signup?plan=pro",
-    ctaVariant: "primary" as const,
     popular: true,
     features: [
       "Unlimited backlog scoring",
@@ -62,12 +53,7 @@ const TIERS = [
   },
   {
     name: "Team",
-    monthly: 59,
-    annual: 47,
     tagline: "Multi-squad visibility. One view of delivery risk across the org.",
-    cta: "Start Team — 14 days free",
-    ctaHref: "https://app.sprinthelm.com/signup?plan=team",
-    ctaVariant: "secondary" as const,
     popular: false,
     features: [
       "Everything in Pro",
@@ -88,12 +74,7 @@ const TIERS = [
   },
   {
     name: "Enterprise",
-    monthly: null,
-    annual: null,
     tagline: "Company-wide delivery intelligence with enterprise-grade security and a named contact.",
-    cta: "Talk to sales",
-    ctaHref: "/contact/enterprise",
-    ctaVariant: "secondary" as const,
     popular: false,
     features: [
       "Everything in Team",
@@ -133,9 +114,7 @@ function FeatureRow({ feature }: { feature: Feature }) {
   );
 }
 
-export function Pricing() {
-  const [annual, setAnnual] = useState(false);
-
+export function Pricing(): JSX.Element {
   return (
     <section id="pricing" className="section-padding">
       <div className="mx-auto max-w-content">
@@ -147,50 +126,12 @@ export function Pricing() {
           className="text-center mb-12"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            One late sprint costs more than a year of Pro.
+            Simple plans. Pricing coming soon.
           </h2>
-          <p className="text-text-secondary max-w-prose mx-auto mb-8">
-            Start free — no credit card, no Jira connection required. Upgrade when the
-            simulation saves your first sprint. Cancel any time.
+          <p className="text-text-secondary max-w-prose mx-auto">
+            We&apos;re finalising our pricing. Every plan starts with a 7-day free trial —
+            no credit card required. Reach out and we&apos;ll find the right fit for your team.
           </p>
-
-          {/* Annual toggle */}
-          <div className="inline-flex items-center gap-3 bg-bg-surface border border-border-subtle rounded-full px-4 py-2">
-            <button
-              onClick={() => setAnnual(false)}
-              className={cn(
-                "text-sm font-medium transition-colors duration-200",
-                !annual ? "text-text-primary" : "text-text-disabled"
-              )}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setAnnual(!annual)}
-              className={cn(
-                "relative w-10 h-5 rounded-full transition-colors duration-200",
-                annual ? "bg-accent" : "bg-bg-elevated border border-border-active"
-              )}
-              aria-label="Toggle annual billing"
-            >
-              <span
-                className={cn(
-                  "absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform duration-200",
-                  annual && "translate-x-5"
-                )}
-              />
-            </button>
-            <button
-              onClick={() => setAnnual(true)}
-              className={cn(
-                "text-sm font-medium transition-colors duration-200",
-                annual ? "text-text-primary" : "text-text-disabled"
-              )}
-            >
-              Annual
-              <span className="ml-1.5 text-label text-success">save 20%</span>
-            </button>
-          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -225,32 +166,18 @@ export function Pricing() {
               <div className="mb-6">
                 <h3 className="text-base font-bold text-text-primary mb-1">{tier.name}</h3>
                 <p className="text-caption text-text-secondary mb-4">{tier.tagline}</p>
-
-                {tier.monthly !== null ? (
-                  <div className="flex items-baseline gap-1">
-                    <motion.span
-                      key={`${tier.name}-${annual}`}
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="text-h2 font-bold text-text-primary"
-                    >
-                      ${annual ? tier.annual : tier.monthly}
-                    </motion.span>
-                    <span className="text-sm text-text-disabled">/mo</span>
-                  </div>
-                ) : (
-                  <p className="text-h3 font-bold text-text-primary">Custom</p>
-                )}
+                <span className="inline-block text-sm font-semibold text-accent bg-accent/10 rounded-full px-3 py-1">
+                  7-day free trial
+                </span>
               </div>
 
               <Button
-                variant={tier.ctaVariant}
+                variant={tier.popular ? "primary" : "secondary"}
                 size="md"
                 className="w-full mb-6"
                 asChild
               >
-                <a href={tier.ctaHref}>{tier.cta}</a>
+                <a href={CONTACT_SALES_HREF}>Contact sales</a>
               </Button>
 
               <ul className="flex flex-col gap-3 flex-1">
@@ -263,7 +190,10 @@ export function Pricing() {
         </div>
 
         <p className="text-center text-caption text-text-disabled mt-8">
-          All paid plans include a 14-day free trial. No credit card required to start.
+          All plans include a 7-day free trial. No credit card required. Email us at{" "}
+          <a href={CONTACT_SALES_HREF} className="underline hover:text-text-secondary transition-colors">
+            hello@sprinthelm.com
+          </a>
         </p>
       </div>
     </section>
