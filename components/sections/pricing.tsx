@@ -64,7 +64,10 @@ const TIERS = [
       "Sprint ROI Calculator — multi-sprint ROI trend",
       "Estimation risk across all teams in portfolio view",
       "Board-ready PDF report",
-      "Jira integration — bidirectional sync",
+      // Phase 1 ships one-way backlog import — do NOT claim "bidirectional
+      // sync" until it exists (2026-07-05 audit M5; matches the in-app
+      // planCatalog copy fixed in sprinthelm-app PR #290).
+      "Jira integration — backlog import",
       "Slack notifications",
       "Role-based access (admin / member)",
       { label: "AI Benchmarking & Intelligence", locked: true },
