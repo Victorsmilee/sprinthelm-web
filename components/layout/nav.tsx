@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Zap } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { BrandMark, BrandWordmark } from "@/components/ui/BrandLogo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -50,10 +51,8 @@ export function Nav() {
       <div className="mx-auto max-w-content px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 text-text-primary font-bold text-lg">
-          <div className="w-7 h-7 rounded bg-accent flex items-center justify-center">
-            <Zap size={14} className="text-white" strokeWidth={2.5} />
-          </div>
-          SprintHelm
+          <BrandMark size={28} />
+          <BrandWordmark />
         </a>
 
         {/* Desktop nav */}

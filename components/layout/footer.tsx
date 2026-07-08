@@ -1,4 +1,5 @@
-import { Zap, Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { BrandMark, BrandWordmark } from "@/components/ui/BrandLogo";
 
 const PRODUCT_LINKS = [
   { label: "Backlog Scoring",        href: "/#features" },
@@ -35,10 +36,8 @@ export function Footer() {
           {/* Column 1 — Brand */}
           <div className="flex flex-col gap-4">
             <a href="/" className="flex items-center gap-2 text-text-primary font-bold text-lg">
-              <div className="w-7 h-7 rounded bg-accent flex items-center justify-center">
-                <Zap size={14} className="text-white" strokeWidth={2.5} />
-              </div>
-              SprintHelm
+              <BrandMark size={28} />
+              <BrandWordmark />
             </a>
             <p className="text-caption text-text-secondary leading-relaxed">
               Built for engineering teams who refuse to plan blind.
