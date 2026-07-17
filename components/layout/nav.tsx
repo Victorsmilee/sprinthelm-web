@@ -17,11 +17,12 @@ const PRODUCT_LINKS = [
 ];
 
 const COMPANY_LINKS = [
-  { label: "About",    href: "/about" },
-  { label: "Blog",     href: "/blog" },
-  { label: "Careers",  href: "/careers" },
-  { label: "Security", href: "/security" },
-  { label: "Contact",  href: "/contact" },
+  { label: "About",     href: "/about" },
+  { label: "Our Story", href: "/ourstory" },
+  { label: "Blog",      href: "/blog" },
+  { label: "Careers",   href: "/careers" },
+  { label: "Security",  href: "/security" },
+  { label: "Contact",   href: "/contact" },
 ];
 
 const NAV_LINKS = [
