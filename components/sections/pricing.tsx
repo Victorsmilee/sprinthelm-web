@@ -39,6 +39,7 @@ const TIERS = [
       "Pressure Index — full score + history",
       "Monte Carlo simulation — full access",
       "Estimation risk scoring — adjusted effort + simulation impact",
+      "Sprint Health Check",
       "Team Composition — up to 8 seats",
       "Team Composition Change Scenarios",
       "AI Executive Summary — 50 / month",
@@ -60,9 +61,9 @@ const TIERS = [
       "Up to 5 team workspaces (8 seats each)",
       "AI Executive Summary — 200 / month",
       "PRD Ticket Extraction — 100 / month",
-      "Multi-team portfolio view",
+      "Portfolio Simulator — capacity + consequence across every project",
       "Sprint ROI Calculator — multi-sprint ROI trend",
-      "Estimation risk across all teams in portfolio view",
+      "Estimation risk across all teams in the Portfolio Simulator",
       "Board-ready PDF report",
       // Phase 1 ships one-way backlog import — do NOT claim "bidirectional
       // sync" until it exists (2026-07-05 audit M5; matches the in-app

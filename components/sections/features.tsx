@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp, AlertTriangle, DollarSign } from "lucide-react";
+import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp, AlertTriangle, DollarSign, LayoutGrid } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const FEATURES = [
@@ -51,6 +51,14 @@ const FEATURES = [
     headline: "Sprint planning speaks in points. Stakeholders speak in money. Now you speak both.",
     body: "Enter your value per story point and instantly see total sprint value. Add your monthly team cost and SprintHelm calculates whether the sprint is profitable before a line of code is written. Don't know your value per point? SprintHelm shows you the cost floor — the break-even number — and lets you auto-fill it. Supports 8 currencies. All calculations stay in your browser.",
     color: "#4CAF50",
+    soon: false,
+  },
+  {
+    icon: LayoutGrid,
+    title: "Portfolio Simulator",
+    headline: "With the team you have, what can you actually ship — across every project?",
+    body: "Run every project against one shared pool of developers and see what fits. Then price the cost of forcing the slate in anyway — in dollars, defects, and attrition — before the deadline is signed. Turn “we need more people” into a case a CFO can approve, with math that traces to your own numbers.",
+    color: "#F59E0B",
     soon: false,
   },
   {

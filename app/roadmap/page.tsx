@@ -19,14 +19,15 @@ const SHIPPED = [
   "CSV and JSON backlog import",
   "Shareable simulation links",
   "What-if team composition scenarios",
+  "Sprint ROI Calculator — sprint value, team cost, net profit/loss",
+  "Sprint Roadmap — 90-day epic planning view",
+  "Board-ready PDF report — standup + stakeholder decks",
+  "Portfolio Simulator — capacity + consequence across every project",
+  "Jira integration — backlog import (Phase 1)",
 ];
 
 const IN_PROGRESS = [
   "Jira bidirectional sync — push priority scores back as custom fields",
-  "Multi-team portfolio view — delivery risk across all squads",
-  "Board-ready PDF report — for standup and stakeholder decks",
-  "Sprint roadmap tab — 90-day epic planning view",
-  "ROI calculator — model the cost of a missed sprint",
 ];
 
 const PLANNED = [
