@@ -16,9 +16,10 @@ const securityHeaders = [
       // middleware (separate work).
       "script-src 'self' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline'",
-      // Hero/blog cards reference remote images (Unsplash, etc.); data: covers
-      // inline SVGs.
-      "img-src 'self' data: https:",
+      // All images are local (/public) or the origin-generated OG card; there
+      // are no remote image hosts, so scope img-src to self + data: (inline
+      // SVGs) rather than a blanket https: (Security audit M1).
+      "img-src 'self' data:",
       "font-src 'self' data:",
       // formspree.io is the survey backend (see components/survey/SurveyForm.tsx).
       "connect-src 'self' https://formspree.io",

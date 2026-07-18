@@ -53,7 +53,7 @@ Reviewer agents must check for: correctness, security vulnerabilities, performan
 ## Coding Standards
 
 ### Constants and configuration
-- **No hardcoded app URLs.** The Streamlit app URL (`https://sprinthelm.streamlit.app/`) must be defined as a single constant and imported wherever it is used. Never inline it across multiple components — a URL change should be a one-line edit.
+- **No hardcoded app URLs.** The app URL (`https://app.sprinthelm.com`) must be defined as a single constant and imported wherever it is used. Never inline it across multiple components — a URL change should be a one-line edit. (The old Streamlit demo URL is retired — do not reintroduce it.)
 - **No hardcoded strings used in multiple places.** Shared copy (taglines, CTAs, pricing tier names) must be defined as a named constant or in a data file, not copy-pasted across components.
 - **No hardcoded colours outside Tailwind config.** All colours must use Tailwind utility classes or CSS variables defined in `globals.css` / `tailwind.config.ts`. Never inline hex values in component files.
 
