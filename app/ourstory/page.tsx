@@ -67,6 +67,23 @@ export default function OurStoryPage() {
               question that mattered before saying yes: <em>&quot;If we add this, what actually
               breaks?&quot;</em>
             </p>
+            <p>
+              But the problem doesn&apos;t stop at the team. It climbs.
+            </p>
+            <p>
+              Somewhere above the sprint board, a CEO stands in front of the board and commits to ship
+              dates — and the people who actually have to deliver them were never in the room. The Head
+              of Engineering already knows the slate won&apos;t fit. All they have to argue with is gut
+              feel, and gut feel loses to a confident roadmap slide every single time.
+            </p>
+            <p>
+              The real question at that level is bigger than one sprint: <em>with the team we have, over
+              this horizon — what ships, what slips, and if leadership forces the whole slate in anyway,
+              what does that decision actually cost?</em> Nobody could answer it, because the cost of an
+              override is invisible. It gets paid later, and quietly — in burnout, in deferred tech debt,
+              in incidents, in the senior engineer who starts taking recruiter calls — and none of it
+              ever shows up on the slide that caused it.
+            </p>
           </Chapter>
 
           <Chapter n="03" title="The idea">
@@ -97,10 +114,18 @@ export default function OurStoryPage() {
               in thirty seconds. Pull the work straight from your existing tools.
             </p>
             <p>
-              <span className="text-text-primary font-medium">The portfolio simulator</span> runs the
-              same engine across many projects competing for one team — so leaders can see the
-              consequence of every &quot;yes&quot; before they commit to it, instead of discovering it a
-              quarter too late.
+              <span className="text-text-primary font-medium">The portfolio simulator</span> lifts that
+              same engine one level up — across every project competing for one shared pool of
+              developers — and adds the part nobody else has: it <em>prices the decision</em>. Force the
+              full slate in, and it shows the cost in dollars, in defects, and in the senior people who
+              quietly start looking — before the deadline is ever signed.
+            </p>
+            <p>
+              It turns &quot;we need more people&quot; into a case a CFO can approve: add three developers
+              and these two projects land by the quarter — here&apos;s what that&apos;s worth. And every
+              number traces back to either your own inputs or a cited industry benchmark, not an AI
+              guess — so the person you&apos;re trying to convince is looking at their own reality, not a
+              black box.
             </p>
           </Chapter>
 
