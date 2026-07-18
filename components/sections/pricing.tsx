@@ -117,7 +117,7 @@ function FeatureRow({ feature }: { feature: Feature }) {
   );
 }
 
-export function Pricing(): JSX.Element {
+export function Pricing(): React.JSX.Element {
   return (
     <section id="pricing" className="section-padding">
       <div className="mx-auto max-w-content">
