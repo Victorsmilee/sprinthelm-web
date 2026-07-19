@@ -111,7 +111,7 @@ const OPEN_ROLES: Role[] = [
             <li>Identify, document, and track bugs through to resolution</li>
             <li>Use AI tools to analyse test coverage and surface edge cases faster</li>
             <li>Collaborate with engineers to verify fixes and prevent regressions</li>
-            <li>Build your intuition for delivery risk and what "good quality" looks like in a startup</li>
+            <li>Build your intuition for delivery risk and what &ldquo;good quality&rdquo; looks like in a startup</li>
           </ul>
         </div>
         <div>
