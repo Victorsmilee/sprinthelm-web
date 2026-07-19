@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/ui/social-icons";
 import { BrandMark, BrandWordmark } from "@/components/ui/BrandLogo";
 
 const PRODUCT_LINKS = [
@@ -44,16 +44,19 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-2">
               <a href="https://github.com/sprinthelm" target="_blank" rel="noopener noreferrer"
+                aria-label="SprintHelm on GitHub"
                 className="text-text-disabled hover:text-text-secondary transition-colors duration-200">
-                <Github size={18} />
+                <GithubIcon size={18} />
               </a>
               <a href="https://linkedin.com/company/sprinthelm" target="_blank" rel="noopener noreferrer"
+                aria-label="SprintHelm on LinkedIn"
                 className="text-text-disabled hover:text-text-secondary transition-colors duration-200">
-                <Linkedin size={18} />
+                <LinkedinIcon size={18} />
               </a>
               <a href="https://twitter.com/sprinthelm" target="_blank" rel="noopener noreferrer"
+                aria-label="SprintHelm on X (Twitter)"
                 className="text-text-disabled hover:text-text-secondary transition-colors duration-200">
-                <Twitter size={18} />
+                <TwitterIcon size={18} />
               </a>
             </div>
           </div>
