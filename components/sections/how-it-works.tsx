@@ -17,8 +17,8 @@ const STEPS = [
     step: "02",
     icon: Cpu,
     title: "Simulate",
-    headline: "Run a thousand sprints before your team runs one.",
-    body: "Our Monte Carlo engine runs 1,000 simulated sprints against your actual team capacity. You get a probability score: how likely is this sprint to complete on time?",
+    headline: "Run a thousand futures before your team runs one.",
+    body: "Our Monte Carlo engine simulates 1,000 runs against your actual team capacity — a single sprint, or every project in the portfolio at once. You get a probability, not a promise: what ships on time, and what slips.",
     color: "#26C6DA",
     xOffset: 0,
   },
@@ -26,8 +26,8 @@ const STEPS = [
     step: "03",
     icon: FileText,
     title: "Decide",
-    headline: "Walk into planning with a C-level summary, not a spreadsheet.",
-    body: "SprintHelm turns simulation output into a 3-sentence C-level briefing, written by Claude. Share it in planning or Slack — before the sprint kicks off, not after it fails.",
+    headline: "Walk into the boardroom with an answer, not a spreadsheet.",
+    body: "SprintHelm turns simulation output into a C-level briefing, written by Claude: what fits, what it costs to force more in, and the recommendation. Share it before the commitment is made — not after it fails.",
     color: "#66BB6A",
     xOffset: 40,
   },
@@ -45,10 +45,11 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            From backlog to briefing in three steps.
+            From backlog to boardroom in three steps.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            No configuration marathons. Paste your backlog, run the simulation, share the summary.
+            No configuration marathons. Score the work, simulate the sprint — or the whole
+            portfolio — and share the answer.
           </p>
         </motion.div>
 

@@ -3,6 +3,7 @@ import { Footer }       from "@/components/layout/footer";
 import { Hero }         from "@/components/sections/hero";
 import { SocialProof }  from "@/components/sections/social-proof";
 import { Problem }      from "@/components/sections/problem";
+import { Portfolio }    from "@/components/sections/portfolio";
 import { HowItWorks }   from "@/components/sections/how-it-works";
 import { Features }     from "@/components/sections/features";
 import { Demo }         from "@/components/sections/demo";
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <Problem />
+        <Portfolio />
         <HowItWorks />
         <Features />
         <Demo />

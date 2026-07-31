@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HeroROIAnimation } from "@/components/sections/hero-roi-animation";
+import { HeroPortfolioAnimation } from "@/components/sections/hero-portfolio-animation";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -79,7 +79,7 @@ export function Hero() {
 
           {/* ── Right: ROI animation ── */}
           <div className="flex items-center justify-center lg:justify-end">
-            <HeroROIAnimation />
+            <HeroPortfolioAnimation />
           </div>
 
         </div>
