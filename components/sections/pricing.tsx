@@ -6,11 +6,14 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const CONTACT_SALES_HREF = "mailto:hello@sprinthelm.com";
+const SIGNUP_HREF = "https://app.sprinthelm.com/signup";
 
 const TIERS = [
   {
     name: "Free",
     tagline: "Run unlimited simulations. See your delivery risk for free.",
+    price: "$0",
+    priceNote: "forever",
     popular: false,
     features: [
       "Backlog CSV — up to 15 tickets",
@@ -19,20 +22,15 @@ const TIERS = [
       "Sprint capacity + overflow selection",
       "Sprint ROI Calculator — sprint value + team cost + net profit/loss",
       "Pressure Index — colour band only",
-      { label: "Adjusted effort + simulation impact", locked: true },
-      { label: "Monte Carlo simulation", locked: true },
       "1 team workspace",
-      { label: "Team Composition Change Scenarios", locked: true },
-      { label: "AI Executive Summary", locked: true },
-      { label: "Project Completion Forecaster", locked: true },
-      { label: "PRD Template Generator", locked: true },
-      { label: "PRD Upload & Ticket Extraction", locked: true },
       "Community support",
     ],
   },
   {
     name: "Pro",
     tagline: "Full access. Ship more sprints on time, every sprint.",
+    price: "$29",
+    priceNote: "per month · $23/mo billed annually",
     popular: true,
     features: [
       "Unlimited backlog scoring",
@@ -48,22 +46,23 @@ const TIERS = [
       "PRD Upload & Ticket Extraction — 20 / month",
       "PDF + TXT export",
       "Sprint ROI Calculator — ROI% with benchmark label",
-      { label: "Board-ready PDF report", locked: true },
       "Priority email support (24h response)",
     ],
   },
   {
     name: "Team",
-    tagline: "Multi-squad visibility. One view of delivery risk across the org.",
+    tagline: "Multi-squad visibility. One view of delivery risk across the org — including the Portfolio Simulator.",
+    price: "$59",
+    priceNote: "per month · $47/mo billed annually",
     popular: false,
     features: [
       "Everything in Pro",
+      "Portfolio Simulator — capacity + consequence across every project",
+      "Estimation risk across all teams in the Portfolio Simulator",
       "Up to 5 team workspaces (8 seats each)",
       "AI Executive Summary — 200 / month",
       "PRD Ticket Extraction — 100 / month",
-      "Portfolio Simulator — capacity + consequence across every project",
       "Sprint ROI Calculator — multi-sprint ROI trend",
-      "Estimation risk across all teams in the Portfolio Simulator",
       "Board-ready PDF report",
       // Phase 1 ships one-way backlog import — do NOT claim "bidirectional
       // sync" until it exists (2026-07-05 audit M5; matches the in-app
@@ -71,14 +70,14 @@ const TIERS = [
       "Jira integration — backlog import",
       "Slack notifications",
       "Role-based access (admin / member)",
-      { label: "AI Benchmarking & Intelligence", locked: true },
-      { label: "SSO + custom scoring weights", locked: true },
       "Priority email + live chat support",
     ],
   },
   {
     name: "Enterprise",
     tagline: "Company-wide delivery intelligence with enterprise-grade security and a named contact.",
+    price: "Custom",
+    priceNote: "annual contract · volume pricing",
     popular: false,
     features: [
       "Everything in Team",
@@ -130,11 +129,11 @@ export function Pricing(): React.JSX.Element {
           className="text-center mb-12"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            Simple plans. Pricing coming soon.
+            Simple plans. Start free.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            We&apos;re finalising our pricing. Every plan starts with a 7-day free trial —
-            no credit card required. Reach out and we&apos;ll find the right fit for your team.
+            Every paid plan starts with a 7-day free trial — no credit card required.
+            The Portfolio Simulator ships with Team and Enterprise.
           </p>
         </motion.div>
 
@@ -170,9 +169,10 @@ export function Pricing(): React.JSX.Element {
               <div className="mb-6">
                 <h3 className="text-base font-bold text-text-primary mb-1">{tier.name}</h3>
                 <p className="text-caption text-text-secondary mb-4">{tier.tagline}</p>
-                <span className="inline-block text-sm font-semibold text-accent bg-accent/10 rounded-full px-3 py-1">
-                  7-day free trial
-                </span>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-3xl font-bold text-text-primary">{tier.price}</span>
+                </div>
+                <p className="text-caption text-text-disabled mt-1">{tier.priceNote}</p>
               </div>
 
               <Button
@@ -181,7 +181,13 @@ export function Pricing(): React.JSX.Element {
                 className="w-full mb-6"
                 asChild
               >
-                <a href={CONTACT_SALES_HREF}>Contact sales</a>
+                {tier.name === "Enterprise" ? (
+                  <a href={CONTACT_SALES_HREF}>Contact sales</a>
+                ) : (
+                  <a href={SIGNUP_HREF}>
+                    {tier.name === "Free" ? "Start free" : "Start 7-day free trial"}
+                  </a>
+                )}
               </Button>
 
               <ul className="flex flex-col gap-3 flex-1">

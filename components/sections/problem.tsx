@@ -6,13 +6,13 @@ import { AlertTriangle, Users, TrendingDown } from "lucide-react";
 const PROBLEMS = [
   {
     icon: TrendingDown,
-    title: "You are making $500k decisions on spreadsheet intuition.",
-    body: "Every sprint plan is a bet on incomplete information. Teams commit without a simulation layer. Two weeks later: missed scope, an incident, a conversation nobody wanted.",
+    title: "You are making $500k roadmap decisions on spreadsheet intuition.",
+    body: "Every commitment — a sprint, a project, a quarter — is a bet on incomplete information. There is no simulation layer between the ask and the yes. Months later: missed dates, an incident, a conversation nobody wanted.",
   },
   {
     icon: Users,
-    title: "Stakeholder pressure moves faster than any team can reason through.",
-    body: "The CEO asks to add the feature. No one checks if the sprint survives it. The team says yes. The sprint says no.",
+    title: "Leadership adds projects faster than anyone can model the impact.",
+    body: "The board asks for one more initiative. Nobody can say what slips, what it costs, or whether the team survives it. So everyone says yes. The portfolio says no.",
   },
   {
     icon: AlertTriangle,

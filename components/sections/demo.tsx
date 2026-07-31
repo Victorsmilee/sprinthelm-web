@@ -7,31 +7,34 @@ import { Button } from "@/components/ui/button";
 const DEMO_HIGHLIGHTS = [
   {
     icon: BarChart2,
-    label: "Backlog scored",
-    value: "15 tickets",
-    sub: "ranked by priority",
+    label: "Projects in flight",
+    value: "4 projects",
+    sub: "one shared team",
   },
   {
     icon: Gauge,
-    label: "Pressure Index",
-    value: "1.18 — Yellow",
-    sub: "capacity at 94%",
+    label: "Team capacity",
+    value: "91% — Yellow",
+    sub: "backend is the bottleneck",
   },
   {
     icon: TrendingUp,
-    label: "Completion odds",
-    value: "68%",
-    sub: "Monte Carlo · 100 runs",
+    label: "On-time forecast",
+    value: "3 ship · 1 slips",
+    sub: "Monte Carlo · 1,000 runs",
   },
   {
     icon: Brain,
-    label: "AI Summary",
-    value: "Generated",
-    sub: "C-level ready",
+    label: "Cost of forcing +1",
+    value: "$240k at risk",
+    sub: "with a traceable why",
   },
 ];
 
-const DEMO_URL = "https://app.sprinthelm.com/?source=website";
+const DEMO_URL = "https://app.sprinthelm.com/portfolio?source=website";
+// TODO: set to the portfolio walkthrough video (Loom/YouTube). Falls back to the
+// live demo link until provided.
+const VIDEO_URL = "";
 
 export function Demo() {
   return (
@@ -45,12 +48,13 @@ export function Demo() {
           className="text-center mb-10"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            See it working on a real backlog.
+            See your whole portfolio, not just one sprint.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            We have pre-loaded SprintHelm with a realistic 15-ticket backlog for a
-            mid-sized SaaS engineering team. No account. No Jira connection. No
-            configuration. Open the demo and see what your sprint is actually carrying.
+            The live Portfolio Simulator, pre-loaded with a mid-sized SaaS org — every
+            project against one team&apos;s capacity. No account, no Jira connection.
+            See what ships on time, what slips, and what it costs when leadership forces
+            one more project in.
           </p>
         </motion.div>
 
@@ -79,7 +83,7 @@ export function Demo() {
           {/* Metrics preview */}
           <div className="bg-bg-primary p-8 md:p-12">
             <p className="text-center text-sm text-text-disabled mb-8 font-mono">
-              — Demo simulation results — Acme Platform Team · Sprint 23 —
+              — Portfolio forecast — Acme Platform · 4 projects, one team —
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
               {DEMO_HIGHLIGHTS.map((item, i) => (
@@ -104,10 +108,17 @@ export function Demo() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" asChild>
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Open live demo — pre-loaded
+                  Open the live portfolio demo
                   <ArrowRight size={16} />
                 </a>
               </Button>
+              {VIDEO_URL && (
+                <Button size="lg" variant="secondary" asChild>
+                  <a href={VIDEO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    Watch the 90-sec walkthrough
+                  </a>
+                </Button>
+              )}
               <p className="text-caption text-text-disabled">
                 Resets every session. Your data never touches it.
               </p>

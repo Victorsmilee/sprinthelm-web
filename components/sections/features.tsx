@@ -6,6 +6,22 @@ import { Badge } from "@/components/ui/badge";
 
 const FEATURES = [
   {
+    icon: LayoutGrid,
+    title: "Portfolio Simulator",
+    headline: "With the team you have, what can you actually ship — across every project?",
+    body: "Run every project against one shared pool of developers and see what fits. Then price the cost of forcing the slate in anyway — in dollars, defects, and attrition — before the deadline is signed. Turn “we need more people” into a case a CFO can approve, with math that traces to your own numbers.",
+    color: "#F59E0B",
+    soon: false,
+  },
+  {
+    icon: Calendar,
+    title: "Quarterly View",
+    headline: "See the quarter before it surprises you.",
+    body: "Map epics across 90 days and surface delivery risks before they compound. Spot underscoped initiatives while there's still time to adjust.",
+    color: "#66BB6A",
+    soon: false,
+  },
+  {
     icon: BarChart2,
     title: "Priority Score",
     headline: "Know which tickets move the business before planning starts.",
@@ -54,22 +70,6 @@ const FEATURES = [
     soon: false,
   },
   {
-    icon: LayoutGrid,
-    title: "Portfolio Simulator",
-    headline: "With the team you have, what can you actually ship — across every project?",
-    body: "Run every project against one shared pool of developers and see what fits. Then price the cost of forcing the slate in anyway — in dollars, defects, and attrition — before the deadline is signed. Turn “we need more people” into a case a CFO can approve, with math that traces to your own numbers.",
-    color: "#F59E0B",
-    soon: false,
-  },
-  {
-    icon: Calendar,
-    title: "Quarterly View",
-    headline: "See the quarter before it surprises you.",
-    body: "Map epics across 90 days and surface delivery risks before they compound. Spot underscoped initiatives while there's still time to adjust.",
-    color: "#66BB6A",
-    soon: false,
-  },
-  {
     icon: TrendingUp,
     title: "Performance Benchmarks",
     headline: "Know what good looks like — not just what you did last sprint.",
@@ -91,7 +91,7 @@ export function Features() {
           className="text-center mb-16"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            Ship the right things. Finish what you start.
+            Ship the right things. Finish what you start — across every project.
           </h2>
         </motion.div>
 
