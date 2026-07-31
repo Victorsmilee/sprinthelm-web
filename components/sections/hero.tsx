@@ -27,7 +27,7 @@ export function Hero() {
         <motion.div {...fadeUp(0)} className="flex justify-center mb-8">
           <span className="inline-flex items-center gap-2 text-sm text-accent bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Delivery Decision Intelligence System, built on AI
+            AI Delivery &amp; Portfolio Intelligence
           </span>
         </motion.div>
 
@@ -43,30 +43,29 @@ export function Hero() {
               transition={{ duration: 0.7, ease: [0, 0, 0.2, 1], delay: 0.1 }}
               className="text-display font-bold text-text-primary text-balance mb-6 leading-tight"
             >
-              Every sprint that slips is{" "}
+              Can you deliver the roadmap?{" "}
               <span className="text-gradient-accent">
-                a funding conversation you weren&apos;t ready for.
+                Know before you commit to it.
               </span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-lg mb-10 text-balance">
-              A missed launch date isn&apos;t a retrospective item — it&apos;s a confidence crisis with the people writing your next check.
-              SprintHelm surfaces delivery risk before the sprint starts, while you can still change it.
+              SprintHelm predicts delivery across every team and project before the work starts — which sprints slip, whether you can take on another project, and what it costs when leadership forces one more in. The portfolio answer your CTO needs, with math they can trace.
             </motion.p>
 
             {/* CTAs */}
             <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-4">
               <Button size="xl" asChild>
                 <a href="https://app.sprinthelm.com/signup" className="flex items-center gap-2">
-                  Run your first simulation — it&apos;s free
+                  See your portfolio forecast — free
                   <ArrowRight size={18} />
                 </a>
               </Button>
               <Button size="xl" variant="secondary" asChild>
-                <a href="https://app.sprinthelm.com/?source=website" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://app.sprinthelm.com/portfolio?source=website" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Play size={16} />
-                  See a live demo
+                  Watch the portfolio demo
                 </a>
               </Button>
             </motion.div>
