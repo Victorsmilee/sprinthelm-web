@@ -24,7 +24,7 @@ export function Cta() {
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto mb-8">
             Start free. No credit card, no Jira required.
-            Upgrade when the simulation saves your first sprint.
+            Upgrade when the forecast saves your first deadline.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild>

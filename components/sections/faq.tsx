@@ -36,7 +36,7 @@ const FAQS = [
   },
   {
     q: "What does Monte Carlo simulation mean in plain English?",
-    a: "We run your sprint plan hundreds of times, each time introducing small random variations that reflect real-world uncertainty: a ticket taking longer, a team member pulled into incidents, a dependency arriving late. Instead of 'this sprint takes 12 days,' you get 'there is a 68% probability this completes on time given your current scope.' The output is a probability, not a prediction. That distinction forces the planning conversation to be about risk tolerance, not false precision.",
+    a: "We run your delivery plan hundreds of times, each time introducing small random variations that reflect real-world uncertainty: a ticket taking longer, a team member pulled into incidents, a dependency arriving late. Instead of 'this sprint takes 12 days,' you get 'there is a 68% probability this completes on time given your current scope.' The output is a probability, not a prediction. That distinction forces the planning conversation to be about risk tolerance, not false precision.",
   },
 ];
 
