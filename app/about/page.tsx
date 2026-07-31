@@ -3,18 +3,18 @@ import { Footer } from "@/components/layout/footer";
 import { ArrowRight, Zap } from "lucide-react";
 
 export const metadata = {
-  title: "About — SprintHelm",
+  title: "About, SprintHelm",
   description: "We're building the delivery intelligence layer engineering teams have been missing.",
 };
 
 const VALUES = [
   {
     title: "Clarity over comfort.",
-    body: "We tell teams what their sprint data actually says — not what they hope it says. Honest numbers build trust faster than optimistic forecasts.",
+    body: "We tell teams what their sprint data actually says, not what they hope it says. Honest numbers build trust faster than optimistic forecasts.",
   },
   {
     title: "Data over hierarchy.",
-    body: "A simulation doesn't care about seniority. If the sprint is overloaded, the Pressure Index goes red — regardless of who made the plan.",
+    body: "A simulation doesn't care about seniority. If the sprint is overloaded, the Pressure Index goes red, regardless of who made the plan.",
   },
   {
     title: "Ship what matters.",
@@ -57,7 +57,7 @@ export default function AboutPage() {
               </p>
               <p>
                 We&apos;d seen this in fast-growing startups and in engineering orgs with hundreds of
-                engineers. The root cause was always the same — teams were making commitment decisions
+                engineers. The root cause was always the same, teams were making commitment decisions
                 without a simulation layer. They had velocity data. They had backlogs. They had estimates.
                 But they had no way to ask: <em>&quot;If we add this, what actually breaks?&quot;</em>
               </p>

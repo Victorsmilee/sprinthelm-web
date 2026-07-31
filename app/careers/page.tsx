@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { ArrowRight, MapPin, Clock, X, Wifi, Globe, Link as LinkIcon, Check, FileText } from "lucide-react";
 
 interface Role {
-  /** URL slug — shown in `?role=<slug>` query param for deep linking. */
+  /** URL slug, shown in `?role=<slug>` query param for deep linking. */
   slug: string;
   title: string;
   team: string;
@@ -30,13 +30,13 @@ const OPEN_ROLES: Role[] = [
     summary:
       "Design real flows across two products, learn how AI is reshaping the designer's workflow, and ship work users see in the same week.",
     applyEmail: APPLY_EMAIL,
-    applySubject: "Product Designer Intern — SprintHelm Build Team",
+    applySubject: "Product Designer Intern, SprintHelm Build Team",
     description: (
       <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
         <div>
           <h3 className="text-base font-bold text-text-primary mb-2">About the role</h3>
           <p>
-            You&apos;ll design across two products — SprintHelm itself and a new product the team is
+            You&apos;ll design across two products, SprintHelm itself and a new product the team is
             launching alongside it. That means you&apos;ll move between a mature, live product with real
             users and an earlier-stage product where you help shape the visual identity and core
             flows from scratch. You&apos;ll use AI tools every day as part of how you design, not as a
@@ -57,8 +57,8 @@ const OPEN_ROLES: Role[] = [
         <div>
           <h3 className="text-base font-bold text-text-primary mb-2">What you&apos;ll learn</h3>
           <ul className="list-disc list-inside space-y-1.5">
-            <li>How AI tools change the modern designer&apos;s workflow — from ideation to handoff</li>
-            <li>How to design across two products at once — one live, one early-stage</li>
+            <li>How AI tools change the modern designer&apos;s workflow, from ideation to handoff</li>
+            <li>How to design across two products at once, one live, one early-stage</li>
             <li>How a small team takes a feature from rough idea to live in production</li>
             <li>Real exposure to designing AI-native products people pay for</li>
           </ul>
@@ -91,14 +91,14 @@ const OPEN_ROLES: Role[] = [
     summary:
       "Test live features across the SprintHelm platform, write test cases, and learn how AI changes the quality workflow in fast-moving product teams.",
     applyEmail: APPLY_EMAIL,
-    applySubject: "QA / Quality Assurance Intern — SprintHelm Build Team",
+    applySubject: "QA / Quality Assurance Intern, SprintHelm Build Team",
     description: (
       <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
         <div>
           <h3 className="text-base font-bold text-text-primary mb-2">About the role</h3>
           <p>
             You&apos;ll work directly on a live product that real teams use to plan their sprints. Your job is to
-            make sure the features we ship actually work — and to catch the things that don&apos;t before users do.
+            make sure the features we ship actually work, and to catch the things that don&apos;t before users do.
             This is not a simulated QA project. You&apos;ll be testing real flows, filing real bugs, and seeing
             your work matter in the same week.
           </p>
@@ -127,7 +127,7 @@ const OPEN_ROLES: Role[] = [
           <h3 className="text-base font-bold text-text-primary mb-2">Who this is for</h3>
           <p>
             QA engineers, testers, or quality-minded professionals who want to stay relevant in an AI-driven
-            world. You don&apos;t need to be an expert — you need to be curious, structured, and willing to learn
+            world. You don&apos;t need to be an expert, you need to be curious, structured, and willing to learn
             by doing on a real product.
           </p>
         </div>
@@ -150,13 +150,13 @@ const OPEN_ROLES: Role[] = [
     summary:
       "Own and prioritise a real product backlog, write user stories, and learn how AI-powered delivery intelligence changes the way product owners make decisions.",
     applyEmail: APPLY_EMAIL,
-    applySubject: "Product Owner Intern — SprintHelm Build Team",
+    applySubject: "Product Owner Intern, SprintHelm Build Team",
     description: (
       <div className="space-y-6 text-sm leading-relaxed text-text-secondary">
         <div>
           <h3 className="text-base font-bold text-text-primary mb-2">About the role</h3>
           <p>
-            You&apos;ll sit at the intersection of users and engineering — translating what teams need into
+            You&apos;ll sit at the intersection of users and engineering, translating what teams need into
             clear, actionable work. You&apos;ll use SprintHelm itself to understand delivery risk, which means
             you&apos;re both a user of the product and a contributor to its direction. This is real product
             ownership, not a simulation.
@@ -209,7 +209,7 @@ const VALUES = [
   },
   {
     title: "AI-native from day one.",
-    body: "You'll use AI as part of your actual workflow — not as a topic to read about, but as a tool you apply to real decisions and real problems.",
+    body: "You'll use AI as part of your actual workflow, not as a topic to read about, but as a tool you apply to real decisions and real problems.",
   },
   {
     title: "A portfolio story that stands out.",
@@ -334,14 +334,14 @@ function JobModal({ role, onClose }: JobModalProps) {
       <div className="overflow-y-auto px-8 py-6" style={{ maxHeight: "calc(90vh - 240px)" }}>
         {role.description}
 
-        {/* Shared commitment block — same for all roles */}
+        {/* Shared commitment block, same for all roles */}
         <div className="mt-6 space-y-3 rounded-xl border border-border-subtle bg-bg-elevated p-5">
           <h3 className="text-sm font-bold text-text-primary">Commitment &amp; requirements</h3>
           <ul className="space-y-2.5 text-sm text-text-secondary">
             <li className="flex items-start gap-2.5">
               <Clock size={14} className="mt-0.5 shrink-0 text-accent" />
               <span>
-                <span className="font-medium text-text-primary">Part-time</span> — minimum 2–3 hours per day,
+                <span className="font-medium text-text-primary">Part-time</span>, minimum 2–3 hours per day,
                 for a <span className="font-medium text-text-primary">3–6 month</span> engagement
               </span>
             </li>
@@ -362,20 +362,20 @@ function JobModal({ role, onClose }: JobModalProps) {
           </ul>
         </div>
 
-        {/* What to send — moved into the body so it's always visible and
+        {/* What to send, moved into the body so it's always visible and
             doesn't compete for space with the Apply CTA on mobile. */}
         <div className="mt-4 flex items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4">
           <FileText size={16} className="mt-0.5 shrink-0 text-accent" />
           <p className="text-sm text-text-primary leading-relaxed">
             <span className="font-semibold">What to send:</span>{" "}
             <span className="text-text-secondary">
-              attach your CV and a short note — why this role excites you, and what you want to learn.
+              attach your CV and a short note, why this role excites you, and what you want to learn.
             </span>
           </p>
         </div>
       </div>
 
-      {/* Footer CTA — Apply button on the left, "Sends to" caption on the
+      {/* Footer CTA, Apply button on the left, "Sends to" caption on the
           right so the row is visually balanced (Designer feedback: was empty
           on the right after the CV microcopy moved into the body). */}
       <div className="px-8 py-5 border-t border-border-subtle bg-bg-elevated flex items-center justify-between gap-4">
@@ -400,7 +400,7 @@ export default function CareersPage() {
   const [activeRole, setActiveRole] = useState<Role | null>(null);
 
   // Auto-open a role's modal when the URL carries `?role=<slug>`. Lets us
-  // share a direct link to a specific job from anywhere — copying the URL
+  // share a direct link to a specific job from anywhere, copying the URL
   // (or clicking "Copy link" in the modal) gives a deep link that opens
   // the same role for the next visitor.
   useEffect(() => {
@@ -413,7 +413,7 @@ export default function CareersPage() {
   }, []);
 
   // Keep the URL in sync with which modal is open. Updating via
-  // history.replaceState avoids polluting browser back-stack — closing the
+  // history.replaceState avoids polluting browser back-stack, closing the
   // modal returns to /careers without leaving an extra history entry.
   const openRole = (role: Role) => {
     setActiveRole(role);
@@ -519,7 +519,7 @@ export default function CareersPage() {
               Tell us what you do and what you want to learn. We&apos;ll keep you in mind as new slots open up.
             </p>
             <a
-              href={`mailto:${APPLY_EMAIL}?subject=SprintHelm Build Team — Speculative application`}
+              href={`mailto:${APPLY_EMAIL}?subject=SprintHelm Build Team, Speculative application`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
               Send a speculative application

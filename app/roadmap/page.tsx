@@ -3,37 +3,37 @@ import { Footer } from "@/components/layout/footer";
 import { CheckCircle, Clock, Lightbulb } from "lucide-react";
 
 export const metadata = {
-  title: "Roadmap — SprintHelm",
+  title: "Roadmap, SprintHelm",
   description: "What's shipping, what's in progress, and what's coming to SprintHelm.",
 };
 
 const SHIPPED = [
   "Backlog priority scoring engine (6-factor weighted model)",
-  "Monte Carlo simulation — 1,000-run sprint probability engine",
-  "Pressure Index — sprint health signal (green / yellow / red)",
-  "AI Executive Summary — Claude-written C-level briefing",
+  "Monte Carlo simulation, 1,000-run sprint probability engine",
+  "Pressure Index, sprint health signal (green / yellow / red)",
+  "AI Executive Summary, Claude-written C-level briefing",
   "PRD upload and ticket extraction",
   "Sprint history and delivery trend tracking",
   "Project Completion Forecaster (epic-level)",
-  "Estimation risk scoring — adjusted effort per ticket",
+  "Estimation risk scoring, adjusted effort per ticket",
   "CSV and JSON backlog import",
   "Shareable simulation links",
   "What-if team composition scenarios",
-  "Sprint ROI Calculator — sprint value, team cost, net profit/loss",
-  "Sprint Roadmap — 90-day epic planning view",
-  "Board-ready PDF report — standup + stakeholder decks",
-  "Portfolio Simulator — capacity + consequence across every project",
-  "Jira integration — backlog import (Phase 1)",
+  "Sprint ROI Calculator, sprint value, team cost, net profit/loss",
+  "Sprint Roadmap, 90-day epic planning view",
+  "Board-ready PDF report, standup + stakeholder decks",
+  "Portfolio Simulator, capacity + consequence across every project",
+  "Jira integration, backlog import (Phase 1)",
 ];
 
 const IN_PROGRESS = [
-  "Jira bidirectional sync — push priority scores back as custom fields",
+  "Jira bidirectional sync, push priority scores back as custom fields",
 ];
 
 const PLANNED = [
   "GitHub + Linear native integration",
-  "AI Benchmarking — anonymised delivery benchmarks by team size and vertical",
-  "Slack delivery alerts — Pressure Index webhook notifications",
+  "AI Benchmarking, anonymised delivery benchmarks by team size and vertical",
+  "Slack delivery alerts, Pressure Index webhook notifications",
   "Azure DevOps integration",
   "Custom scoring weight configuration (Enterprise)",
   "Team velocity history import from Jira",
@@ -95,13 +95,13 @@ export default function RoadmapPage() {
           <div className="mx-auto max-w-xl">
             <h2 className="text-h3 font-bold text-text-primary mb-3">Want to influence the roadmap?</h2>
             <p className="text-text-secondary text-sm mb-6">
-              We prioritise based on customer feedback. If there&apos;s a feature you need, tell us — it goes straight into the queue.
+              We prioritise based on customer feedback. If there&apos;s a feature you need, tell us, it goes straight into the queue.
             </p>
             <a
               href="mailto:hello@sprinthelm.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
-              Send your request — hello@sprinthelm.com
+              Send your request, hello@sprinthelm.com
             </a>
           </div>
         </section>

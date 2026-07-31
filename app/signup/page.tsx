@@ -11,8 +11,8 @@ const APP_URL = "https://app.sprinthelm.com";
 
 const PERKS = [
   "Backlog scoring across 6 weighted factors",
-  "Monte Carlo simulation — probability, not guesswork",
-  "Pressure Index — spot burnout risk before it hits",
+  "Monte Carlo simulation, probability, not guesswork",
+  "Pressure Index, spot burnout risk before it hits",
   "AI executive summary in plain English",
   "No credit card. No Jira connection required.",
 ];
@@ -36,7 +36,7 @@ export default function SignupPage() {
         <div className="mx-auto max-w-content w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left — value prop */}
+            {/* Left, value prop */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ export default function SignupPage() {
                 Delivery intelligence that gives you a real forecast before the sprint begins.
               </h1>
               <p className="text-text-secondary mb-8 leading-relaxed">
-                SprintHelm shows you exactly where your sprint will break —
+                SprintHelm shows you exactly where your sprint will break, 
                 before it starts. No setup, no Jira connection required.
               </p>
               <ul className="flex flex-col gap-3">
@@ -62,7 +62,7 @@ export default function SignupPage() {
               </ul>
             </motion.div>
 
-            {/* Right — email form */}
+            {/* Right, email form */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}

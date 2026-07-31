@@ -9,7 +9,7 @@ const STEPS = [
     icon: BarChart2,
     title: "Score",
     headline: "Score every ticket against what actually matters.",
-    body: "Paste your backlog or connect Jira. SprintHelm scores every ticket against revenue impact, incident risk, and strategic alignment. A ranked priority list — in seconds.",
+    body: "Paste your backlog or connect Jira. SprintHelm scores every ticket against revenue impact, incident risk, and strategic alignment. A ranked priority list, in seconds.",
     color: "#5C6BC0",
     xOffset: -40,
   },
@@ -18,7 +18,7 @@ const STEPS = [
     icon: Cpu,
     title: "Simulate",
     headline: "Run a thousand futures before your team runs one.",
-    body: "Our Monte Carlo engine simulates 1,000 runs against your actual team capacity — a single sprint, or every project in the portfolio at once. You get a probability, not a promise: what ships on time, and what slips.",
+    body: "Our Monte Carlo engine simulates 1,000 runs against your actual team capacity, one team or every project in the portfolio at once. You get a probability, not a promise: what ships on time, and what slips.",
     color: "#26C6DA",
     xOffset: 0,
   },
@@ -27,7 +27,7 @@ const STEPS = [
     icon: FileText,
     title: "Decide",
     headline: "Walk into the boardroom with an answer, not a spreadsheet.",
-    body: "SprintHelm turns simulation output into a C-level briefing, written by Claude: what fits, what it costs to force more in, and the recommendation. Share it before the commitment is made — not after it fails.",
+    body: "SprintHelm turns simulation output into a C-level briefing, written by Claude: what fits, what it costs to force more in, and the recommendation. Share it before the commitment is made, not after it fails.",
     color: "#66BB6A",
     xOffset: 40,
   },
@@ -48,8 +48,8 @@ export function HowItWorks() {
             From backlog to boardroom in three steps.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            No configuration marathons. Score the work, simulate the sprint — or the whole
-            portfolio — and share the answer.
+            No configuration marathons. Score the work, simulate one team or the whole
+            portfolio, and share the answer.
           </p>
         </motion.div>
 

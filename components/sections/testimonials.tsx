@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const FINDINGS = [
   {
     quote:
-      "Teams running SprintHelm before planning consistently find 20–35% scope inflation relative to actual capacity — before the sprint starts.",
+      "Teams running SprintHelm before planning consistently find 20–35% scope inflation relative to actual capacity, before the work is committed.",
   },
   {
     quote:

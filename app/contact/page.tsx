@@ -4,7 +4,7 @@ import { Mail, Building2, ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
-  title: "Contact — SprintHelm",
+  title: "Contact, SprintHelm",
   description: "Get in touch with the SprintHelm team.",
 };
 
@@ -18,7 +18,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-2xl">
             <h1 className="text-h1 font-bold text-text-primary mb-4 leading-tight">Get in touch.</h1>
             <p className="text-lg text-text-secondary">
-              Questions, feedback, or just want to talk sprint planning — we&apos;re here.
+              Questions, feedback, or just want to talk sprint planning, we&apos;re here.
             </p>
           </div>
         </section>
@@ -33,7 +33,7 @@ export default function ContactPage() {
               </div>
               <h2 className="text-lg font-bold text-text-primary mb-2">General enquiries</h2>
               <p className="text-sm text-text-secondary leading-relaxed mb-6 flex-1">
-                Product questions, feedback, press, or anything else — drop us a line and we&apos;ll reply within 24 hours.
+                Product questions, feedback, press, or anything else, drop us a line and we&apos;ll reply within 24 hours.
               </p>
               <a
                 href="mailto:hello@sprinthelm.com"
@@ -64,7 +64,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Inline form — captures leads even when the visitor has no
+        {/* Inline form, captures leads even when the visitor has no
             configured mail client. Submits to Formspree (see ContactForm).
             The mailto cards above remain as the explicit, no-friction path. */}
         <section className="pb-20 px-6">

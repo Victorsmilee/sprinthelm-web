@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { FileText, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Data Processing Agreement — SprintHelm",
+  title: "Data Processing Agreement, SprintHelm",
   description: "SprintHelm's Data Processing Agreement for Enterprise customers under GDPR.",
 };
 
@@ -26,11 +26,11 @@ const SECTIONS = [
   },
   {
     title: "5. Sub-processors",
-    body: "SprintHelm uses the following sub-processors in the delivery of its services: cloud infrastructure and database (Supabase, EU West Europe region); web hosting and edge network (Vercel, global CDN); payment processing (Stripe); AI inference (Anthropic, United States); and ticket-system integration (Atlassian — only when the Customer connects a Jira workspace, in which case Atlassian receives the API calls SprintHelm makes on the user's behalf). A full sub-processor list with entity names and processing locations is also reflected in the SprintHelm Privacy Policy at sprinthelm.com/privacy. SprintHelm will provide 30 days' notice of material changes to sub-processors.",
+    body: "SprintHelm uses the following sub-processors in the delivery of its services: cloud infrastructure and database (Supabase, EU West Europe region); web hosting and edge network (Vercel, global CDN); payment processing (Stripe); AI inference (Anthropic, United States); and ticket-system integration (Atlassian, only when the Customer connects a Jira workspace, in which case Atlassian receives the API calls SprintHelm makes on the user's behalf). A full sub-processor list with entity names and processing locations is also reflected in the SprintHelm Privacy Policy at sprinthelm.com/privacy. SprintHelm will provide 30 days' notice of material changes to sub-processors.",
   },
   {
     title: "6. Data Transfers",
-    body: "Customer Data is stored and processed in the EU by default (Supabase, EU West Europe region). If Customer requests processing in an alternative region, a separate addendum will be agreed. Where sub-processors are located outside the EEA — including Anthropic (United States), Stripe, Vercel (global CDN), and Atlassian (where its OAuth and API servers are operated for the Customer's Jira site) — SprintHelm relies on Standard Contractual Clauses (SCCs) as the transfer mechanism. Atlassian's data-transfer disclosures additionally apply when the Customer has connected a Jira workspace.",
+    body: "Customer Data is stored and processed in the EU by default (Supabase, EU West Europe region). If Customer requests processing in an alternative region, a separate addendum will be agreed. Where sub-processors are located outside the EEA, including Anthropic (United States), Stripe, Vercel (global CDN), and Atlassian (where its OAuth and API servers are operated for the Customer's Jira site), SprintHelm relies on Standard Contractual Clauses (SCCs) as the transfer mechanism. Atlassian's data-transfer disclosures additionally apply when the Customer has connected a Jira workspace.",
   },
   {
     title: "7. Data Retention & Deletion",
@@ -94,7 +94,7 @@ export default function DpaPage() {
               href="mailto:enterprise@sprinthelm.com?subject=DPA Request"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
-              Request DPA — enterprise@sprinthelm.com
+              Request DPA, enterprise@sprinthelm.com
               <ArrowRight size={14} />
             </a>
           </div>

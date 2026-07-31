@@ -93,7 +93,7 @@ export function BlogModal({ post, onClose }: BlogModalProps): React.JSX.Element 
               CONTRACT: `post.content` MUST be authored as static HTML strings
               in TypeScript (see app/blog/page.tsx → POSTS). It is NEVER sourced
               from user input, URL params, fetched APIs, or a CMS. If that
-              changes — even to a "trusted" CMS — this dangerouslySetInnerHTML
+              changes, even to a "trusted" CMS, this dangerouslySetInnerHTML
               becomes an XSS sink and the content MUST be sanitised (e.g.
               isomorphic-dompurify) or migrated to react-markdown/JSX first.
               Tracked: audit finding M4 follow-up.

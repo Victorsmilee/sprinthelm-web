@@ -8,8 +8,8 @@ const FEATURES = [
   {
     icon: LayoutGrid,
     title: "Portfolio Simulator",
-    headline: "With the team you have, what can you actually ship — across every project?",
-    body: "Run every project against one shared pool of developers and see what fits. Then price the cost of forcing the slate in anyway — in dollars, defects, and attrition — before the deadline is signed. Turn “we need more people” into a case a CFO can approve, with math that traces to your own numbers.",
+    headline: "With the team you have, what can you actually ship across every project?",
+    body: "Run every project against one shared pool of developers and see what fits. Then price the cost of forcing the slate in anyway, in dollars, defects, and attrition, before the deadline is signed. Turn “we need more people” into a case a CFO can approve, with math that traces to your own numbers.",
     color: "#F59E0B",
     soon: false,
   },
@@ -25,7 +25,7 @@ const FEATURES = [
     icon: BarChart2,
     title: "Priority Score",
     headline: "Know which tickets move the business before planning starts.",
-    body: "Every ticket scored across six weighted factors — revenue impact, incident risk, tech debt, customer severity, strategic alignment, deadline sensitivity. Walk into planning with a defensible list stakeholders read in 30 seconds.",
+    body: "Every ticket scored across six weighted factors: revenue impact, incident risk, tech debt, customer severity, strategic alignment, deadline sensitivity. Walk into planning with a defensible list stakeholders read in 30 seconds.",
     color: "#5C6BC0",
     soon: false,
   },
@@ -40,8 +40,8 @@ const FEATURES = [
   {
     icon: Gauge,
     title: "Pressure Index",
-    headline: "Green, Yellow, or Red — before a line of code is written.",
-    body: "A single signal: this sprint is healthy, stretched, or overloaded. Red means renegotiate scope now. Green means go with confidence.",
+    headline: "Green, Yellow, or Red, before a line of code is written.",
+    body: "A single signal: this plan is healthy, stretched, or overloaded. Red means renegotiate scope now. Green means go with confidence.",
     color: "#FFA726",
     soon: false,
   },
@@ -49,30 +49,30 @@ const FEATURES = [
     icon: Sparkles,
     title: "Stakeholder Briefing",
     headline: "The update your stakeholders will actually read.",
-    body: "Simulation results distilled into a 3-sentence C-level summary by Claude. Paste it into the planning deck or Slack — no editing required.",
+    body: "Simulation results distilled into a 3-sentence C-level summary by Claude. Paste it into the planning deck or Slack. No editing required.",
     color: "#9B59B6",
     soon: false,
   },
   {
     icon: AlertTriangle,
     title: "Estimation Risk",
-    headline: "See which tickets will blow their estimates — before the sprint starts.",
-    body: "Every ticket scored for hidden complexity — tech debt severity, estimate size, ticket type. The simulation adjusts so your completion probability reflects real delivery risk.",
+    headline: "See which tickets will blow their estimates, before the work starts.",
+    body: "Every ticket scored for hidden complexity: tech debt severity, estimate size, ticket type. The simulation adjusts so your completion probability reflects real delivery risk.",
     color: "#FF7043",
     soon: false,
   },
   {
     icon: DollarSign,
-    title: "Sprint ROI Calculator",
-    headline: "Sprint planning speaks in points. Stakeholders speak in money. Now you speak both.",
-    body: "Enter your value per story point and instantly see total sprint value. Add your monthly team cost and SprintHelm calculates whether the sprint is profitable before a line of code is written. Don't know your value per point? SprintHelm shows you the cost floor — the break-even number — and lets you auto-fill it. Supports 8 currencies. All calculations stay in your browser.",
+    title: "Delivery ROI Calculator",
+    headline: "Planning speaks in points. Stakeholders speak in money. Now you speak both.",
+    body: "Enter your value per story point and instantly see total sprint value. Add your monthly team cost and SprintHelm calculates whether the sprint is profitable before a line of code is written. Don't know your value per point? SprintHelm shows you the cost floor (the break-even number) and lets you auto-fill it. Supports 8 currencies. All calculations stay in your browser.",
     color: "#4CAF50",
     soon: false,
   },
   {
     icon: TrendingUp,
     title: "Performance Benchmarks",
-    headline: "Know what good looks like — not just what you did last sprint.",
+    headline: "Know what good looks like, not just what you did last quarter.",
     body: "Completion rates and delivery accuracy benchmarked against teams by size and vertical. Stop measuring yourself against your own floor.",
     color: "#EF5350",
     soon: false,
@@ -91,7 +91,7 @@ export function Features() {
           className="text-center mb-16"
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4">
-            Ship the right things. Finish what you start — across every project.
+            Ship the right things. Finish what you start, across every project.
           </h2>
         </motion.div>
 

@@ -3,14 +3,14 @@ import { Footer } from "@/components/layout/footer";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Enterprise Sales — SprintHelm",
+  title: "Enterprise Sales, SprintHelm",
   description: "Talk to the SprintHelm team about an enterprise deployment.",
 };
 
 const WHAT_TO_EXPECT = [
-  "Response within 24 hours — no automated qualification sequences",
+  "Response within 24 hours, no automated qualification sequences",
   "A working demo tailored to your team size and sprint cadence",
-  "Honest answers about fit — we won’t oversell",
+  "Honest answers about fit, we won’t oversell",
   "Pricing scoped to your org size with no hidden line items",
 ];
 
@@ -18,7 +18,7 @@ const ENTERPRISE_FEATURES = [
   "Unlimited team workspaces and members",
   "SSO / SAML 2.0 + full RBAC",
   "SOC 2 Type II compliance and audit logs",
-  "BYOK — bring your own Anthropic API key",
+  "BYOK, bring your own Anthropic API key",
   "Dedicated Customer Success Manager",
   "SLA-backed support (4h P1/P2)",
   "Custom scoring weight configuration",
@@ -42,7 +42,7 @@ export default function EnterpriseContactPage() {
             </h1>
             <p className="text-lg text-text-secondary">
               Tell us about your team size, stack, and how you currently plan sprints.
-              We&apos;ll show you how SprintHelm fits — in under 30 minutes.
+              We&apos;ll show you how SprintHelm fits, in under 30 minutes.
             </p>
           </div>
         </section>
@@ -50,13 +50,13 @@ export default function EnterpriseContactPage() {
         {/* Main content */}
         <section className="py-20 px-6">
           <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Left — contact */}
+            {/* Left, contact */}
             <div>
               <h2 className="text-h3 font-bold text-text-primary mb-6">Get in touch</h2>
               <div className="p-8 rounded-xl bg-bg-surface border border-accent/30 mb-8">
                 <p className="text-sm text-text-secondary leading-relaxed mb-6">
                   Email us directly with your team size, current tooling, and what&apos;s breaking in your sprint planning process.
-                  We&apos;ll come back with a tailored response — not a sales deck.
+                  We&apos;ll come back with a tailored response, not a sales deck.
                 </p>
                 <a
                   href="mailto:enterprise@sprinthelm.com"
@@ -78,7 +78,7 @@ export default function EnterpriseContactPage() {
               </ul>
             </div>
 
-            {/* Right — features */}
+            {/* Right, features */}
             <div>
               <h2 className="text-h3 font-bold text-text-primary mb-6">What&apos;s included</h2>
               <div className="p-8 rounded-xl bg-bg-surface border border-border-subtle">

@@ -23,13 +23,13 @@ export function Cta() {
             Stop making $500k delivery decisions on intuition.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto mb-8">
-            Start free — no credit card, no Jira required.
+            Start free. No credit card, no Jira required.
             Upgrade when the simulation saves your first sprint.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild>
               <a href="https://app.sprinthelm.com/signup" className="flex items-center gap-2">
-                Run your first simulation — it&apos;s free
+                Run your first forecast, free
                 <ArrowRight size={18} />
               </a>
             </Button>

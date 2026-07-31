@@ -15,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SprintHelm — Delivery Decision Intelligence",
+  title: "SprintHelm, Delivery Decision Intelligence",
   description:
-    "Score your backlog across six weighted factors, run a Monte Carlo simulation, and generate a C-level summary — before the sprint begins. Stop guessing. Start delivering.",
+    "Score your backlog across six weighted factors, run a Monte Carlo simulation, and generate a C-level summary, before the sprint begins. Stop guessing. Start delivering.",
   keywords: [
     "sprint planning",
     "backlog scoring",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "SprintHelm — Delivery Decision Intelligence",
+    title: "SprintHelm, Delivery Decision Intelligence",
     description:
       "Your sprint plan looks fine. Your deadline doesn't know that yet.",
     url: "https://sprinthelm.com",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SprintHelm — Delivery Decision Intelligence",
+    title: "SprintHelm, Delivery Decision Intelligence",
     description:
       "Your sprint plan looks fine. Your deadline doesn't know that yet.",
   },

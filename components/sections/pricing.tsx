@@ -16,58 +16,58 @@ const TIERS = [
     priceNote: "forever",
     popular: false,
     features: [
-      "Backlog CSV — up to 15 tickets",
-      "Priority scoring engine — full access",
-      "Complexity risk badges — flag high-risk tickets",
-      "Sprint capacity + overflow selection",
-      "Sprint ROI Calculator — sprint value + team cost + net profit/loss",
-      "Pressure Index — colour band only",
+      "Backlog CSV (up to 15 tickets)",
+      "Priority scoring engine (full access)",
+      "Complexity risk badges (flags high-risk tickets)",
+      "Capacity + overflow selection",
+      "ROI Calculator (value + team cost + net profit/loss)",
+      "Pressure Index (colour band only)",
       "1 team workspace",
       "Community support",
     ],
   },
   {
     name: "Pro",
-    tagline: "Full access. Ship more sprints on time, every sprint.",
+    tagline: "Full access. Ship on time, every cycle.",
     price: "$29",
     priceNote: "per month · $23/mo billed annually",
     popular: true,
     features: [
       "Unlimited backlog scoring",
-      "Pressure Index — full score + history",
-      "Monte Carlo simulation — full access",
-      "Estimation risk scoring — adjusted effort + simulation impact",
+      "Pressure Index (full score + history)",
+      "Monte Carlo simulation (full access)",
+      "Estimation risk scoring (adjusted effort + simulation impact)",
       "Sprint Health Check",
-      "Team Composition — up to 8 seats",
+      "Team Composition (up to 8 seats)",
       "Team Composition Change Scenarios",
-      "AI Executive Summary — 50 / month",
+      "AI Executive Summary (50 / month)",
       "Project Completion Forecaster",
       "PRD Template Generator",
-      "PRD Upload & Ticket Extraction — 20 / month",
+      "PRD Upload & Ticket Extraction (20 / month)",
       "PDF + TXT export",
-      "Sprint ROI Calculator — ROI% with benchmark label",
+      "ROI Calculator (ROI% with benchmark label)",
       "Priority email support (24h response)",
     ],
   },
   {
     name: "Team",
-    tagline: "Multi-squad visibility. One view of delivery risk across the org — including the Portfolio Simulator.",
+    tagline: "Multi-squad visibility. One view of delivery risk across the org, including the Portfolio Simulator.",
     price: "$59",
     priceNote: "per month · $47/mo billed annually",
     popular: false,
     features: [
       "Everything in Pro",
-      "Portfolio Simulator — capacity + consequence across every project",
+      "Portfolio Simulator (capacity + consequence across every project)",
       "Estimation risk across all teams in the Portfolio Simulator",
       "Up to 5 team workspaces (8 seats each)",
-      "AI Executive Summary — 200 / month",
-      "PRD Ticket Extraction — 100 / month",
-      "Sprint ROI Calculator — multi-sprint ROI trend",
+      "AI Executive Summary (200 / month)",
+      "PRD Ticket Extraction (100 / month)",
+      "ROI Calculator (multi-sprint trend)",
       "Board-ready PDF report",
       // Phase 1 ships one-way backlog import — do NOT claim "bidirectional
       // sync" until it exists (2026-07-05 audit M5; matches the in-app
       // planCatalog copy fixed in sprinthelm-app PR #290).
-      "Jira integration — backlog import",
+      "Jira integration (backlog import)",
       "Slack notifications",
       "Role-based access (admin / member)",
       "Priority email + live chat support",
@@ -132,7 +132,7 @@ export function Pricing(): React.JSX.Element {
             Simple plans. Start free.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            Every paid plan starts with a 7-day free trial — no credit card required.
+            Every paid plan starts with a 7-day free trial. No credit card required.
             The Portfolio Simulator ships with Team and Enterprise.
           </p>
         </motion.div>
