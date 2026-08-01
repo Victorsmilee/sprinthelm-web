@@ -3,7 +3,7 @@ import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — SprintHelm",
+  title: "Terms of Service, SprintHelm",
   description: "SprintHelm Terms of Service. Read our terms before using the platform.",
 };
 

@@ -7,7 +7,7 @@ const PROBLEMS = [
   {
     icon: TrendingDown,
     title: "You are making $500k roadmap decisions on spreadsheet intuition.",
-    body: "Every commitment — a sprint, a project, a quarter — is a bet on incomplete information. There is no simulation layer between the ask and the yes. Months later: missed dates, an incident, a conversation nobody wanted.",
+    body: "Every commitment you make, from a single project to a whole quarter, is a bet on incomplete information. There is no simulation layer between the ask and the yes. Months later: missed dates, an incident, a conversation nobody wanted.",
   },
   {
     icon: Users,
@@ -17,7 +17,7 @@ const PROBLEMS = [
   {
     icon: AlertTriangle,
     title: "45% of product launches miss their target date. 20% miss revenue targets.",
-    body: "This is the default for every software company between seed and Series C — not an exceptional bad year. — PMI 2025",
+    body: "This is the default for every software company between seed and Series C, not an exceptional bad year. (PMI 2025)",
   },
 ];
 

@@ -14,7 +14,7 @@ const DEMO_HIGHLIGHTS = [
   {
     icon: Gauge,
     label: "Team capacity",
-    value: "91% — Yellow",
+    value: "91% Yellow",
     sub: "backend is the bottleneck",
   },
   {
@@ -51,7 +51,7 @@ export function Demo() {
             See your whole portfolio, not just one sprint.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            The live Portfolio Simulator, pre-loaded with a mid-sized SaaS org — every
+            The live Portfolio Simulator, pre-loaded with a mid-sized SaaS org: every
             project against one team&apos;s capacity. No account, no Jira connection.
             See what ships on time, what slips, and what it costs when leadership forces
             one more project in.
@@ -83,7 +83,7 @@ export function Demo() {
           {/* Metrics preview */}
           <div className="bg-bg-primary p-8 md:p-12">
             <p className="text-center text-sm text-text-disabled mb-8 font-mono">
-              — Portfolio forecast — Acme Platform · 4 projects, one team —
+              Portfolio forecast · Acme Platform · 4 projects, one team
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
               {DEMO_HIGHLIGHTS.map((item, i) => (

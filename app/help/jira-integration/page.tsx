@@ -3,9 +3,9 @@ import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Jira Integration FAQ — SprintHelm",
+  title: "Jira Integration FAQ, SprintHelm",
   description:
-    "Frequently asked questions about connecting your Jira workspace to SprintHelm — per-user connections, Jira admin permissions, subscription requirements, multi-user logins, and what happens when you leave your company.",
+    "Frequently asked questions about connecting your Jira workspace to SprintHelm, per-user connections, Jira admin permissions, subscription requirements, multi-user logins, and what happens when you leave your company.",
 };
 
 const LAST_UPDATED = "8 June 2026";
@@ -28,7 +28,7 @@ const FAQS: FaqItem[] = [
           their own SprintHelm account.
         </p>
         <p>
-          One shared organisation-level connection is a feature on our roadmap — see &ldquo;What if I want one
+          One shared organisation-level connection is a feature on our roadmap, see &ldquo;What if I want one
           shared connection for my whole team?&rdquo; below.
         </p>
       </>
@@ -65,7 +65,7 @@ const FAQS: FaqItem[] = [
       <>
         <p>
           Only if your Atlassian organisation has set <em>&ldquo;Admin approval required&rdquo;</em> for
-          third-party apps. Most small organisations don&rsquo;t — any Atlassian user can authorise SprintHelm
+          third-party apps. Most small organisations don&rsquo;t, any Atlassian user can authorise SprintHelm
           directly.
         </p>
         <p>
@@ -82,7 +82,7 @@ const FAQS: FaqItem[] = [
     a: (
       <p>
         Yes. Jira integration is a Pro+ feature, and the gate is per-user. If one teammate is on Pro and
-        another is on Free, only the Pro teammate sees the Connect button — the Free teammate sees an
+        another is on Free, only the Pro teammate sees the Connect button, the Free teammate sees an
         upgrade prompt.
       </p>
     ),
@@ -93,7 +93,7 @@ const FAQS: FaqItem[] = [
     a: (
       <>
         <p>
-          Technically, yes — SprintHelm allows multiple concurrent sessions per account, and they&rsquo;d
+          Technically, yes, SprintHelm allows multiple concurrent sessions per account, and they&rsquo;d
           all share the same Jira connection.
         </p>
         <p>
@@ -123,7 +123,7 @@ const FAQS: FaqItem[] = [
       <>
         <p>
           That&rsquo;s coming in a future release. We&rsquo;re tracking it as the
-          &ldquo;organisation connection&rdquo; model — one designated admin connects on behalf of the
+          &ldquo;organisation connection&rdquo; model, one designated admin connects on behalf of the
           organisation, and all team members share that connection without each needing to OAuth
           themselves.
         </p>
@@ -140,7 +140,7 @@ const FAQS: FaqItem[] = [
     a: (
       <p>
         Encrypted in our database using AES-256-GCM (the industry-standard authenticated encryption
-        algorithm). The encryption key is stored separately in our deployment environment variables — it
+        algorithm). The encryption key is stored separately in our deployment environment variables, it
         never lives in the database, in code, or in logs. Inspecting the database directly shows only
         ciphertext, never your tokens.
       </p>
@@ -172,7 +172,7 @@ const FAQS: FaqItem[] = [
           </li>
         </ul>
         <p>
-          Epics and Subtasks are <strong>skipped</strong> — they&rsquo;re not ticket-level work in
+          Epics and Subtasks are <strong>skipped</strong>, they&rsquo;re not ticket-level work in
           SprintHelm&rsquo;s model.
         </p>
         <p>
@@ -206,7 +206,7 @@ export default function JiraIntegrationFaqPage() {
               their own encrypted token pair.
             </p>
             <p className="mt-2 text-sm text-text-secondary">
-              This is intentional — it&rsquo;s the simplest design that&rsquo;s both secure and respectful
+              This is intentional, it&rsquo;s the simplest design that&rsquo;s both secure and respectful
               of Jira&rsquo;s own permission model.
             </p>
           </div>

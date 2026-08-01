@@ -3,11 +3,11 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 // Social share card (Open Graph + Twitter summary_large_image). Rendered to PNG
-// at request time via next/og so it always carries the current helm branding —
+// at request time via next/og so it always carries the current helm branding, 
 // no static asset to regenerate when the brand changes. Node runtime so we can
 // read the logo SVG off disk and inline it as a data URI.
 export const runtime = "nodejs";
-export const alt = "SprintHelm — Delivery Decision Intelligence";
+export const alt = "SprintHelm, Delivery Decision Intelligence";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

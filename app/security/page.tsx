@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { Lock, Shield, Database, CreditCard, CheckCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Security — SprintHelm",
+  title: "Security, SprintHelm",
   description: "Enterprise-grade security. Zero compromise on your backlog data.",
 };
 
@@ -12,8 +12,8 @@ const PILLARS = [
     icon: Lock,
     title: "Encryption",
     items: [
-      "TLS 1.3 in transit — all data between your browser and SprintHelm servers is encrypted",
-      "AES-256 at rest — stored simulation history and workspace data encrypted at the block level",
+      "TLS 1.3 in transit, all data between your browser and SprintHelm servers is encrypted",
+      "AES-256 at rest, stored simulation history and workspace data encrypted at the block level",
       "Keys managed via AWS KMS with automatic annual rotation",
     ],
   },
@@ -21,7 +21,7 @@ const PILLARS = [
     icon: Shield,
     title: "Authentication & Access",
     items: [
-      "OAuth 2.0 — sign in with Google or email/password",
+      "OAuth 2.0, sign in with Google or email/password",
       "SSO / SAML 2.0 available on Enterprise",
       "Role-based access control (admin / member) on Team and Enterprise",
       "Session tokens are short-lived and rotated on every sign-in",
@@ -31,7 +31,7 @@ const PILLARS = [
     icon: Database,
     title: "Data Handling",
     items: [
-      "Free and Pro: backlog data is processed in-memory and not persisted — cleared when your session ends",
+      "Free and Pro: backlog data is processed in-memory and not persisted, cleared when your session ends",
       "Team and Enterprise: simulation history stored in encrypted workspaces (EU-West-1 by default)",
       "Enterprise: alternative data residency regions available on request",
       "We never use your backlog or ticket data to train any AI model",
@@ -43,7 +43,7 @@ const PILLARS = [
     items: [
       "GDPR-compliant data processing for all EU users",
       "SOC 2 Type II report available to Enterprise customers under NDA",
-      "Data Processing Agreement (DPA) available — contact enterprise@sprinthelm.com",
+      "Data Processing Agreement (DPA) available, contact enterprise@sprinthelm.com",
       "Audit logs available on Enterprise for compliance review",
     ],
   },
@@ -51,7 +51,7 @@ const PILLARS = [
     icon: CreditCard,
     title: "Payments",
     items: [
-      "All payment processing handled by Stripe — we never store or handle card data",
+      "All payment processing handled by Stripe, we never store or handle card data",
       "PCI DSS compliance managed entirely by Stripe",
       "Billing emails are the only payment-related data SprintHelm retains",
     ],

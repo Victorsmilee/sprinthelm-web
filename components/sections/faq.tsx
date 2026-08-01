@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 const FAQS = [
   {
     q: "Does SprintHelm connect to Jira?",
-    a: "Yes — on Pro tier and above. Pro is read-only (import tickets). Team adds bidirectional sync (push priority scores and risk flags back to Jira as custom fields). Enterprise includes full API access. Free tier users can paste backlogs manually as JSON or CSV.",
+    a: "Yes, on Pro tier and above. Pro is read-only (import tickets). Team adds bidirectional sync (push priority scores and risk flags back to Jira as custom fields). Enterprise includes full API access. Free tier users can paste backlogs manually as JSON or CSV.",
   },
   {
     q: "Where is my data stored?",
-    a: "Backlog data is processed in-memory on Free/Pro — not persisted, cleared when your session ends. Team and Enterprise store simulation history in your workspace (encrypted at rest and in transit, EU-West-1 by default). Enterprise can request alternative data residency. We never use your data to train any model.",
+    a: "Backlog data is processed in-memory on Free/Pro, not persisted, cleared when your session ends. Team and Enterprise store simulation history in your workspace (encrypted at rest and in transit, EU-West-1 by default). Enterprise can request alternative data residency. We never use your data to train any model.",
   },
   {
     q: "Can my whole team use one account?",
@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Can I bring my own Anthropic API key?",
-    a: "Enterprise tier only. BYOK routes AI generation through your own Anthropic account — direct control over costs, usage logging, and compliance. Lower tiers use SprintHelm's shared API access against your monthly allocation.",
+    a: "Enterprise tier only. BYOK routes AI generation through your own Anthropic account, giving you direct control over costs, usage logging, and compliance. Lower tiers use SprintHelm's shared API access against your monthly allocation.",
   },
   {
     q: "What is the difference between Free and Pro?",
@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How do I cancel? Is there a contract?",
-    a: "No contract below Enterprise. Cancel any time from billing settings — access continues until the end of your billing period. Contact support within 48 hours of an unintended renewal charge and we will handle it. Enterprise contracts are annual.",
+    a: "No contract below Enterprise. Cancel any time from billing settings. Access continues until the end of your billing period. Contact support within 48 hours of an unintended renewal charge and we will handle it. Enterprise contracts are annual.",
   },
   {
     q: "How secure is SprintHelm?",
@@ -36,7 +36,7 @@ const FAQS = [
   },
   {
     q: "What does Monte Carlo simulation mean in plain English?",
-    a: "We run your sprint plan hundreds of times, each time introducing small random variations that reflect real-world uncertainty — a ticket taking longer, a team member pulled into incidents, a dependency arriving late. Instead of 'this sprint takes 12 days,' you get 'there is a 68% probability this completes on time given your current scope.' The output is a probability, not a prediction. That distinction forces the planning conversation to be about risk tolerance, not false precision.",
+    a: "We run your delivery plan hundreds of times, each time introducing small random variations that reflect real-world uncertainty: a ticket taking longer, a team member pulled into incidents, a dependency arriving late. Instead of 'this sprint takes 12 days,' you get 'there is a 68% probability this completes on time given your current scope.' The output is a probability, not a prediction. That distinction forces the planning conversation to be about risk tolerance, not false precision.",
   },
 ];
 
@@ -117,7 +117,7 @@ export function Faq() {
             href="mailto:hello@sprinthelm.com"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 transition-colors duration-200"
           >
-            Talk to us — hello@sprinthelm.com
+            Talk to us at hello@sprinthelm.com
           </a>
         </motion.div>
       </div>

@@ -17,19 +17,19 @@ const QUESTIONS = [
     icon: Layers,
     question: "“Can we take on one more project?”",
     answer:
-      "Run every project against your one shared team. SprintHelm answers yes, no, or “yes — after Sprint 25,” with the capacity math to back it in front of anyone.",
+      "Run every project against your one shared team. SprintHelm answers yes, no, or “yes, but not before Q3,” with the capacity math to back it in front of anyone.",
   },
   {
     icon: Scale,
     question: "“What breaks if leadership forces it in anyway?”",
     answer:
-      "Price the override before the deadline is signed: which projects slip, how far, and what it costs — in dollars, defects, and attrition risk. Not a feeling. A number.",
+      "Price the override before the deadline is signed: which projects slip, how far, and what it costs in dollars, defects, and attrition risk. Not a feeling. A number.",
   },
   {
     icon: UserPlus,
-    question: "“Do we need to hire — and when?”",
+    question: "“Do we need to hire, and when?”",
     answer:
-      "Model headcount before the req is opened. Add an engineer from Sprint 3 and watch the forecast move — turning “we need more people” into a case a CFO can approve.",
+      "Model headcount before the req is opened. Add an engineer six weeks in and watch the forecast move, turning “we need more people” into a case a CFO can approve.",
   },
 ];
 
@@ -52,9 +52,9 @@ export function Portfolio() {
             <span className="text-gradient-accent">The answer executives actually need.</span>
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            Sprint tools tell you what happened. SprintHelm simulates what happens next —
-            across the whole portfolio — so the three hardest questions in engineering
-            leadership get answers with math that traces.
+            Most delivery tools tell you what already happened. SprintHelm simulates what
+            happens next, across the whole portfolio, so the three hardest questions in
+            engineering leadership get answers with math that traces.
           </p>
         </motion.div>
 
@@ -98,7 +98,7 @@ export function Portfolio() {
             </a>
           </Button>
           <p className="text-caption text-text-disabled">
-            Available on Team and Enterprise plans. Pre-loaded demo — no account needed.
+            Available on Team and Enterprise plans. Pre-loaded demo, no account needed.
           </p>
         </motion.div>
       </div>

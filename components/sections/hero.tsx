@@ -51,14 +51,14 @@ export function Hero() {
 
             {/* Subheadline */}
             <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-lg mb-10 text-balance">
-              SprintHelm predicts delivery across every team and project before the work starts — which sprints slip, whether you can take on another project, and what it costs when leadership forces one more in. The portfolio answer your CTO needs, with math they can trace.
+              SprintHelm predicts delivery across every team and project before the work starts. See what slips, whether you can take on another project, and what it costs when leadership forces one more in. The portfolio answer your CTO needs, with math they can trace.
             </motion.p>
 
             {/* CTAs */}
             <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-4">
               <Button size="xl" asChild>
                 <a href="https://app.sprinthelm.com/signup" className="flex items-center gap-2">
-                  See your portfolio forecast — free
+                  See your portfolio forecast, free
                   <ArrowRight size={18} />
                 </a>
               </Button>

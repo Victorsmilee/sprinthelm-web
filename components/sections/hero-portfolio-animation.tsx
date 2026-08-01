@@ -162,7 +162,7 @@ export function HeroPortfolioAnimation() {
                 </div>
                 <p className="text-caption text-text-secondary">
                   <span className="text-accent font-semibold">Recommendation:</span>{" "}
-                  delay Loyalty 2.0 one sprint — every project ships, $0 at risk.
+                  delay Loyalty 2.0 one sprint and every project ships, $0 at risk.
                 </p>
               </motion.div>
             )}

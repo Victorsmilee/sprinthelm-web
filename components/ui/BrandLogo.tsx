@@ -1,14 +1,14 @@
 /**
  * SprintHelm brand identity (2026-07 redesign, PO-approved).
  *
- * Mark: "Sprint Helm" — a gold/brass ship's helm mid-spin (4 handles in an X,
+ * Mark: "Sprint Helm", a gold/brass ship's helm mid-spin (4 handles in an X,
  * amber motion trail) on an indigo tile. 2.5D: top-lit tile gradient, dark
  * extrusion under the wheel, glass sheen. Replaces the generic layers icon.
  *
  * Wordmark: "Sprint" in text-primary + "Helm" in the brand metal. Two tiers:
- *   helm="amber"    — flat #fbbf24; product UI (headers, nav). Option A.
- *   helm="gradient" — brass gradient; brand moments (login, marketing, PDF
- *                     covers). Option C. Falls back poorly below ~14px bold —
+ *   helm="amber", flat #fbbf24; product UI (headers, nav). Option A.
+ *   helm="gradient", brass gradient; brand moments (login, marketing, PDF
+ *                     covers). Option C. Falls back poorly below ~14px bold, 
  *                     use amber at small sizes.
  *
  * Master SVG asset lives at public/logo-sprinthelm.svg; the favicon is
@@ -25,13 +25,13 @@ export function BrandMark({
   size?: number;
   className?: string;
   /**
-   * Continuous helm rotation — the "4D" loading affordance (e.g. while a
+   * Continuous helm rotation, the "4D" loading affordance (e.g. while a
    * simulation runs). All marks also spin on hover. Both honour
    * prefers-reduced-motion.
    */
   spinning?: boolean;
 }): React.JSX.Element {
-  // Gradient IDs must be unique per instance — two marks on one page would
+  // Gradient IDs must be unique per instance, two marks on one page would
   // otherwise resolve url(#…) against whichever renders first.
   const uid = useId().replace(/[«»:]/g, "");
   const tile = `tile-${uid}`;
@@ -81,11 +81,11 @@ export function BrandMark({
       <style>{`
         @keyframes sh-helm-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .sh-helm-wheel { transform-box: view-box; transform-origin: 128px 128px; }
-        svg:hover > .sh-helm-wheel, .sh-helm-wheel.sh-spinning {
+        svg:hover > .sh-helm-wheel.sh-helm-wheel.sh-spinning {
           animation: sh-helm-spin 2.4s linear infinite;
         }
         @media (prefers-reduced-motion: reduce) {
-          svg:hover > .sh-helm-wheel, .sh-helm-wheel.sh-spinning { animation: none; }
+          svg:hover > .sh-helm-wheel.sh-helm-wheel.sh-spinning { animation: none; }
         }
       `}</style>
       <rect x="8" y="8" width="240" height="240" rx="56" fill={`url(#${tile})`} />

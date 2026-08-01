@@ -3,8 +3,8 @@
  *
  * lucide-react removed its brand/logo glyphs in the 1.x line (trademark
  * policy), so these are inlined locally to keep the footer's social row
- * intact. They mirror lucide's icon API — a numeric `size` and `className`
- * that inherits `currentColor` — so they drop into existing markup unchanged.
+ * intact. They mirror lucide's icon API, a numeric `size` and `className`
+ * that inherits `currentColor`, so they drop into existing markup unchanged.
  * Co-located as peer brand primitives, following BrandLogo.tsx.
  */
 

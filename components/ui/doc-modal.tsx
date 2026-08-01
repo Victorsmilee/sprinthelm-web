@@ -76,8 +76,8 @@ export function DocModal({ entry, onClose }: DocModalProps): React.JSX.Element |
             {/*
               CONTRACT: `entry.content` MUST be authored as static HTML strings
               in TypeScript (see lib/docs-content.ts). It is NEVER sourced from
-              user input, URL params, fetched APIs, or a CMS. If that changes —
-              even to a "trusted" CMS — this dangerouslySetInnerHTML becomes an
+              user input, URL params, fetched APIs, or a CMS. If that changes, 
+              even to a "trusted" CMS, this dangerouslySetInnerHTML becomes an
               XSS sink and the content MUST be sanitised (e.g. isomorphic-
               dompurify) or migrated to react-markdown/JSX first. Tracked:
               audit finding M4 follow-up.

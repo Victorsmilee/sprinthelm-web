@@ -38,7 +38,7 @@ export function ContactForm(): React.JSX.Element {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
-  // Honeypot — bots tend to fill every field, including ones hidden from
+  // Honeypot, bots tend to fill every field, including ones hidden from
   // humans. If this carries any value at submit time, drop the request.
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -56,7 +56,7 @@ export function ContactForm(): React.JSX.Element {
 
     if (!FORMSPREE_ID) {
       setServerError(
-        "Form submission isn’t configured yet — please email hello@sprinthelm.com instead.",
+        "Form submission isn’t configured yet, please email hello@sprinthelm.com instead.",
       );
       setStatus("error");
       return;
@@ -91,7 +91,7 @@ export function ContactForm(): React.JSX.Element {
     } catch (err) {
       setServerError(
         err instanceof Error
-          ? "Couldn’t reach the form service — please try again or email hello@sprinthelm.com."
+          ? "Couldn’t reach the form service, please try again or email hello@sprinthelm.com."
           : "Something went wrong. Please try again.",
       );
       setStatus("error");
@@ -105,7 +105,7 @@ export function ContactForm(): React.JSX.Element {
         <div>
           <h3 className="text-base font-semibold text-text-primary mb-1">Message sent.</h3>
           <p className="text-sm text-text-secondary leading-relaxed">
-            Thanks — we’ll get back to you within 24 hours. Check your inbox (and spam) for a copy of your message.
+            Thanks, we’ll get back to you within 24 hours. Check your inbox (and spam) for a copy of your message.
           </p>
         </div>
       </div>
@@ -123,7 +123,7 @@ export function ContactForm(): React.JSX.Element {
         Send us a message
       </h3>
 
-      {/* Honeypot — visually hidden, off the tab order */}
+      {/* Honeypot, visually hidden, off the tab order */}
       <div className="absolute -left-[9999px] pointer-events-none" aria-hidden="true">
         <label htmlFor="contact-website">Website</label>
         <input
@@ -210,7 +210,7 @@ export function ContactForm(): React.JSX.Element {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "contact-message-error" : undefined}
           className="w-full px-3.5 py-2.5 rounded-lg bg-bg-elevated border border-border-subtle text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent resize-y"
-          placeholder="Tell us what’s on your mind — a question, some feedback, an idea, anything."
+          placeholder="Tell us what’s on your mind, a question, some feedback, an idea, anything."
         />
         {errors.message && (
           <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-danger">

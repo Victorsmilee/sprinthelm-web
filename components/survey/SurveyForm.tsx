@@ -194,10 +194,10 @@ function calcScore(answers: Answers): number {
   let s = 0;
 
   const painMap: Record<string, number> = {
-    "Most sprints — spillover is the default": 3,
+    "Most sprints, spillover is the default": 3,
     "Regularly (1 in 2–3 sprints)": 2,
     "Occasionally (1 in 4–5 sprints)": 1,
-    "Almost never — we consistently hit our sprint goals": 0,
+    "Almost never, we consistently hit our sprint goals": 0,
   };
   s += painMap[answers["q4"] as string] ?? 0;
 
@@ -208,7 +208,7 @@ function calcScore(answers: Answers): number {
   s += (5 - conf) * 0.4;
 
   const gap = (answers["q8"] as string) ?? "";
-  if (gap.includes("No — this is a gap")) s += 2;
+  if (gap.includes("No, this is a gap")) s += 2;
   else if (gap.includes("gut feel")) s += 1;
 
   const val = parseInt((answers["q10"] as string) ?? "3", 10);
@@ -242,12 +242,12 @@ function getResultTier(score: number): ResultTier {
   if (score >= 4) {
     return {
       title: "SprintHelm could make a real difference.",
-      body: "You're managing delivery reasonably well but feel the friction. SprintHelm's what-if scenario planner and epic timeline projections are likely to be the features that click for you — especially when a stakeholder asks why their feature didn't make the sprint.",
+      body: "You're managing delivery reasonably well but feel the friction. SprintHelm's what-if scenario planner and epic timeline projections are likely to be the features that click for you, especially when a stakeholder asks why their feature didn't make the sprint.",
     };
   }
   return {
-    title: "Good to meet you — we'd love your feedback.",
-    body: "Your team seems to have delivery fairly well managed. SprintHelm's PRD extraction and AI executive summary might still save you hours of sprint prep — and the free demo takes 60 seconds to try.",
+    title: "Good to meet you, we'd love your feedback.",
+    body: "Your team seems to have delivery fairly well managed. SprintHelm's PRD extraction and AI executive summary might still save you hours of sprint prep, and the free demo takes 60 seconds to try.",
   };
 }
 
@@ -381,7 +381,7 @@ export function SurveyForm(): React.ReactElement {
       localStorage.setItem(LS_KEY, String(Date.now()));
     } catch {
       setSubmitError(
-        "Submission failed — your results are still shown below. Please try again later."
+        "Submission failed, your results are still shown below. Please try again later."
       );
     }
 
@@ -400,7 +400,7 @@ export function SurveyForm(): React.ReactElement {
       <div className="text-center py-12">
         <div className="text-3xl mb-4">✓</div>
         <h2 className="text-xl font-semibold text-text-primary mb-3">
-          You&apos;ve already submitted — thank you!
+          You&apos;ve already submitted, thank you!
         </h2>
         <p className="text-text-secondary text-sm mb-6">
           Your responses are on their way to us. Ready to see SprintHelm in action?
@@ -490,11 +490,11 @@ export function SurveyForm(): React.ReactElement {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-6">
-              <SectionTag>Section 1 of 5 — About You</SectionTag>
+              <SectionTag>Section 1 of 5, About You</SectionTag>
               <SectionTitle>Tell us about your role and team</SectionTitle>
             </div>
 
-            {/* q1 — Role (multi-select, max 3) */}
+            {/* q1, Role (multi-select, max 3) */}
             <QBlock>
               <QLabel required>What is your role? (select all that apply, up to 3)</QLabel>
               <div className="flex flex-col gap-1.5">
@@ -518,7 +518,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q1"]} msg="Please select at least one role to continue." />
             </QBlock>
 
-            {/* q_teams — How many teams */}
+            {/* q_teams, How many teams */}
             <QBlock>
               <QLabel>How many teams do you currently work with?</QLabel>
               <div className="grid grid-cols-2 gap-1.5">
@@ -533,7 +533,7 @@ export function SurveyForm(): React.ReactElement {
               </div>
             </QBlock>
 
-            {/* q2 — Engineer count */}
+            {/* q2, Engineer count */}
             <QBlock>
               <QLabel required>How many engineers are on your primary team?</QLabel>
               <div className="grid grid-cols-2 gap-1.5">
@@ -549,7 +549,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q2"]} msg="Please select a team size." />
             </QBlock>
 
-            {/* q3 — Sprint cadence */}
+            {/* q3, Sprint cadence */}
             <QBlock>
               <QLabel>What sprint cadence does your team run?</QLabel>
               <div className="grid grid-cols-2 gap-1.5">
@@ -587,19 +587,19 @@ export function SurveyForm(): React.ReactElement {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-6">
-              <SectionTag>Section 2 of 5 — The Pain</SectionTag>
+              <SectionTag>Section 2 of 5, The Pain</SectionTag>
               <SectionTitle>How much does delivery uncertainty cost you right now?</SectionTitle>
             </div>
 
-            {/* q4 — Sprint miss frequency */}
+            {/* q4, Sprint miss frequency */}
             <QBlock>
               <QLabel required>How often do sprints miss their committed scope?</QLabel>
               <div className="flex flex-col gap-1.5">
                 {[
-                  "Almost never — we consistently hit our sprint goals",
+                  "Almost never, we consistently hit our sprint goals",
                   "Occasionally (1 in 4–5 sprints)",
                   "Regularly (1 in 2–3 sprints)",
-                  "Most sprints — spillover is the default",
+                  "Most sprints, spillover is the default",
                 ].map((opt) => (
                   <RadioOpt
                     key={opt}
@@ -612,7 +612,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q4"]} msg="Please select one." />
             </QBlock>
 
-            {/* q5 — Friction causes */}
+            {/* q5, Friction causes */}
             <QBlock>
               <QLabel required>
                 Which of these causes the most friction in your team? (select all that apply)
@@ -622,10 +622,10 @@ export function SurveyForm(): React.ReactElement {
                   "Stakeholders adding scope mid-sprint without understanding the trade-off",
                   "No clear way to prioritise the backlog objectively",
                   'Technical debt keeps getting pushed to \u201cnext sprint\u201d',
-                  "Team capacity is hard to model — absences, seniority gaps, new hires",
+                  "Team capacity is hard to model, absences, seniority gaps, new hires",
                   "No way to forecast when features or epics will actually ship",
                   "Getting alignment with the CEO / board on delivery timelines",
-                  "Single points of failure — too much relying on one person",
+                  "Single points of failure, too much relying on one person",
                 ].map((opt) => (
                   <CheckOpt
                     key={opt}
@@ -638,7 +638,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q5"]} msg="Please select at least one." />
             </QBlock>
 
-            {/* q6 — Confidence scale */}
+            {/* q6, Confidence scale */}
             <QBlock>
               <QLabel>
                 On a scale of 1–5, how much confidence do you have that your current sprint plan
@@ -673,11 +673,11 @@ export function SurveyForm(): React.ReactElement {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-6">
-              <SectionTag>Section 3 of 5 — Current Tools</SectionTag>
-              <SectionTitle>What are you using today — and where does it fall short?</SectionTitle>
+              <SectionTag>Section 3 of 5, Current Tools</SectionTag>
+              <SectionTitle>What are you using today, and where does it fall short?</SectionTitle>
             </div>
 
-            {/* q7 — Current tools */}
+            {/* q7, Current tools */}
             <QBlock>
               <QLabel>
                 Which tools do you currently use for sprint planning and backlog management?
@@ -705,7 +705,7 @@ export function SurveyForm(): React.ReactElement {
               </div>
             </QBlock>
 
-            {/* q8 — Tooling gap */}
+            {/* q8, Tooling gap */}
             <QBlock>
               <QLabel required>
                 Can your current tooling answer this question in real time: &ldquo;If we add this
@@ -713,9 +713,9 @@ export function SurveyForm(): React.ReactElement {
               </QLabel>
               <div className="flex flex-col gap-1.5">
                 {[
-                  "Yes — we have a reliable way to answer this",
-                  "Roughly — we estimate based on gut feel and experience",
-                  "No — this is a gap we feel every sprint",
+                  "Yes, we have a reliable way to answer this",
+                  "Roughly, we estimate based on gut feel and experience",
+                  "No, this is a gap we feel every sprint",
                   "We don't track this at all",
                 ].map((opt) => (
                   <RadioOpt
@@ -729,14 +729,14 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q8"]} msg="Please select one." />
             </QBlock>
 
-            {/* q9 — Sprint derailed */}
+            {/* q9, Sprint derailed */}
             <QBlock>
               <QLabel>
                 Have you ever had a sprint derailed by something your planning process should have
                 flagged earlier?
               </QLabel>
               <div className="grid grid-cols-2 gap-1.5">
-                {["Yes — frequently", "Yes — occasionally", "Rarely", "No"].map((opt) => (
+                {["Yes, frequently", "Yes, occasionally", "Rarely", "No"].map((opt) => (
                   <RadioOpt
                     key={opt}
                     label={opt}
@@ -767,15 +767,15 @@ export function SurveyForm(): React.ReactElement {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-6">
-              <SectionTag>Section 4 of 5 — Willingness to Pay</SectionTag>
+              <SectionTag>Section 4 of 5, Willingness to Pay</SectionTag>
               <SectionTitle>What&apos;s the right price for solving this?</SectionTitle>
             </div>
 
-            {/* q10 — Value scale */}
+            {/* q10, Value scale */}
             <QBlock>
               <QLabel required>
                 If a tool could mathematically score your backlog, run 100 sprint simulations, and
-                tell you the probability your sprint completes on time — how valuable would that be?
+                tell you the probability your sprint completes on time, how valuable would that be?
               </QLabel>
               <ScaleSelector
                 qid="q10"
@@ -787,13 +787,13 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q10"]} msg="Please rate this." />
             </QBlock>
 
-            {/* q11 — Pricing model */}
+            {/* q11, Pricing model */}
             <QBlock>
               <QLabel required>Which pricing model would work best for your team?</QLabel>
               <div className="flex flex-col gap-1.5">
                 {[
-                  "Per team — flat rate per team per month",
-                  "Per organisation — annual contract, unlimited seats",
+                  "Per team, flat rate per team per month",
+                  "Per organisation, annual contract, unlimited seats",
                   "Free with paid upgrade for advanced features",
                   "I'd need to evaluate before committing to any model",
                 ].map((opt) => (
@@ -808,7 +808,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q11"]} msg="Please select one." />
             </QBlock>
 
-            {/* q12 — Price point (team-based USD) */}
+            {/* q12, Price point (team-based USD) */}
             <QBlock>
               <QLabel required>
                 At what monthly price would SprintHelm be a no-brainer purchase for your team?
@@ -820,7 +820,7 @@ export function SurveyForm(): React.ReactElement {
                   "$60–$99/mo",
                   "$100–$199/mo",
                   "$200+/mo",
-                  "Free only — I wouldn't pay",
+                  "Free only, I wouldn't pay",
                 ].map((opt) => (
                   <RadioOpt
                     key={opt}
@@ -833,7 +833,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q12"]} msg="Please select one." />
             </QBlock>
 
-            {/* q13 — Enterprise tier */}
+            {/* q13, Enterprise tier */}
             <QBlock>
               <QLabel>
                 Would your company pay for a team/enterprise tier that includes multi-team
@@ -841,9 +841,9 @@ export function SurveyForm(): React.ReactElement {
               </QLabel>
               <div className="flex flex-col gap-1.5">
                 {[
-                  "Yes — this is exactly what our CTO/CEO needs",
-                  "Possibly — I'd need to see it in action first",
-                  "No — we don't have budget for additional tooling",
+                  "Yes, this is exactly what our CTO/CEO needs",
+                  "Possibly, I'd need to see it in action first",
+                  "No, we don't have budget for additional tooling",
                   "Not sure",
                 ].map((opt) => (
                   <RadioOpt
@@ -876,25 +876,25 @@ export function SurveyForm(): React.ReactElement {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-6">
-              <SectionTag>Section 5 of 5 — Interest & Next Steps</SectionTag>
-              <SectionTitle>Almost done — let us know how to follow up</SectionTitle>
+              <SectionTag>Section 5 of 5, Interest & Next Steps</SectionTag>
+              <SectionTitle>Almost done, let us know how to follow up</SectionTitle>
             </div>
 
-            {/* q14 — Feature selection */}
+            {/* q14, Feature selection */}
             <QBlock>
               <QLabel>
                 Which SprintHelm features would be most useful to you right now? (select up to 3)
               </QLabel>
               <div className="flex flex-col gap-1.5">
                 {[
-                  "Backlog scoring engine — objective priority scores across 6 factors",
-                  "Monte Carlo simulation — probability that the sprint completes on time",
-                  "Pressure Index — Green/Yellow/Red sprint health gauge",
-                  "AI Executive Summary — 3-sentence board-ready sprint brief generated by AI",
-                  "Epic Timeline Projections — forecast when each epic ships across future sprints",
+                  "Backlog scoring engine, objective priority scores across 6 factors",
+                  "Monte Carlo simulation, probability that the sprint completes on time",
+                  "Pressure Index, Green/Yellow/Red sprint health gauge",
+                  "AI Executive Summary, 3-sentence board-ready sprint brief generated by AI",
+                  "Epic Timeline Projections, forecast when each epic ships across future sprints",
                   'What-If Scenario Planning \u2014 \u201cwhat if we add this dev / remove this epic?\u201d',
-                  "PRD Extraction — upload a PRD doc and get a scored backlog automatically",
-                  "Multi-team portfolio view — side-by-side velocity and health for all teams",
+                  "PRD Extraction, upload a PRD doc and get a scored backlog automatically",
+                  "Multi-team portfolio view, side-by-side velocity and health for all teams",
                 ].map((opt) => (
                   <CheckOpt
                     key={opt}
@@ -906,7 +906,7 @@ export function SurveyForm(): React.ReactElement {
               </div>
             </QBlock>
 
-            {/* q15 — Demo likelihood */}
+            {/* q15, Demo likelihood */}
             <QBlock>
               <QLabel required>
                 How likely are you to try SprintHelm&apos;s free demo (no sign-up required)?
@@ -921,7 +921,7 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q15"]} msg="Please rate this." />
             </QBlock>
 
-            {/* q16 — Open feedback */}
+            {/* q16, Open feedback */}
             <QBlock>
               <QLabel>
                 Is there anything specific you&apos;d want SprintHelm to do that you didn&apos;t
@@ -929,15 +929,15 @@ export function SurveyForm(): React.ReactElement {
               </QLabel>
               <textarea
                 id="q16"
-                placeholder="Open feedback — any missing features, integration needs, or deal-breakers…"
+                placeholder="Open feedback, any missing features, integration needs, or deal-breakers…"
                 rows={3}
                 className="w-full bg-bg-elevated border border-border-subtle rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:border-accent transition-colors duration-200 resize-y"
               />
             </QBlock>
 
-            {/* q17 — Email */}
+            {/* q17, Email */}
             <QBlock>
-              <QLabel>Work email — if you&apos;d like early access or an invite to our beta</QLabel>
+              <QLabel>Work email, if you&apos;d like early access or an invite to our beta</QLabel>
               <input
                 id="q17"
                 type="email"
