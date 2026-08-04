@@ -24,17 +24,21 @@ const SLAS = [
   },
   {
     plan: "Team",
-    channel: "Priority email + live chat",
-    response: "12 hours",
+    channel: "Priority email",
+    response: "1 business day",
     color: "text-accent",
   },
   {
     plan: "Enterprise",
-    channel: "Dedicated CSM + SLA",
-    response: "4h P1/P2",
+    channel: "Dedicated support contact",
+    response: "Agreed in your contract",
     color: "text-success",
   },
 ];
+// Truth pass 2026-08-04: this table is a published support promise, so it must
+// describe a rota we actually staff. Removed "live chat" (no such channel
+// exists) and the "4h P1/P2" SLA (implies 24/5 on-call we do not run). Pro's
+// "24 hours" reads as a clock-hours SLA; kept, but revisit if it slips.
 
 type TopicLink = { label: string; section: string };
 
@@ -61,9 +65,10 @@ const TOPICS: { title: string; links: TopicLink[] }[] = [
     title: "Integrations",
     links: [
       { label: "Connecting Jira (Pro+)", section: "Integrations" },
-      { label: "Slack notifications setup (Team+)", section: "Integrations" },
       { label: "CSV export format", section: "Integrations" },
-      { label: "API access (Enterprise)", section: "Integrations" },
+      // Removed 2026-08-04: "Slack notifications setup (Team+)" and
+      // "API access (Enterprise)" — neither feature exists, so both were help
+      // links to nothing.
     ],
   },
   {

@@ -1,6 +1,6 @@
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
-import { Lock, Shield, Database, CreditCard, CheckCircle } from "lucide-react";
+import { Lock, Shield, Database, CreditCard, CheckCircle, Clock } from "lucide-react";
 
 export const metadata = {
   title: "Security, SprintHelm",
@@ -22,9 +22,8 @@ const PILLARS = [
     title: "Authentication & Access",
     items: [
       "OAuth 2.0, sign in with Google or email/password",
-      "SSO / SAML 2.0 available on Enterprise",
-      "Role-based access control (admin / member) on Team and Enterprise",
       "Session tokens are short-lived and rotated on every sign-in",
+      "Every account is single-user today, so there is no shared-account access to manage",
     ],
   },
   {
@@ -32,8 +31,8 @@ const PILLARS = [
     title: "Data Handling",
     items: [
       "Free and Pro: backlog data is processed in-memory and not persisted, cleared when your session ends",
-      "Team and Enterprise: simulation history stored in encrypted workspaces (EU-West-1 by default)",
-      "Enterprise: alternative data residency regions available on request",
+      "Team: simulation and portfolio history stored encrypted at rest, hosted in the EU",
+      "Jira OAuth tokens are encrypted with AES-256-GCM before they touch the database",
       "We never use your backlog or ticket data to train any AI model",
     ],
   },
@@ -42,9 +41,25 @@ const PILLARS = [
     title: "Compliance",
     items: [
       "GDPR-compliant data processing for all EU users",
-      "SOC 2 Type II report available to Enterprise customers under NDA",
       "Data Processing Agreement (DPA) available, contact enterprise@sprinthelm.com",
-      "Audit logs available on Enterprise for compliance review",
+      "We complete security questionnaires for enterprise prospects",
+    ],
+  },
+  // Stated plainly rather than implied as shipped. Every line here was
+  // previously listed above as though it already existed — corrected in the
+  // 2026-08-04 launch truth pass. `pending` swaps the green tick for a clock
+  // so the section cannot be skim-read as delivered. Move an item into another
+  // pillar only when it actually ships.
+  {
+    icon: Clock,
+    title: "On the roadmap, not yet available",
+    pending: true,
+    items: [
+      "SOC 2 Type II: we are not certified. No report exists yet and we will not imply otherwise",
+      "SSO / SAML 2.0: planned for Enterprise, not built",
+      "Role-based access control (admin / member): planned, not built",
+      "Customer-facing audit logs: planned, not built",
+      "Alternative data residency regions: not available, all data is hosted in the EU",
     ],
   },
   {
@@ -95,7 +110,11 @@ export default function SecurityPage() {
                 <ul className="space-y-3">
                   {pillar.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle size={16} className="text-success flex-shrink-0 mt-0.5" />
+                      {"pending" in pillar && pillar.pending ? (
+                        <Clock size={16} className="text-text-disabled flex-shrink-0 mt-0.5" aria-hidden />
+                      ) : (
+                        <CheckCircle size={16} className="text-success flex-shrink-0 mt-0.5" aria-hidden />
+                      )}
                       <span className="text-sm text-text-secondary leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -110,7 +129,7 @@ export default function SecurityPage() {
           <div className="mx-auto max-w-xl">
             <h2 className="text-h3 font-bold text-text-primary mb-3">Need a security review?</h2>
             <p className="text-text-secondary text-sm mb-6">
-              Security questionnaires, DPAs, SOC 2 reports, and custom compliance reviews available for enterprise prospects.
+              Security questionnaires, DPAs, and our controls inventory are available for enterprise prospects. We are not SOC 2 certified yet, and we will tell you that up front rather than after you have signed.
             </p>
             <a
               href="mailto:enterprise@sprinthelm.com"

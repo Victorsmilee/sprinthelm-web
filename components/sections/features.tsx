@@ -75,7 +75,11 @@ const FEATURES = [
     headline: "Know what good looks like, not just what you did last quarter.",
     body: "Completion rates and delivery accuracy benchmarked against teams by size and vertical. Stop measuring yourself against your own floor.",
     color: "#EF5350",
-    soon: false,
+    // Not built (Gate 6 G6-03). There is no benchmarking anywhere in the app:
+    // no cross-team comparison, no planned-vs-actual accuracy scoring, no
+    // per-team velocity trend. Shipped as available until the 2026-08-04
+    // truth pass. Flip to false only when G6-03 lands.
+    soon: true,
   },
 ];
 

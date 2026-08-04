@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-const INTEGRATIONS = ["Jira", "Linear", "GitHub", "Slack", "Notion", "Confluence", "Azure DevOps"];
+// Only list what connects today. Jira is the one shipped integration (one-way
+// backlog import); CSV and JSON are real entry paths in the app. Linear,
+// GitHub, Slack, Notion, Confluence and Azure DevOps were listed here as
+// though they existed — removed in the 2026-08-04 truth pass. They live on
+// /roadmap until they ship.
+const INTEGRATIONS = ["Jira", "CSV", "JSON"];
 
 const STATS = [
   { value: 78,    suffix: "%",  label: "of PMs say stakeholder alignment is their #1 challenge" },

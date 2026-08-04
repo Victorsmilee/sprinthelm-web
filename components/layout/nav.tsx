@@ -12,7 +12,12 @@ const PRODUCT_LINKS = [
   { label: "Monte Carlo Simulation", href: "/#features" },
   { label: "Pressure Index",         href: "/#features" },
   { label: "AI Executive Summary",   href: "/#features" },
-  { label: "Epic Forecasting",       href: "/#features", soon: true },
+  // Epic Forecasting SHIPS: calculateEpicForecast in the app renders the "Epic
+  // Delivery Timeline" (per-epic ship dates) in the Forecast tab, and the
+  // Portfolio Simulator runs per-epic Monte Carlo on imported Jira epics.
+  // It was mislabelled "Soon" until the 2026-08-04 truth pass.
+  { label: "Epic Forecasting",       href: "/#features" },
+  // Team Benchmarking genuinely is not built (Gate 6 G6-03). Keep the label.
   { label: "Team Benchmarking",      href: "/#features", soon: true },
 ];
 
