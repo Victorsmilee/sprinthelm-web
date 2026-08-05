@@ -96,7 +96,7 @@ export default function AboutPage() {
             <h2 className="text-h2 font-bold text-text-primary mb-4">Ready to stop planning blind?</h2>
             <p className="text-text-secondary mb-8">Free to start. No credit card. Results in under 60 seconds.</p>
             <a
-              href="https://app.sprinthelm.com/signup"
+              href="https://app.sprinthelm.com/signup?plan=free"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-colors duration-200"
             >
               Run your first simulation

@@ -6,7 +6,24 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const CONTACT_SALES_HREF = "mailto:hello@sprinthelm.com";
-const SIGNUP_HREF = "https://app.sprinthelm.com/signup";
+/**
+ * Signup URL for a given tier.
+ *
+ * The `?plan=` param is NOT decoration — app/signup/page.tsx reads it and
+ * renders a plan-specific page (heading, trial badge, price line, the three
+ * headline features). Without it the page falls back to `free`, so a customer
+ * who clicked "Start 14-day free trial" on the Pro card landed on "Get started
+ * free / Free forever / No credit card required" and had to work out for
+ * themselves that they were in the wrong place. That was the state of the
+ * live funnel until 2026-08-06.
+ *
+ * The app accepts exactly `pro` | `team`; anything else resolves to `free`.
+ */
+function signupHref(tier: string): string {
+  const plan = tier.toLowerCase();
+  const param = plan === "pro" || plan === "team" ? plan : "free";
+  return `https://app.sprinthelm.com/signup?plan=${param}`;
+}
 
 const TIERS = [
   {
@@ -202,7 +219,7 @@ export function Pricing(): React.JSX.Element {
                 {tier.name === "Enterprise" ? (
                   <a href={CONTACT_SALES_HREF}>Contact sales</a>
                 ) : (
-                  <a href={SIGNUP_HREF}>
+                  <a href={signupHref(tier.name)}>
                     {tier.name === "Free" ? "Start free" : "Start 14-day free trial"}
                   </a>
                 )}
