@@ -27,6 +27,13 @@ const FAQS = [
     a: "Free is fully functional for occasional solo use: up to 15 tickets, the full priority scoring engine, complexity risk badges and a Pressure Index colour band. It does not include AI summaries, Jira import, PRD extraction or the full Monte Carlo simulation. Pro adds all of those. Start free, run three simulations, and you will know quickly whether Pro earns its place.",
   },
   {
+    // Added 2026-08-05 with the trial. State the card requirement plainly: a
+    // customer who discovers it at the payment step feels tricked, and one who
+    // discovers the charge on day 14 files a chargeback.
+    q: "How does the free trial work?",
+    a: "Paid plans start with a 14-day free trial. We do ask for a card up front, and we charge nothing until day 14. You get every feature of the plan from minute one. We email you 3 days before the trial ends so the first charge is never a surprise, and if you cancel before then you are not charged at all: your account simply returns to the Free plan with your data intact. Free itself needs no card and lasts forever. We chose 14 days because a sprint is two weeks, and a shorter trial cannot show you a full cycle.",
+  },
+  {
     q: "How do I cancel? Is there a contract?",
     a: "No contract below Enterprise. Cancel any time from billing settings. Access continues until the end of your billing period. Contact support within 48 hours of an unintended renewal charge and we will handle it. Enterprise contracts are annual.",
   },

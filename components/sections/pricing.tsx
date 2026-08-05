@@ -150,8 +150,8 @@ export function Pricing(): React.JSX.Element {
             Simple plans. Start free.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            Every paid plan starts with a 7-day free trial. No credit card required.
-            The Portfolio Simulator ships with Team and Enterprise.
+            Every paid plan starts with a 14-day free trial. Cancel any time before it
+            ends and you won&apos;t be charged. The Portfolio Simulator ships with Team and Enterprise.
           </p>
         </motion.div>
 
@@ -203,7 +203,7 @@ export function Pricing(): React.JSX.Element {
                   <a href={CONTACT_SALES_HREF}>Contact sales</a>
                 ) : (
                   <a href={SIGNUP_HREF}>
-                    {tier.name === "Free" ? "Start free" : "Start 7-day free trial"}
+                    {tier.name === "Free" ? "Start free" : "Start 14-day free trial"}
                   </a>
                 )}
               </Button>
@@ -218,7 +218,8 @@ export function Pricing(): React.JSX.Element {
         </div>
 
         <p className="text-center text-caption text-text-disabled mt-8">
-          All plans include a 7-day free trial. No credit card required. Email us at{" "}
+          Free is free forever, no card needed. Paid plans start with a 14-day trial: we take
+          your card, charge nothing until day 14, and cancel is one click. Email us at{" "}
           <a href={CONTACT_SALES_HREF} className="underline hover:text-text-secondary transition-colors">
             hello@sprinthelm.com
           </a>
