@@ -38,62 +38,80 @@ const TIERS = [
       "Monte Carlo simulation (full access)",
       "Estimation risk scoring (adjusted effort + simulation impact)",
       "Sprint Health Check",
-      "Team Composition (up to 8 seats)",
+      // No seat model exists in the app (no org/invite/membership table).
+      "Team Composition modelling by role and seniority",
       "Team Composition Change Scenarios",
       "AI Executive Summary (50 / month)",
       "Project Completion Forecaster",
       "PRD Template Generator",
       "PRD Upload & Ticket Extraction (20 / month)",
       "PDF + TXT export",
-      "ROI Calculator (ROI% with benchmark label)",
-      "Priority email support (24h response)",
+      // "benchmark label" dropped: no benchmarking exists in the product.
+      "Sprint ROI Calculator",
+      // Support promise reworded to something one team can actually staff.
+      "Email support within one business day",
     ],
   },
   {
     name: "Team",
-    tagline: "Multi-squad visibility. One view of delivery risk across the org, including the Portfolio Simulator.",
+    tagline: "Every project's delivery risk on one screen, including the Portfolio Simulator.",
     price: "$59",
     priceNote: "per month · $47/mo billed annually",
     popular: false,
     features: [
       "Everything in Pro",
       "Portfolio Simulator (capacity + consequence across every project)",
-      "Estimation risk across all teams in the Portfolio Simulator",
-      "Up to 5 team workspaces (8 seats each)",
       "AI Executive Summary (200 / month)",
       "PRD Ticket Extraction (100 / month)",
-      "ROI Calculator (multi-sprint trend)",
       "Board-ready PDF report",
       // Phase 1 ships one-way backlog import — do NOT claim "bidirectional
       // sync" until it exists (2026-07-05 audit M5; matches the in-app
       // planCatalog copy fixed in sprinthelm-app PR #290).
       "Jira integration (backlog import)",
-      "Slack notifications",
-      "Role-based access (admin / member)",
-      "Priority email + live chat support",
+      "Priority email support",
     ],
+    // Removed 2026-08-04 (launch truth pass) — purchasable copy with nothing
+    // behind it. Each returns only when the feature ships:
+    //   "Estimation risk across all teams in the Portfolio Simulator" — the
+    //     Portfolio is single-team by design.
+    //   "Up to 5 team workspaces (8 seats each)" — no org/seat/workspace model
+    //     exists anywhere in the app's schema.
+    //   "ROI Calculator (multi-sprint trend)" — not implemented.
+    //   "Slack notifications" — not implemented.
+    //   "Role-based access (admin / member)" — G3-04, not started.
+    //   "live chat support" — no live-chat channel exists.
   },
   {
     name: "Enterprise",
-    tagline: "Company-wide delivery intelligence with enterprise-grade security and a named contact.",
+    tagline: "Company-wide delivery intelligence with a named contact and a direct line to us.",
     price: "Custom",
     priceNote: "annual contract · volume pricing",
     popular: false,
     features: [
       "Everything in Team",
-      "Unlimited team workspaces",
       "Unlimited AI summaries + extractions",
-      "AI Benchmarking & Intelligence",
-      "Branded board-ready PDF report",
-      "Estimation risk breakdown in board PDF report",
       "Pressure Index webhook alerts",
-      "SSO / SAML + full RBAC",
-      "Custom scoring weight configuration",
-      "All integrations (Jira, Linear, GitHub, Slack, Azure DevOps)",
-      "SOC 2 Type II compliance + audit logs",
-      "BYOK (bring your own Anthropic API key)",
-      "Dedicated CSM + SLA-backed support (4h P1/P2)",
+      "Security questionnaires + signed DPA",
+      "Dedicated support contact",
     ],
+    // Removed 2026-08-04 (launch truth pass). This card sits next to a payment
+    // decision, so it lists only what we can hand over today. Roadmap and
+    // compliance commitments belong on /security with dates against them:
+    //   "SOC 2 Type II compliance + audit logs" — not certified (G9-01 not
+    //     started). Claiming a certification we do not hold is a legal
+    //     exposure, not a copy nit.
+    //   "SSO / SAML + full RBAC" — not built.
+    //   "All integrations (Linear, GitHub, Azure DevOps)" — only Jira exists,
+    //     and it is already a Team line.
+    //   "AI Benchmarking & Intelligence" — does not exist.
+    //   "BYOK" — not built.
+    //   "Branded board-ready PDF report" / "Estimation risk breakdown in board
+    //     PDF" — lib/boardPdf.ts has no branding and no such breakdown.
+    //   "Custom scoring weight configuration" — real, but every plan already
+    //     has it, so it was never an Enterprise differentiator.
+    //   "Unlimited team workspaces" — no workspace model.
+    //   "SLA-backed support (4h P1/P2)" — implies an on-call rota we do not
+    //     staff. Softened to a named contact, which we can honour.
   },
 ];
 
@@ -132,8 +150,8 @@ export function Pricing(): React.JSX.Element {
             Simple plans. Start free.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            Every paid plan starts with a 7-day free trial. No credit card required.
-            The Portfolio Simulator ships with Team and Enterprise.
+            Every paid plan starts with a 14-day free trial. Cancel any time before it
+            ends and you won&apos;t be charged. The Portfolio Simulator ships with Team and Enterprise.
           </p>
         </motion.div>
 
@@ -185,7 +203,7 @@ export function Pricing(): React.JSX.Element {
                   <a href={CONTACT_SALES_HREF}>Contact sales</a>
                 ) : (
                   <a href={SIGNUP_HREF}>
-                    {tier.name === "Free" ? "Start free" : "Start 7-day free trial"}
+                    {tier.name === "Free" ? "Start free" : "Start 14-day free trial"}
                   </a>
                 )}
               </Button>
@@ -200,7 +218,8 @@ export function Pricing(): React.JSX.Element {
         </div>
 
         <p className="text-center text-caption text-text-disabled mt-8">
-          All plans include a 7-day free trial. No credit card required. Email us at{" "}
+          Free is free forever, no card needed. Paid plans start with a 14-day trial: we take
+          your card, charge nothing until day 14, and cancel is one click. Email us at{" "}
           <a href={CONTACT_SALES_HREF} className="underline hover:text-text-secondary transition-colors">
             hello@sprinthelm.com
           </a>

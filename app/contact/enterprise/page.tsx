@@ -14,16 +14,21 @@ const WHAT_TO_EXPECT = [
   "Pricing scoped to your org size with no hidden line items",
 ];
 
+// What we can actually hand over today. This page converts into a sales
+// conversation, so an unbacked promise here becomes a contract term.
+// Everything removed in the 2026-08-04 truth pass (SSO/SAML + RBAC, SOC 2 and
+// audit logs, BYOK, an SLA-backed on-call rota, Linear/GitHub/Azure DevOps,
+// unlimited workspaces and members) is unbuilt. Discuss roadmap items in the
+// conversation, with dates, rather than listing them as delivered.
 const ENTERPRISE_FEATURES = [
-  "Unlimited team workspaces and members",
-  "SSO / SAML 2.0 + full RBAC",
-  "SOC 2 Type II compliance and audit logs",
-  "BYOK, bring your own Anthropic API key",
-  "Dedicated Customer Success Manager",
-  "SLA-backed support (4h P1/P2)",
-  "Custom scoring weight configuration",
-  "All integrations: Jira, Linear, GitHub, Slack, Azure DevOps",
+  "Unlimited AI summaries and PRD extractions",
+  "Portfolio Simulator across every project",
+  "Pressure Index webhook alerts",
+  "Jira backlog import",
+  "Security questionnaires completed by us",
   "Data Processing Agreement (DPA)",
+  "Dedicated support contact",
+  "Pricing scoped to your org size",
 ];
 
 export default function EnterpriseContactPage() {

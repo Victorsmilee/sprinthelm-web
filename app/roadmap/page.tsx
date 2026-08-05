@@ -17,8 +17,11 @@ const SHIPPED = [
   "Project Completion Forecaster (epic-level)",
   "Estimation risk scoring, adjusted effort per ticket",
   "CSV and JSON backlog import",
-  "Shareable simulation links",
+  // "Shareable simulation links" moved to Planned 2026-08-04: the tier gate
+  // exists but is never consumed anywhere in the app, so nothing ships it.
   "What-if team composition scenarios",
+  // Moved up from Planned: this shipped, and it is not Enterprise-gated.
+  "Custom scoring weight configuration",
   "Sprint ROI Calculator, sprint value, team cost, net profit/loss",
   "Sprint Roadmap, 90-day epic planning view",
   "Board-ready PDF report, standup + stakeholder decks",
@@ -27,15 +30,23 @@ const SHIPPED = [
 ];
 
 const IN_PROGRESS = [
-  "Jira bidirectional sync, push priority scores back as custom fields",
+  "Delivery intelligence, cycle-time history inferred from your Jira issues",
 ];
 
 const PLANNED = [
   "GitHub + Linear native integration",
   "AI Benchmarking, anonymised delivery benchmarks by team size and vertical",
+  "Team Benchmarking, side-by-side comparison across your squads",
   "Slack delivery alerts, Pressure Index webhook notifications",
   "Azure DevOps integration",
-  "Custom scoring weight configuration (Enterprise)",
+  "Shareable simulation links",
+  // Moved down from In progress 2026-08-04: Phase 2 write-back is deferred
+  // until there is a customer asking for it, so calling it in progress
+  // overstated where it actually is.
+  "Jira bidirectional sync, push priority scores back as custom fields",
+  "Shared accounts, invite your team with admin and member roles",
+  "SSO / SAML and role-based access control",
+  "SOC 2 Type II certification",
   "Team velocity history import from Jira",
   "Dependency mapping across epics",
 ];

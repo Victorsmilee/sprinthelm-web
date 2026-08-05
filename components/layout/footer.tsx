@@ -6,7 +6,8 @@ const PRODUCT_LINKS = [
   { label: "Monte Carlo Simulation", href: "/#features" },
   { label: "Pressure Index",         href: "/#features" },
   { label: "AI Executive Summary",   href: "/#features" },
-  { label: "Epic Forecasting",       href: "/#features", soon: true },
+  // Epic Forecasting ships (see nav.tsx). Team Benchmarking does not (G6-03).
+  { label: "Epic Forecasting",       href: "/#features" },
   { label: "Team Benchmarking",      href: "/#features", soon: true },
   { label: "Pricing",                href: "/#pricing" },
   { label: "Roadmap",                href: "/roadmap" },

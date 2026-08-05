@@ -14,15 +14,23 @@ const SECTIONS = [
   },
   {
     title: "2. Scope of Processing",
-    body: "SprintHelm processes Customer Data solely to provide the SprintHelm platform services as described in the Enterprise agreement. Processing includes: storing and analysing backlog ticket data, running Monte Carlo simulations against team capacity inputs, generating AI-powered summaries, and maintaining simulation history in Customer workspaces.",
+    body: "SprintHelm processes Customer Data solely to provide the SprintHelm platform services as described in the Enterprise agreement. Processing includes: storing and analysing backlog ticket data, running Monte Carlo simulations against team capacity inputs, generating AI-powered summaries, and maintaining simulation history in the Customer's account.",
   },
   {
     title: "3. Data Subject Categories",
     body: "The Customer Data processed may relate to: employees and contractors of the Customer (team capacity data, names, and roles used in simulation inputs); end users of the Customer's products (referenced indirectly in ticket descriptions and priority inputs). SprintHelm does not require or process sensitive personal data (as defined in GDPR Article 9) in the normal course of service delivery.",
   },
   {
+    // Corrected 2026-08-04 (launch truth pass). This section is a CONTRACTUAL
+    // representation the Controller relies on as its Article 28 basis, not
+    // marketing copy, so it must describe only measures that are actually in
+    // place. Previously claimed "SOC 2 Type II certification (report available
+    // under NDA on request)" — we hold no such certification and no report
+    // exists — plus "annual penetration testing" and "role-based permissions"
+    // (RBAC is not built). Add a measure back only once it is real, and have
+    // counsel review any change to this section.
     title: "4. Security Measures",
-    body: "SprintHelm maintains the following technical and organisational measures: TLS 1.3 encryption in transit; AES-256 encryption at rest; access controls with role-based permissions; annual penetration testing; SOC 2 Type II certification (report available under NDA on request); incident response procedures with 72-hour breach notification to affected Controllers.",
+    body: "SprintHelm maintains the following technical and organisational measures: TLS 1.3 encryption in transit; AES-256 encryption at rest; row-level access controls that scope every stored record to its owning account; third-party integration credentials (such as Jira OAuth tokens) encrypted with AES-256-GCM under a per-environment key before storage; payment card data handled entirely by Stripe and never received by SprintHelm; incident response procedures with 72-hour breach notification to affected Controllers. SprintHelm is not currently SOC 2 certified and does not hold a SOC 2 report. Our current certification status and roadmap are published at sprinthelm.com/security, and we will complete Controller security questionnaires on request.",
   },
   {
     title: "5. Sub-processors",
@@ -30,7 +38,7 @@ const SECTIONS = [
   },
   {
     title: "6. Data Transfers",
-    body: "Customer Data is stored and processed in the EU by default (Supabase, EU West Europe region). If Customer requests processing in an alternative region, a separate addendum will be agreed. Where sub-processors are located outside the EEA, including Anthropic (United States), Stripe, Vercel (global CDN), and Atlassian (where its OAuth and API servers are operated for the Customer's Jira site), SprintHelm relies on Standard Contractual Clauses (SCCs) as the transfer mechanism. Atlassian's data-transfer disclosures additionally apply when the Customer has connected a Jira workspace.",
+    body: "Customer Data is stored and processed in the EU (Supabase, EU West Europe region). Alternative processing regions are not currently offered; where a Customer requires one, SprintHelm will confirm feasibility in writing before any commitment is made. Where sub-processors are located outside the EEA, including Anthropic (United States), Stripe, Vercel (global CDN), and Atlassian (where its OAuth and API servers are operated for the Customer's Jira site), SprintHelm relies on Standard Contractual Clauses (SCCs) as the transfer mechanism. Atlassian's data-transfer disclosures additionally apply when the Customer has connected a Jira workspace.",
   },
   {
     title: "7. Data Retention & Deletion",

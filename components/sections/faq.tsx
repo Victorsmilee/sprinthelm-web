@@ -8,23 +8,30 @@ import { cn } from "@/lib/utils";
 const FAQS = [
   {
     q: "Does SprintHelm connect to Jira?",
-    a: "Yes, on Pro tier and above. Pro is read-only (import tickets). Team adds bidirectional sync (push priority scores and risk flags back to Jira as custom fields). Enterprise includes full API access. Free tier users can paste backlogs manually as JSON or CSV.",
+    a: "Yes, on Pro tier and above. It is a one-way backlog import: we pull your issues in, score them, and simulate. We do not write anything back to Jira. Free tier users can paste backlogs manually as JSON or CSV.",
   },
   {
     q: "Where is my data stored?",
-    a: "Backlog data is processed in-memory on Free/Pro, not persisted, cleared when your session ends. Team and Enterprise store simulation history in your workspace (encrypted at rest and in transit, EU-West-1 by default). Enterprise can request alternative data residency. We never use your data to train any model.",
+    a: "Backlog data is processed in-memory on Free/Pro, not persisted, cleared when your session ends. Team stores simulation and portfolio history in your account, encrypted at rest and in transit, hosted in the EU. We never use your data to train any model.",
   },
   {
     q: "Can my whole team use one account?",
-    a: "Free and Pro are single-user. Team gives up to 5 team workspaces and 10 members with admin/member roles. Enterprise is unlimited users and workspaces.",
+    a: "Not yet. Every plan is single-user today, so each person signs in with their own account. Shared accounts with invites and roles are on the roadmap. Team tier is about seeing every project in one portfolio, not about seat count.",
   },
   {
     q: "Can I bring my own Anthropic API key?",
-    a: "Enterprise tier only. BYOK routes AI generation through your own Anthropic account, giving you direct control over costs, usage logging, and compliance. Lower tiers use SprintHelm's shared API access against your monthly allocation.",
+    a: "Not yet. Every tier currently uses SprintHelm's shared API access against your monthly allocation. Bring-your-own-key is on the roadmap for Enterprise, so talk to us if it is a requirement for you.",
   },
   {
     q: "What is the difference between Free and Pro?",
-    a: "Free is fully functional for occasional solo use. Limits: 5 AI summaries/month, no Jira, no PRD extraction. Pro removes those limits and adds Jira read sync. If you are running weekly sprints for a single team, you will hit the AI cap within a month. Start free, run three simulations, you will know if Pro is worth $29.",
+    a: "Free is fully functional for occasional solo use: up to 15 tickets, the full priority scoring engine, complexity risk badges and a Pressure Index colour band. It does not include AI summaries, Jira import, PRD extraction or the full Monte Carlo simulation. Pro adds all of those. Start free, run three simulations, and you will know quickly whether Pro earns its place.",
+  },
+  {
+    // Added 2026-08-05 with the trial. State the card requirement plainly: a
+    // customer who discovers it at the payment step feels tricked, and one who
+    // discovers the charge on day 14 files a chargeback.
+    q: "How does the free trial work?",
+    a: "Paid plans start with a 14-day free trial. We do ask for a card up front, and we charge nothing until day 14. You get every feature of the plan from minute one. We email you 3 days before the trial ends so the first charge is never a surprise, and if you cancel before then you are not charged at all: your account simply returns to the Free plan with your data intact. Free itself needs no card and lasts forever. We chose 14 days because a sprint is two weeks, and a shorter trial cannot show you a full cycle.",
   },
   {
     q: "How do I cancel? Is there a contract?",
@@ -32,7 +39,7 @@ const FAQS = [
   },
   {
     q: "How secure is SprintHelm?",
-    a: "TLS 1.3 in transit, AES-256 at rest, Stripe for payments (we never handle card data), OAuth 2.0 for auth. SOC 2 Type II available on Enterprise. Security questionnaires and DPAs available for enterprise prospects at enterprise@sprinthelm.io.",
+    a: "TLS 1.3 in transit, AES-256 at rest, Stripe for payments (we never handle card data), OAuth 2.0 for auth. We are not SOC 2 certified yet and will say so plainly rather than imply otherwise. We can complete security questionnaires and sign a DPA today: email enterprise@sprinthelm.com.",
   },
   {
     q: "What does Monte Carlo simulation mean in plain English?",
