@@ -142,10 +142,13 @@ export default function PrivacyPage() {
                       <td className="py-2 pr-4">Generating AI executive summaries from sprint data</td>
                       <td className="py-2">Contract performance (Art. 6(1)(b))</td>
                     </tr>
-                    <tr>
-                      <td className="py-2 pr-4">Improving the Service (aggregated analytics)</td>
-                      <td className="py-2">Legitimate interests (Art. 6(1)(f))</td>
-                    </tr>
+                    {/*
+                      Removed 2026-08-08: "Improving the Service (aggregated
+                      analytics)" under legitimate interests. We run no analytics
+                      of any kind, so declaring a lawful basis for it described a
+                      processing activity that does not happen. Restore the row
+                      only when analytics actually ships — see section 9.
+                    */}
                     <tr>
                       <td className="py-2 pr-4">Sending product update emails (if opted in)</td>
                       <td className="py-2">Consent (Art. 6(1)(a))</td>
@@ -427,21 +430,38 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">9. Cookies</h2>
               <p>
-                SprintHelm uses the following cookies:
+                <strong className="text-text-primary">
+                  This marketing website sets no cookies at all.
+                </strong>{" "}
+                There is no analytics, no tracking and no advertising technology on it. Our
+                typefaces are downloaded when the site is built and served from our own
+                servers, so your browser never contacts a font provider.
+              </p>
+              <p className="mt-3">
+                The SprintHelm application at app.sprinthelm.com sets two cookies, both
+                strictly necessary to deliver the service you asked for:
               </p>
               <ul className="list-disc list-inside mt-3 space-y-2">
                 <li>
-                  <strong className="text-text-primary">Authentication cookies</strong> (essential): Set by Supabase Auth
-                  to maintain your signed-in session. These are HTTP-only, SameSite=Lax cookies and cannot be
-                  accessed by JavaScript. Required for the Service to function.
+                  <strong className="text-text-primary">Your sign-in session</strong> (set by
+                  Supabase Auth). HTTP-only and SameSite=Lax, so it cannot be read by
+                  JavaScript. Without it you cannot stay signed in.
                 </li>
                 <li>
-                  <strong className="text-text-primary">Vercel analytics</strong> (if enabled): Aggregated, anonymised
-                  page view data with no cross-site tracking. No cookie is set for analytics unless you consent.
+                  <strong className="text-text-primary">Your chosen plan</strong>, kept for ten
+                  minutes while you sign up, so the page you land on matches the plan you
+                  clicked. It expires on its own and holds nothing but the plan name.
                 </li>
               </ul>
               <p className="mt-3">
-                We do not use advertising cookies, third-party tracking pixels, or fingerprinting.
+                Because we set no cookies beyond those two, and neither is used to track you,
+                there is nothing here for you to consent to and we do not show a cookie
+                banner. We do not use advertising cookies, third-party tracking pixels, or
+                fingerprinting.
+              </p>
+              <p className="mt-3">
+                If we introduce analytics in future we will update this section before doing
+                so, and we will either use a cookieless tool or ask for your consent first.
               </p>
             </section>
 
