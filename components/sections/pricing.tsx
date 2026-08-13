@@ -29,7 +29,7 @@ const TIERS = [
   {
     name: "Free",
     tagline: "Run unlimited simulations. See your delivery risk for free.",
-    price: "$0",
+    price: "€0",
     priceNote: "forever",
     popular: false,
     features: [
@@ -46,9 +46,11 @@ const TIERS = [
   {
     name: "Pro",
     tagline: "Full access. Ship on time, every cycle.",
-    price: "$29",
-    priceNote: "per month · $23/mo billed annually",
-    popular: true,
+    price: "€9",
+    listPrice: "€19",
+    founding: true,
+    priceNote: "per month, excl. VAT",
+    popular: false,
     features: [
       "Unlimited backlog scoring",
       "Pressure Index (full score + history)",
@@ -72,9 +74,11 @@ const TIERS = [
   {
     name: "Team",
     tagline: "Every project's delivery risk on one screen, including the Portfolio Simulator.",
-    price: "$59",
-    priceNote: "per month · $47/mo billed annually",
-    popular: false,
+    price: "€19.99",
+    listPrice: "€49",
+    founding: true,
+    priceNote: "per month, excl. VAT",
+    popular: true,
     features: [
       "Everything in Pro",
       "Portfolio Simulator (capacity + consequence across every project)",
@@ -102,7 +106,7 @@ const TIERS = [
     name: "Enterprise",
     tagline: "Company-wide delivery intelligence with a named contact and a direct line to us.",
     price: "Custom",
-    priceNote: "annual contract · volume pricing",
+    priceNote: "annual contract, from €12,000/yr",
     popular: false,
     features: [
       "Everything in Team",
@@ -204,10 +208,20 @@ export function Pricing(): React.JSX.Element {
               <div className="mb-6">
                 <h3 className="text-base font-bold text-text-primary mb-1">{tier.name}</h3>
                 <p className="text-caption text-text-secondary mb-4">{tier.tagline}</p>
-                <div className="flex items-baseline gap-1.5">
+                <div className="flex items-baseline gap-2">
                   <span className="text-3xl font-bold text-text-primary">{tier.price}</span>
+                  {"listPrice" in tier && tier.listPrice && (
+                    <span className="text-lg text-text-disabled line-through" aria-label={`Regular price ${tier.listPrice} per month`}>
+                      {tier.listPrice}
+                    </span>
+                  )}
                 </div>
                 <p className="text-caption text-text-disabled mt-1">{tier.priceNote}</p>
+                {"founding" in tier && tier.founding && (
+                  <p className="text-caption text-accent mt-1.5 font-medium">
+                    Founding Member price, first 100 customers. Locked for 12 months.
+                  </p>
+                )}
               </div>
 
               <Button
