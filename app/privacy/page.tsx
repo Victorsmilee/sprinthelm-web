@@ -66,6 +66,24 @@ export default function PrivacyPage() {
                 Sprint planning data should describe work items, not individuals.
               </p>
 
+              <h3 className="font-semibold text-text-primary mt-4 mb-2">Billing data (paid plans only)</h3>
+              <p>
+                If you subscribe to a paid plan, our payment processor Stripe collects and holds your card
+                details. <strong className="text-text-primary">We never receive or store your full card
+                number.</strong> What we store against your account is limited to:
+              </p>
+              <ul className="list-disc list-inside mt-2 space-y-1">
+                <li>Your Stripe customer and subscription identifiers</li>
+                <li>Your plan, its status, and the renewal or trial end date</li>
+                <li>The card brand and last four digits, as returned by Stripe, so we can show you which card is on file</li>
+                <li>Billing country, and a VAT identification number if you supply one, for tax purposes</li>
+                <li>A billing audit record of plan changes, payments and refunds</li>
+              </ul>
+              <p className="mt-2 text-sm text-text-disabled">
+                Invoices and payment history are available to you in the billing portal linked from your
+                Account page.
+              </p>
+
               <h3 className="font-semibold text-text-primary mt-4 mb-2">Technical data</h3>
               <ul className="list-disc list-inside space-y-1">
                 <li>IP address and approximate location (country/region)</li>
@@ -184,6 +202,28 @@ export default function PrivacyPage() {
                 <div className="rounded-lg border border-border-subtle p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
+                      <p className="font-semibold text-text-primary">Stripe</p>
+                      <p className="text-sm mt-1">
+                        Payment processing, subscription billing and tax calculation for paid plans. Stripe
+                        collects and holds your card details directly; we never receive the full card number.
+                        Stripe also issues your invoices and calculates VAT from your billing country.
+                      </p>
+                      <p className="text-sm mt-1 text-text-disabled">
+                        Data: name, email address, billing address and country, VAT identification number if
+                        supplied, card details (held by Stripe), payment and invoice history.
+                      </p>
+                      <p className="text-sm mt-1">
+                        Stripe&apos;s privacy policy applies to this processing:{" "}
+                        <span className="text-accent">stripe.com/privacy</span>
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Paid plans</span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border-subtle p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
                       <p className="font-semibold text-text-primary">Anthropic (Claude API)</p>
                       <p className="text-sm mt-1">
                         AI language model used to generate executive summaries of your sprint plan.
@@ -234,6 +274,35 @@ export default function PrivacyPage() {
                       <p className="text-sm mt-1 text-text-disabled">Data: request logs, IP addresses</p>
                     </div>
                     <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Global CDN</span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border-subtle p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-semibold text-text-primary">Resend</p>
+                      <p className="text-sm mt-1">
+                        Transactional email delivery. We use it to send account emails (sign-in confirmation,
+                        password reset) and billing emails (trial ending, payment failed, plan changed). We do
+                        not send marketing email through it unless you opt in.
+                      </p>
+                      <p className="text-sm mt-1 text-text-disabled">Data: your email address, the content of the message sent to you, delivery status</p>
+                    </div>
+                    <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">US</span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border-subtle p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-semibold text-text-primary">Upstash</p>
+                      <p className="text-sm mt-1">
+                        Rate limiting for our API, which protects the service from abuse. It stores a short-lived
+                        counter keyed to a request identifier and holds no sprint data and no message content.
+                      </p>
+                      <p className="text-sm mt-1 text-text-disabled">Data: derived request identifier (account or IP based), request counts, expiring within minutes</p>
+                    </div>
+                    <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Infrastructure</span>
                   </div>
                 </div>
 
@@ -318,7 +387,7 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Your encrypted OAuth token rows are hard-deleted immediately.</li>
                 <li>Your workspace connection row is marked as &ldquo;disconnected&rdquo; and is purged within 30 days.</li>
-                <li>Connection audit log entries are retained for 12 months for security and incident-response purposes, then automatically purged. You can request expedited audit-log purge by emailing privacy@sprinthelm.com.</li>
+                <li>Connection audit log entries are retained for 12 months for security and incident-response purposes, after which they are purged. You can request expedited audit-log purge by emailing privacy@sprinthelm.com.</li>
                 <li>Jira ticket and sprint data you imported is NOT automatically deleted; it remains in your SprintHelm account under the standard retention rules and is deleted on full account deletion or on request.</li>
               </ul>
 
@@ -379,12 +448,37 @@ export default function PrivacyPage() {
                 </li>
                 <li>
                   <strong className="text-text-primary">Jira connection audit log:</strong> Retained 12 months
-                  after disconnect for security and incident-response purposes, then automatically purged.
+                  after disconnect for security and incident-response purposes, after which they are purged.
                   Expedited purge available on request to privacy@sprinthelm.com.
                 </li>
                 <li><strong className="text-text-primary">Anonymised aggregate data</strong> (e.g. usage statistics with no personally identifiable information) may be retained indefinitely for service improvement</li>
                 <li><strong className="text-text-primary">Legal obligations:</strong> Some data may be retained longer where required by applicable law (e.g. financial records)</li>
               </ul>
+              <p className="mt-4">
+                <strong className="text-text-primary">How to close your account.</strong> You can close your
+                account yourself at any time from{" "}
+                <strong className="text-text-primary">Account settings &rarr; Close account</strong>. The
+                deletion runs immediately and cannot be undone. Any active subscription is cancelled first, so
+                you are not charged again. You can also email{" "}
+                <a href="mailto:privacy@sprinthelm.com" className="text-accent hover:underline">
+                  privacy@sprinthelm.com
+                </a>{" "}
+                from the address on the account and we will do it for you within 30 days, usually far sooner,
+                and confirm in writing.
+              </p>
+              <p className="mt-3">
+                <strong className="text-text-primary">Cancelling a subscription is not the same as closing your
+                account.</strong> Cancelling moves you to the Free plan and your data is retained. Closing your
+                account erases it.
+              </p>
+              <p className="mt-3">
+                <strong className="text-text-primary">What we keep after you close.</strong> We retain a record
+                that the deletion happened, holding your user identifier, a one-way hash of your email address
+                rather than the address itself, and your billing history. We keep it to evidence that we
+                honoured your request and to meet our financial record-keeping obligations. Security audit
+                entries are kept with your identity removed. Nothing in this record can be used to restore
+                your account or your data.
+              </p>
             </section>
 
             <section>
