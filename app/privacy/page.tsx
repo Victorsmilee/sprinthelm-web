@@ -455,15 +455,29 @@ export default function PrivacyPage() {
                 <li><strong className="text-text-primary">Legal obligations:</strong> Some data may be retained longer where required by applicable law (e.g. financial records)</li>
               </ul>
               <p className="mt-4">
-                <strong className="text-text-primary">How to close your account.</strong> Self-service account
-                deletion is not yet available in the application. To close your account and have your data
-                erased, email{" "}
+                <strong className="text-text-primary">How to close your account.</strong> You can close your
+                account yourself at any time from{" "}
+                <strong className="text-text-primary">Account settings &rarr; Close account</strong>. The
+                deletion runs immediately and cannot be undone. Any active subscription is cancelled first, so
+                you are not charged again. You can also email{" "}
                 <a href="mailto:privacy@sprinthelm.com" className="text-accent hover:underline">
                   privacy@sprinthelm.com
                 </a>{" "}
-                from the address on the account. We action the request within 30 days, usually far sooner, and
-                confirm in writing once it is done. Cancelling a paid subscription is not the same as closing
-                your account: cancelling moves you to the Free plan and your data is retained.
+                from the address on the account and we will do it for you within 30 days, usually far sooner,
+                and confirm in writing.
+              </p>
+              <p className="mt-3">
+                <strong className="text-text-primary">Cancelling a subscription is not the same as closing your
+                account.</strong> Cancelling moves you to the Free plan and your data is retained. Closing your
+                account erases it.
+              </p>
+              <p className="mt-3">
+                <strong className="text-text-primary">What we keep after you close.</strong> We retain a record
+                that the deletion happened, holding your user identifier, a one-way hash of your email address
+                rather than the address itself, and your billing history. We keep it to evidence that we
+                honoured your request and to meet our financial record-keeping obligations. Security audit
+                entries are kept with your identity removed. Nothing in this record can be used to restore
+                your account or your data.
               </p>
             </section>
 

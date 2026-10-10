@@ -346,13 +346,20 @@ export default function TermsPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">14. Termination</h2>
               <p>
-                You may close your account at any time. Self-service deletion is not yet available in the
-                application, so to close your account email{" "}
+                You may close your account at any time from{" "}
+                <strong className="text-text-primary">Account settings &rarr; Close account</strong>. You will
+                be asked to type a confirmation phrase, because the action is immediate and cannot be undone.
+                Closing your account permanently deletes your sprint and backlog data, team configuration,
+                portfolio projects and forecasts, and any connected Jira workspace along with its stored
+                access tokens.
+              </p>
+              <p className="mt-3">
+                If you would rather we did it for you, or you cannot sign in, email{" "}
                 <a href="mailto:privacy@sprinthelm.com" className="text-accent hover:underline">
                   privacy@sprinthelm.com
                 </a>{" "}
                 from the address on the account. We action erasure requests within 30 days and usually far
-                sooner, and we will confirm in writing once it is done.
+                sooner, and we confirm in writing once it is done.
               </p>
               <p className="mt-3">
                 <strong className="text-text-primary">Cancelling a subscription does not close your
@@ -360,9 +367,9 @@ export default function TermsPage() {
                 plan. Closing your account erases it.
               </p>
               <p className="mt-3">
-                Closing your account also disconnects any connected Jira workspace and deletes the stored
-                access tokens for it. We may retain billing, invoice and tax records for as long as applicable
-                law requires, and de-identified audit records that no longer identify you.
+                Any active subscription is cancelled before anything is deleted, so you are not charged
+                again. We may retain billing, invoice and tax records for as long as applicable law requires,
+                and de-identified security audit records that no longer identify you.
               </p>
               <p className="mt-3">
                 We may suspend or terminate your access immediately if you breach these Terms, engage in
