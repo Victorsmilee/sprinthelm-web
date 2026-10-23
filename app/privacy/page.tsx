@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "SprintHelm Privacy Policy. How we collect, use, and protect your data.",
 };
 
-const PRIVACY_EFFECTIVE_DATE = "2 April 2026";
-const PRIVACY_VERSION = "1.0";
+const PRIVACY_EFFECTIVE_DATE = "20 October 2026";
+const PRIVACY_VERSION = "1.1";
 
 export default function PrivacyPage() {
   return (
@@ -301,6 +301,28 @@ export default function PrivacyPage() {
                         counter keyed to a request identifier and holds no sprint data and no message content.
                       </p>
                       <p className="text-sm mt-1 text-text-disabled">Data: derived request identifier (account or IP based), request counts, expiring within minutes</p>
+                    </div>
+                    <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Infrastructure</span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border-subtle p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-semibold text-text-primary">Sentry</p>
+                      <p className="text-sm mt-1">
+                        Error monitoring. When something breaks in SprintHelm, Sentry receives a technical
+                        report so we can find and fix it. We have configured it to send the error only: the
+                        error message, the code location it came from, and which part of the app failed.
+                      </p>
+                      <p className="text-sm mt-1">
+                        We have explicitly switched off every other category it is capable of collecting. It
+                        does not receive your IP address, your cookies or session, request or response
+                        contents, your sprint or ticket data, anything you typed, or the contents of your
+                        Jira workspace. We do not use its session-recording feature, so your screen is never
+                        recorded.
+                      </p>
+                      <p className="text-sm mt-1 text-text-disabled">Data: error message and stack trace, the failing route, the app version and environment</p>
                     </div>
                     <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Infrastructure</span>
                   </div>
