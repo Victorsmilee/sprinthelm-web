@@ -28,13 +28,14 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">1. Who We Are</h2>
               <p>
-                SprintHelm (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) operates the sprint planning platform
-                at <span className="text-accent">app.sprinthelm.com</span> and the marketing website at{" "}
+                SprintHelm is developed and operated by Eben EIO Global O&Uuml; (&ldquo;Eben EIO Global&rdquo;,
+                &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), which operates the sprint planning
+                platform at <span className="text-accent">app.sprinthelm.com</span> and the marketing website at{" "}
                 <span className="text-accent">sprinthelm.com</span>.
               </p>
               <p className="mt-3">
-                For the purposes of the UK GDPR and EU GDPR, SprintHelm is the data controller for personal
-                data collected through the Service. For questions or to exercise your rights, contact us at{" "}
+                For the purposes of the UK GDPR and EU GDPR, Eben EIO Global O&Uuml; is the data controller for
+                personal data collected through the Service. For questions or to exercise your rights, contact us at{" "}
                 <a href="mailto:privacy@sprinthelm.com" className="text-accent hover:underline">
                   privacy@sprinthelm.com
                 </a>.

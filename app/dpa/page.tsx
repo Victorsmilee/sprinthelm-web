@@ -10,7 +10,7 @@ export const metadata = {
 const SECTIONS = [
   {
     title: "1. Parties",
-    body: "This Data Processing Agreement is entered into between SprintHelm Ltd (\"Data Processor\") and the Customer entity identified in the SprintHelm Enterprise order form (\"Data Controller\"). It supplements and forms part of the SprintHelm Enterprise Terms of Service.",
+    body: "This Data Processing Agreement is entered into between Eben EIO Global OÜ, the entity that develops and operates SprintHelm (\"Data Processor\"), and the Customer entity identified in the SprintHelm Enterprise order form (\"Data Controller\"). It supplements and forms part of the SprintHelm Enterprise Terms of Service.",
   },
   {
     title: "2. Scope of Processing",
