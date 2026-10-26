@@ -127,18 +127,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border-subtle mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-caption text-text-disabled">
-            © 2026 SprintHelm Ltd.
+            © 2026 Eben EIO Global OÜ
           </p>
           <p className="text-caption text-text-disabled">
-            Built with{" "}
-            <a
-              href="https://anthropic.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-text-secondary transition-colors duration-150"
-            >
-              Claude by Anthropic
-            </a>
+            Developed and operated by Eben EIO Global OÜ
           </p>
         </div>
       </div>

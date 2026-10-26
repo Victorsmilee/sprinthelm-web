@@ -28,14 +28,20 @@ export default function TermsPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">1. Acceptance of Terms</h2>
               <p>
-                By creating an account or using SprintHelm (the &ldquo;Service&rdquo;), operated by SprintHelm
-                (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), you agree to be bound by these Terms of Service
+                By creating an account or using SprintHelm (the &ldquo;Service&rdquo;), developed and operated by
+                Eben EIO Global O&Uuml; (&ldquo;Eben EIO Global&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+                &ldquo;our&rdquo;), you agree to be bound by these Terms of Service
                 (&ldquo;Terms&rdquo;). If you are accepting these Terms on behalf of an organisation, you warrant
                 that you have authority to bind that organisation. If you do not agree, do not use the Service.
               </p>
               <p className="mt-3">
                 You must be at least 18 years old to use the Service. The Service is intended for business use
                 by engineering and product teams.
+              </p>
+              <p className="mt-3">
+                <strong className="text-text-primary">Operating entity:</strong> Eben EIO Global O&Uuml; is the
+                principal operating, contracting and invoicing entity for SprintHelm. Your contract for the
+                Service is with Eben EIO Global O&Uuml;, and invoices for the Service are issued by it.
               </p>
             </section>
 
@@ -277,9 +283,11 @@ export default function TermsPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">10. Intellectual Property</h2>
               <p>
-                <strong className="text-text-primary">Our property:</strong> SprintHelm, including the platform,
-                scoring algorithms, simulation models, AI prompts, design, and all generated outputs, is owned by
-                us or our licensors. Nothing in these Terms transfers ownership of the platform to you.
+                <strong className="text-text-primary">Our property:</strong> SprintHelm is developed and
+                operated by Eben EIO Global O&Uuml;. Intellectual property rights in the Service &mdash; including
+                the platform, scoring algorithms, simulation models, AI prompts, design, and all generated outputs
+                &mdash; are owned by Eben EIO Global O&Uuml; or its licensors. Nothing in these Terms transfers
+                ownership of the platform to you.
               </p>
               <p className="mt-3">
                 <strong className="text-text-primary">Your data:</strong> You retain ownership of all input data
