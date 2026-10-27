@@ -127,7 +127,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border-subtle mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-caption text-text-disabled">
-            © 2026 Eben EIO Global OÜ
+            © 2026 SprintHelm
           </p>
           <p className="text-caption text-text-disabled">
             Developed and operated by Eben EIO Global OÜ
