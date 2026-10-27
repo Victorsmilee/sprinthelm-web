@@ -522,7 +522,10 @@ export default function PrivacyPage() {
                   privacy@sprinthelm.com
                 </a>.
                 We will respond within 30 days. If you are not satisfied with our response, you have the right
-                to lodge a complaint with your local data protection authority (in the UK: the ICO at ico.org.uk).
+                to lodge a complaint with a supervisory authority. As Eben EIO Global O&Uuml; is established in
+                Estonia, our lead supervisory authority is the Estonian Data Protection Inspectorate
+                (Andmekaitse Inspektsioon, <span className="text-accent">aki.ee</span>). You may also complain
+                to the supervisory authority in your own country of residence.
               </p>
             </section>
 
