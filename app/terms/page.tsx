@@ -397,9 +397,14 @@ export default function TermsPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">16. Governing Law</h2>
               <p>
-                These Terms are governed by and construed in accordance with the laws of England and Wales.
-                Any disputes shall first be subject to good-faith resolution between the parties. If unresolved,
-                disputes shall be submitted to the exclusive jurisdiction of the courts of England and Wales.
+                These Terms are governed by and construed in accordance with the laws of the Republic of
+                Estonia. Any disputes shall first be subject to good-faith resolution between the parties. If
+                unresolved, disputes shall be submitted to the exclusive jurisdiction of the courts of Estonia,
+                with Harju County Court (Harju Maakohus) as the court of first instance.
+              </p>
+              <p className="mt-3">
+                If you are contracting as a consumer, nothing in this clause deprives you of the protection of
+                the mandatory provisions of the law of your country of residence.
               </p>
             </section>
 
