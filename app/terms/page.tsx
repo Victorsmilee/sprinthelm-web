@@ -43,6 +43,20 @@ export default function TermsPage() {
                 principal operating, contracting and invoicing entity for SprintHelm. Your contract for the
                 Service is with Eben EIO Global O&Uuml;, and invoices for the Service are issued by it.
               </p>
+              <ul className="mt-3 space-y-1">
+                <li>
+                  <strong className="text-text-primary">Registered name:</strong> Eben EIO Global O&Uuml;
+                </li>
+                <li>
+                  <strong className="text-text-primary">Registry code:</strong> 17632520
+                </li>
+                <li>
+                  <strong className="text-text-primary">VAT number:</strong> EE100103985
+                </li>
+                <li>
+                  <strong className="text-text-primary">Registered address:</strong> Paldiski mnt 227c, Estonia
+                </li>
+              </ul>
             </section>
 
             <section>
@@ -411,10 +425,10 @@ export default function TermsPage() {
             <section>
               <h2 className="text-lg font-semibold text-text-primary mb-3">17. Contact</h2>
               <p>
-                For questions about these Terms, contact us at{" "}
+                For questions about these Terms, contact Eben EIO Global O&Uuml; at{" "}
                 <a href="mailto:hello@sprinthelm.com" className="text-accent hover:underline">
                   hello@sprinthelm.com
-                </a>.
+                </a>, or by post at Paldiski mnt 227c, Estonia.
               </p>
             </section>
 
