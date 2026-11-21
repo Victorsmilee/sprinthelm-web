@@ -158,7 +158,7 @@ export default function TermsPage() {
               <h2 className="text-lg font-semibold text-text-primary mb-3">5. Free Trial</h2>
               <p>
                 Pro and Team subscriptions begin with a{" "}
-                <strong className="text-text-primary">14-day free trial</strong>. Nothing is charged during the
+                <strong className="text-text-primary">7-day free trial</strong>. Nothing is charged during the
                 trial.
               </p>
               <p className="mt-3">
@@ -225,7 +225,7 @@ export default function TermsPage() {
                 7. Refunds and Your Right to Cancel
               </h2>
               <p>
-                Every paid plan includes a 14-day free trial (section 5), so you can evaluate the Service in
+                Every paid plan includes a 7-day free trial (section 5), so you can evaluate the Service in
                 full before any money is taken.
               </p>
               <p className="mt-3">
