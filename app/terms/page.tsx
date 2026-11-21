@@ -51,10 +51,7 @@ export default function TermsPage() {
                   <strong className="text-text-primary">Registry code:</strong> 17632520
                 </li>
                 <li>
-                  <strong className="text-text-primary">VAT number:</strong> EE100103985
-                </li>
-                <li>
-                  <strong className="text-text-primary">Registered address:</strong> Paldiski mnt 227c, Estonia
+                  <strong className="text-text-primary">VAT number:</strong> EE103046042
                 </li>
               </ul>
             </section>
@@ -428,7 +425,7 @@ export default function TermsPage() {
                 For questions about these Terms, contact Eben EIO Global O&Uuml; at{" "}
                 <a href="mailto:hello@sprinthelm.com" className="text-accent hover:underline">
                   hello@sprinthelm.com
-                </a>, or by post at Paldiski mnt 227c, Estonia.
+                </a>.
               </p>
             </section>
 
