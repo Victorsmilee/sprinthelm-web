@@ -51,7 +51,7 @@ export default function TermsPage() {
                   <strong className="text-text-primary">Registry code:</strong> 17632520
                 </li>
                 <li>
-                  <strong className="text-text-primary">VAT number:</strong> EE100103985
+                  <strong className="text-text-primary">VAT number:</strong> EE103046042
                 </li>
                 <li>
                   <strong className="text-text-primary">Registered address:</strong> Paldiski mnt 227c, Estonia
