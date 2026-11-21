@@ -34,9 +34,8 @@ export default function PrivacyPage() {
                 <span className="text-accent">sprinthelm.com</span>.
               </p>
               <p className="mt-3">
-                For the purposes of the UK GDPR and EU GDPR, Eben EIO Global O&Uuml; (registry code 17632520,
-                registered at Paldiski mnt 227c, Estonia) is the data controller for personal data collected
-                through the Service. For questions or to exercise your rights, contact us at{" "}
+                For the purposes of the UK GDPR and EU GDPR, Eben EIO Global O&Uuml; (registry code 17632520)
+                is the data controller for personal data collected through the Service. For questions or to exercise your rights, contact us at{" "}
                 <a href="mailto:privacy@sprinthelm.com" className="text-accent hover:underline">
                   privacy@sprinthelm.com
                 </a>.
