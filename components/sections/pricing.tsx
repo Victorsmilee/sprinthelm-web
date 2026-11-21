@@ -12,7 +12,7 @@ const CONTACT_SALES_HREF = "mailto:hello@sprinthelm.com";
  * The `?plan=` param is NOT decoration — app/signup/page.tsx reads it and
  * renders a plan-specific page (heading, trial badge, price line, the three
  * headline features). Without it the page falls back to `free`, so a customer
- * who clicked "Start 14-day free trial" on the Pro card landed on "Get started
+ * who clicked "Start 7-day free trial" on the Pro card landed on "Get started
  * free / Free forever / No credit card required" and had to work out for
  * themselves that they were in the wrong place. That was the state of the
  * live funnel until 2026-08-06.
@@ -171,7 +171,7 @@ export function Pricing(): React.JSX.Element {
             Simple plans. Start free.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto">
-            Every paid plan starts with a 14-day free trial. Cancel any time before it
+            Every paid plan starts with a 7-day free trial. Cancel any time before it
             ends and you won&apos;t be charged. The Portfolio Simulator ships with Team and Enterprise.
           </p>
         </motion.div>
@@ -234,7 +234,7 @@ export function Pricing(): React.JSX.Element {
                   <a href={CONTACT_SALES_HREF}>Contact sales</a>
                 ) : (
                   <a href={signupHref(tier.name)}>
-                    {tier.name === "Free" ? "Start free" : "Start 14-day free trial"}
+                    {tier.name === "Free" ? "Start free" : "Start 7-day free trial"}
                   </a>
                 )}
               </Button>
@@ -249,7 +249,7 @@ export function Pricing(): React.JSX.Element {
         </div>
 
         <p className="text-center text-caption text-text-disabled mt-8">
-          Free is free forever, no card needed. Paid plans start with a 14-day trial: we take
+          Free is free forever, no card needed. Paid plans start with a 7-day trial: we take
           your card, charge nothing until day 14, and cancel is one click. Email us at{" "}
           <a href={CONTACT_SALES_HREF} className="underline hover:text-text-secondary transition-colors">
             hello@sprinthelm.com

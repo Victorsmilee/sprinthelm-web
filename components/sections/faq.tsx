@@ -31,7 +31,7 @@ const FAQS = [
     // customer who discovers it at the payment step feels tricked, and one who
     // discovers the charge on day 14 files a chargeback.
     q: "How does the free trial work?",
-    a: "Paid plans start with a 14-day free trial. We do ask for a card up front, and we charge nothing until day 14. You get every feature of the plan from minute one. We email you 3 days before the trial ends so the first charge is never a surprise, and if you cancel before then you are not charged at all: your account simply returns to the Free plan with your data intact. Free itself needs no card and lasts forever. We chose 14 days because a sprint is two weeks, and a shorter trial cannot show you a full cycle.",
+    a: "Paid plans start with a 7-day free trial. We do ask for a card up front, and we charge nothing until day 7. You get every feature of the plan from minute one. We email you 3 days before the trial ends so the first charge is never a surprise, and if you cancel before then you are not charged at all: your account simply returns to the Free plan with your data intact. Free itself needs no card and lasts forever. Seven days is enough because SprintHelm is judged on the plan, not on the sprint outcome: import a backlog and the pressure index, the forecast and the what-if are all there in the first session.",
   },
   {
     q: "How do I cancel? Is there a contract?",
