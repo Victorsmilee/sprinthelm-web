@@ -62,7 +62,7 @@ export default function SecurityPage() {
 
         {/* Controls inventory */}
         <section className="py-16 px-6">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
               <div>
                 <h2 className="text-h3 font-bold text-text-primary mb-2">Controls inventory</h2>
@@ -132,7 +132,7 @@ export default function SecurityPage() {
 
         {/* Sub-processors */}
         <section className="py-16 px-6 border-t border-border-subtle">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <h2 className="text-h3 font-bold text-text-primary mb-2">Sub-processors</h2>
             <p className="text-sm text-text-secondary mb-8">
               Third parties that process customer data on our behalf. We give 30 days&apos; notice
@@ -167,9 +167,9 @@ export default function SecurityPage() {
 
         {/* Documents */}
         <section className="py-16 px-6 border-t border-border-subtle">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <h2 className="text-h3 font-bold text-text-primary mb-8">Documents</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { href: "/security/controls", label: "Controls one-pager", note: "Printable summary for your vendor review" },
                 { href: "/dpa", label: "Data Processing Agreement", note: "GDPR Article 28 processor terms" },

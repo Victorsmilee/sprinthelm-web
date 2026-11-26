@@ -260,7 +260,7 @@ export default function BlogPage(): React.JSX.Element {
 
         {/* Posts */}
         <section className="py-20 px-6">
-          <div className="mx-auto max-w-4xl space-y-6">
+          <div className="mx-auto max-w-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {POSTS.map((post) => (
               <button
                 key={post.title}

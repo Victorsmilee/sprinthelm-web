@@ -102,7 +102,7 @@ export default function DocsPage(): React.JSX.Element {
               <p className="text-text-disabled text-sm">No results found for &ldquo;{query}&rdquo;. Try a different search term.</p>
             </div>
           ) : (
-            <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="mx-auto max-w-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {sectionsToShow.map((sectionName) => {
                 const meta = SECTION_META[sectionName];
                 const Icon = meta?.icon ?? BookOpen;
