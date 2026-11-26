@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
+import LegalShell from "@/components/legal/LegalShell";
 
 export const metadata: Metadata = {
   title: "Privacy Policy, SprintHelm",
@@ -15,13 +16,10 @@ export default function PrivacyPage() {
     <>
       <Nav />
       <main className="min-h-screen section-padding pt-24">
-        <div className="mx-auto max-w-3xl w-full">
-          <div className="mb-10">
-            <h1 className="text-h1 font-bold text-text-primary mb-2">Privacy Policy</h1>
-            <p className="text-sm text-text-disabled">
+        <LegalShell title="Privacy Policy" meta={<p className="text-sm text-text-disabled">
               Effective date: {PRIVACY_EFFECTIVE_DATE} &nbsp;·&nbsp; Version {PRIVACY_VERSION}
-            </p>
-          </div>
+            </p>}>
+          
 
           <div className="prose prose-invert max-w-none space-y-8 text-text-secondary leading-relaxed">
 
@@ -655,7 +653,7 @@ export default function PrivacyPage() {
             </section>
 
           </div>
-        </div>
+        </LegalShell>
       </main>
       <Footer />
     </>
