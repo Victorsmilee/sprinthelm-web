@@ -13,8 +13,8 @@ describe("Regression — homepage section order", () => {
     cy.visit("/");
 
     cy.get("#faq").then(($faq) => {
-      // Find the CTA section — it contains the "Stop making $500k" heading
-      cy.contains("Stop making $500k delivery decisions on intuition")
+      // Find the CTA section — it contains the "Stop making €500k" heading
+      cy.contains("Stop making €500k delivery decisions on intuition")
         .closest("section")
         .then(($cta) => {
           // FAQ's DOM position (offsetTop) must be less than CTA's
@@ -59,7 +59,7 @@ describe("Regression — CTA section URLs", () => {
   beforeEach(() => cy.visit("/"));
 
   it("CTA section primary button links to app.sprinthelm.com/signup", () => {
-    cy.contains("Stop making $500k delivery decisions on intuition")
+    cy.contains("Stop making €500k delivery decisions on intuition")
       .closest("section")
       .contains("Run your first simulation")
       .closest("a")
@@ -67,7 +67,7 @@ describe("Regression — CTA section URLs", () => {
   });
 
   it("CTA section demo link does NOT point to Streamlit", () => {
-    cy.contains("Stop making $500k delivery decisions on intuition")
+    cy.contains("Stop making €500k delivery decisions on intuition")
       .closest("section")
       .contains("See a live demo")
       .closest("a")

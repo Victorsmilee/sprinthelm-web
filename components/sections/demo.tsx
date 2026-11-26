@@ -26,7 +26,7 @@ const DEMO_HIGHLIGHTS = [
   {
     icon: Brain,
     label: "Cost of forcing +1",
-    value: "$240k at risk",
+    value: "€240k at risk",
     sub: "with a traceable why",
   },
 ];

@@ -215,9 +215,9 @@ function calcScore(answers: Answers): number {
   s += (val - 1) * 0.5;
 
   const pay = (answers["q12"] as string) ?? "";
-  if (pay.includes("$60–$99") || pay.includes("$100–$199") || pay.includes("$200+")) {
+  if (pay.includes("€60–€99") || pay.includes("€100–€199") || pay.includes("€200+")) {
     s += 1;
-  } else if (pay.includes("$29–$59")) {
+  } else if (pay.includes("€29–€59")) {
     s += 0.5;
   }
 
@@ -808,18 +808,18 @@ export function SurveyForm(): React.ReactElement {
               <ErrorMsg show={!!errors["q11"]} msg="Please select one." />
             </QBlock>
 
-            {/* q12, Price point (team-based USD) */}
+            {/* q12, Price point (team-based EUR — the product sells in EUR) */}
             <QBlock>
               <QLabel required>
                 At what monthly price would SprintHelm be a no-brainer purchase for your team?
               </QLabel>
               <div className="grid grid-cols-2 gap-1.5">
                 {[
-                  "Under $29/mo",
-                  "$29–$59/mo",
-                  "$60–$99/mo",
-                  "$100–$199/mo",
-                  "$200+/mo",
+                  "Under €29/mo",
+                  "€29–€59/mo",
+                  "€60–€99/mo",
+                  "€100–€199/mo",
+                  "€200+/mo",
                   "Free only, I wouldn't pay",
                 ].map((opt) => (
                   <RadioOpt

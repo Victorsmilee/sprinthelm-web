@@ -158,11 +158,11 @@ export function HeroPortfolioAnimation() {
               >
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-text-secondary">Cost of forcing Loyalty 2.0</span>
-                  <span className="font-mono font-semibold text-danger">$240k at risk</span>
+                  <span className="font-mono font-semibold text-danger">€240k at risk</span>
                 </div>
                 <p className="text-caption text-text-secondary">
                   <span className="text-accent font-semibold">Recommendation:</span>{" "}
-                  delay Loyalty 2.0 one sprint and every project ships, $0 at risk.
+                  delay Loyalty 2.0 one sprint and every project ships, €0 at risk.
                 </p>
               </motion.div>
             )}

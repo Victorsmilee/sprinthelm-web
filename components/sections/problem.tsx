@@ -6,7 +6,7 @@ import { AlertTriangle, Users, TrendingDown } from "lucide-react";
 const PROBLEMS = [
   {
     icon: TrendingDown,
-    title: "You are making $500k roadmap decisions on spreadsheet intuition.",
+    title: "You are making €500k roadmap decisions on spreadsheet intuition.",
     body: "Every commitment you make, from a single project to a whole quarter, is a bet on incomplete information. There is no simulation layer between the ask and the yes. Months later: missed dates, an incident, a conversation nobody wanted.",
   },
   {
