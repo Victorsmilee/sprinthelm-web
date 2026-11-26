@@ -323,6 +323,10 @@ export default function PrivacyPage() {
                         Jira workspace. We do not use its session-recording feature, so your screen is never
                         recorded.
                       </p>
+                      <p className="text-sm mt-1">
+                        Sentry is configured on its EU region, so these reports are stored in Germany rather
+                        than being sent out of the EU.
+                      </p>
                       <p className="text-sm mt-1 text-text-disabled">Data: error message and stack trace, the failing route, the app version and environment</p>
                     </div>
                     <span className="shrink-0 text-xs text-text-disabled bg-bg-elevated px-2 py-1 rounded">Infrastructure</span>
@@ -442,6 +446,12 @@ export default function PrivacyPage() {
                 which is operated from the United States. This constitutes an international transfer under GDPR.
                 This transfer is covered by Anthropic&apos;s Standard Contractual Clauses (SCCs) with their
                 EU customers. By using the AI summary feature, you consent to this transfer.
+              </p>
+              <p className="mt-3">
+                Error monitoring runs on Sentry&apos;s EU region, with error reports stored in Germany, so
+                this is not an international transfer of stored data. Sentry Inc. is based in the United
+                States and may access that data when providing support; that access is covered by Standard
+                Contractual Clauses.
               </p>
               <p className="mt-3">
                 Vercel&apos;s global CDN may process request data at edge locations worldwide. This is limited
