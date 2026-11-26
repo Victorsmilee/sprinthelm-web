@@ -80,7 +80,7 @@ export default function RoadmapPage() {
 
         {/* Roadmap columns */}
         <section className="py-20 px-6">
-          <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mx-auto max-w-content grid grid-cols-1 md:grid-cols-3 gap-6">
             {COLUMNS.map((col) => (
               <div key={col.title} className="rounded-xl bg-bg-surface border border-border-subtle overflow-hidden">
                 <div className={`flex items-center gap-2.5 px-6 py-4 border-b border-border-subtle ${col.bg} border`}>
