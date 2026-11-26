@@ -1,6 +1,7 @@
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { FileText, ArrowRight } from "lucide-react";
+import LegalShell from "@/components/legal/LegalShell";
 
 export const metadata = {
   title: "Data Processing Agreement, SprintHelm",
@@ -81,14 +82,16 @@ export default function DpaPage() {
 
         {/* Sections */}
         <section className="py-20 px-6">
-          <div className="mx-auto max-w-3xl space-y-8">
-            {SECTIONS.map((section) => (
-              <div key={section.title}>
-                <h2 className="text-base font-bold text-text-primary mb-3">{section.title}</h2>
-                <p className="text-sm text-text-secondary leading-relaxed">{section.body}</p>
-              </div>
-            ))}
-          </div>
+          <LegalShell>
+            <div className="space-y-8">
+              {SECTIONS.map((section) => (
+                <div key={section.title}>
+                  <h2 className="text-base font-bold text-text-primary mb-3">{section.title}</h2>
+                  <p className="text-sm text-text-secondary leading-relaxed">{section.body}</p>
+                </div>
+              ))}
+            </div>
+          </LegalShell>
         </section>
 
         {/* Execute DPA */}
