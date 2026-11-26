@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
+import LegalShell from "@/components/legal/LegalShell";
 
 export const metadata: Metadata = {
   title: "Terms of Service, SprintHelm",
@@ -15,13 +16,10 @@ export default function TermsPage() {
     <>
       <Nav />
       <main className="min-h-screen section-padding pt-24">
-        <div className="mx-auto max-w-3xl w-full">
-          <div className="mb-10">
-            <h1 className="text-h1 font-bold text-text-primary mb-2">Terms of Service</h1>
-            <p className="text-sm text-text-disabled">
+        <LegalShell title="Terms of Service" meta={<p className="text-sm text-text-disabled">
               Effective date: {TERMS_EFFECTIVE_DATE} &nbsp;·&nbsp; Version {TERMS_VERSION}
-            </p>
-          </div>
+            </p>}>
+          
 
           <div className="prose prose-invert max-w-none space-y-8 text-text-secondary leading-relaxed">
 
@@ -430,7 +428,7 @@ export default function TermsPage() {
             </section>
 
           </div>
-        </div>
+        </LegalShell>
       </main>
       <Footer />
     </>
