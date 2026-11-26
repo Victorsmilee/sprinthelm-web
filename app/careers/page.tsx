@@ -454,9 +454,9 @@ export default function CareersPage() {
 
         {/* What you gain */}
         <section className="py-20 px-6 border-b border-border-subtle">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <h2 className="text-h2 font-bold text-text-primary mb-10">Why join.</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {VALUES.map((v) => (
                 <div key={v.title} className="p-6 rounded-xl bg-bg-surface border border-border-subtle">
                   <h3 className="text-base font-bold text-text-primary mb-2">{v.title}</h3>
@@ -469,12 +469,12 @@ export default function CareersPage() {
 
         {/* Open roles */}
         <section className="py-20 px-6 border-b border-border-subtle">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <h2 className="text-h2 font-bold text-text-primary mb-3">Open roles.</h2>
             <p className="text-sm text-text-secondary mb-10">
               Three open roles. Click any to read the full description and apply.
             </p>
-            <div className="space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {OPEN_ROLES.map((role) => (
                 <button
                   key={role.slug}
@@ -483,7 +483,7 @@ export default function CareersPage() {
                   onClick={() => openRole(role)}
                   className="w-full text-left block p-8 rounded-xl bg-bg-surface border border-border-subtle hover:border-border-active hover:-translate-y-0.5 transition-all duration-200 group cursor-pointer"
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div className="flex flex-col gap-3 mb-4">
                     <div>
                       <h3 className="text-lg font-bold text-text-primary group-hover:text-accent transition-colors duration-200 mb-1.5">
                         {role.title}

@@ -77,7 +77,7 @@ export default function AboutPage() {
 
         {/* Values */}
         <section className="py-20 px-6 border-b border-border-subtle">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <h2 className="text-h2 font-bold text-text-primary mb-12">What we believe.</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {VALUES.map((v) => (

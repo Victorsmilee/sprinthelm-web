@@ -112,9 +112,9 @@ export default function SupportPage(): React.JSX.Element {
 
         {/* Topics grid */}
         <section className="py-20 px-6 border-b border-border-subtle">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-content">
             <h2 className="text-h3 font-bold text-text-primary mb-10">Common topics</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {TOPICS.map((topic) => (
                 <div key={topic.title} className="p-6 rounded-xl bg-bg-surface border border-border-subtle">
                   <h3 className="text-base font-bold text-text-primary mb-4">{topic.title}</h3>
