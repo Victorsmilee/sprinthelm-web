@@ -60,7 +60,15 @@ const config: Config = {
         "section-mobile":  "48px",
       },
       maxWidth: {
-        content: "1200px",
+        // Raised from 1200px on 2026-11-26. At 1200 a 2560px display left
+        // roughly 650px of dead space on each side, which read as the page
+        // being narrow rather than deliberate.
+        //
+        // NOT full-bleed, and that is the point: `prose` stays at 640 because
+        // paragraph line-length is a readability constraint, not a layout one.
+        // 1440 is the width the cards and the hero want; body text keeps its
+        // own, narrower cap.
+        content: "1440px",
         prose:   "640px",
       },
       borderRadius: {
