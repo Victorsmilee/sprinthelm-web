@@ -82,8 +82,25 @@ const TOPICS: { title: string; links: TopicLink[] }[] = [
   },
 ];
 
+/**
+ * Match a topic link to its article.
+ *
+ * Compares apostrophe-insensitively on purpose. These labels are duplicated
+ * by hand between TOPICS (above) and SUPPORT_CONTENT (lib/support-content.ts),
+ * and on 2026-11-27 "What\u2019s included in Free vs Pro" was found dead in
+ * production: the topic link used a typographic apostrophe and the article a
+ * straight one, so `===` never matched and clicking the link silently did
+ * nothing. Nothing surfaced it — openDoc's `if (entry)` swallows a miss, and
+ * the repo had no CI. Normalising means a future copy-paste through an editor
+ * that smartens quotes cannot resurrect it.
+ */
+function normalizeLabel(label: string): string {
+  return label.replace(/[\u2018\u2019]/g, "'").trim();
+}
+
 function findEntry(label: string): DocEntry | undefined {
-  return SUPPORT_CONTENT.find((e) => e.label === label);
+  const target = normalizeLabel(label);
+  return SUPPORT_CONTENT.find((e) => normalizeLabel(e.label) === target);
 }
 
 export default function SupportPage(): React.JSX.Element {

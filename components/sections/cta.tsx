@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function Cta() {
   return (
-    <section className="section-padding">
+    <section id="cta" className="section-padding">
       <div className="mx-auto max-w-content">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

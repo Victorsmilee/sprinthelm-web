@@ -131,7 +131,7 @@ export const SUPPORT_CONTENT: DocEntry[] = [
   // Plans & billing
   {
     section: "Plans & billing",
-    label: "What's included in Free vs Pro",
+    label: "What\u2019s included in Free vs Pro",
     content: `
 <p>SprintHelm has four plans: Free, Pro, Team, and Enterprise. Here's what's included at each level.</p>
 

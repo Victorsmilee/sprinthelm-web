@@ -1,0 +1,76 @@
+# CI for the marketing site.
+#
+# WHY THIS EXISTS: this repo had no workflows at all. Its Cypress specs had
+# therefore never run anywhere, and by 2026-11-26 eleven of forty-two
+# assertions were failing on `main` against copy that no longer existed. The
+# site was fine; the safety net was fiction, which is worse than no net —
+# a real regression would have been indistinguishable from the standing noise.
+#
+# Two jobs: Typecheck is seconds and catches most of what breaks a Vercel
+# build, so it runs first for fast feedback. Cypress needs a production build
+# and a server, so it runs on its own.
+#
+# NO LINT JOB, deliberately. `npm run lint` is `next lint`, and ESLint has
+# never been configured in this repo — the command drops into an interactive
+# "How would you like to configure ESLint?" prompt, which in CI either hangs
+# or fails on the first run. Shipping that would reproduce the exact disease
+# this file is curing: a red pipeline nobody trusts. Configuring ESLint is a
+# follow-up of its own (and `next lint` is deprecated in Next 16 in favour of
+# the ESLint CLI, so that follow-up should go straight to the CLI).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A new push to the same PR makes the previous run irrelevant.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit
+
+  cypress:
+    name: Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # `cypress-io/github-action` installs deps, runs the build, starts the
+      # server and waits for it before running the specs. `start` + `wait-on`
+      # are what keep this from racing the server, which is the failure mode
+      # that broke the app repo's Cypress job on runner 2.338.0.
+      - uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm run start
+          wait-on: "http://localhost:3001"
+          wait-on-timeout: 120
+        env:
+          # cypress.config.ts points at :3001; `next start` defaults to :3000.
+          PORT: 3001
+
+      # Screenshots are the only way to see what a headless failure looked like.
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+          retention-days: 7

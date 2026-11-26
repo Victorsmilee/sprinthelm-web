@@ -8,7 +8,7 @@ describe("Navigation — footer links resolve", () => {
     { href: "/about",               heading: "delivery intelligence layer" },
     { href: "/blog",                heading: "Blog" },
     { href: "/careers",             heading: "Build the future of sprint planning" },
-    { href: "/security",            heading: "Enterprise-grade security" },
+    { href: "/security",            heading: "Your backlog is your roadmap" },
     { href: "/contact",             heading: "Get in touch" },
     { href: "/roadmap",             heading: "What's coming to SprintHelm" },
     { href: "/support",             heading: "We're here to help" },
@@ -71,7 +71,13 @@ describe("Navigation — in-page CTAs", () => {
     cy.visit("/about");
     cy.contains("Run your first simulation")
       .closest("a")
-      .should("have.attr", "href", "https://app.sprinthelm.com/signup");
+      .invoke("attr", "href")
+      .should((href) => {
+        // The link carries ?plan=free. Asserting the bare /signup URL was
+        // what failed here: the plan param is deliberate, not incidental.
+        expect(href).to.contain("https://app.sprinthelm.com/signup");
+        expect(href).to.match(/[?&]plan=(free|pro|team)/);
+      });
   });
 
   it("careers page speculative CTA uses hello@sprinthelm.com", () => {
