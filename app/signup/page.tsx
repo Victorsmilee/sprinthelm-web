@@ -14,7 +14,7 @@ const PERKS = [
   "Monte Carlo simulation, probability, not guesswork",
   "Pressure Index, spot burnout risk before it hits",
   "AI executive summary in plain English",
-  "No credit card. No Jira connection required.",
+  "No payment card. No Jira connection required.",
 ];
 
 export default function SignupPage() {
@@ -102,7 +102,7 @@ export default function SignupPage() {
                   </Button>
                 </form>
                 <p className="text-caption text-text-disabled mt-4 text-center">
-                  No credit card. No Jira required. Results in under 60 seconds.
+                  No payment card. No Jira connection required. Results in under 60 seconds.
                 </p>
 
                 <div className="mt-6 pt-6 border-t border-border-subtle">
