@@ -10,7 +10,7 @@ import { HowItWorks }   from "@/components/sections/how-it-works";
 import { Features }     from "@/components/sections/features";
 import { Demo }         from "@/components/sections/demo";
 import { Pricing }      from "@/components/sections/pricing";
-import { Testimonials } from "@/components/sections/testimonials";
+import { Trust }        from "@/components/sections/trust";
 import { Faq }          from "@/components/sections/faq";
 import { Cta }          from "@/components/sections/cta";
 
@@ -31,7 +31,7 @@ export default function Home() {
         <Features />
         <Demo />
         <Pricing />
-        <Testimonials />
+        <Trust />
         <Faq />
         <Cta />
       </main>
