@@ -3,8 +3,9 @@ import { Footer } from "@/components/layout/footer";
 import { ArrowRight, Zap } from "lucide-react";
 
 export const metadata = {
-  title: "About, SprintHelm",
-  description: "We're building the delivery intelligence layer engineering teams have been missing.",
+  title: "About SprintHelm, Delivery Forecasting for Engineering Leaders",
+  description:
+    "Why we built SprintHelm: engineering leaders commit to product roadmaps they cannot yet see. We built the forecast that fixes that.",
 };
 
 const VALUES = [
@@ -35,12 +36,12 @@ export default function AboutPage() {
               About SprintHelm
             </div>
             <h1 className="text-h1 font-bold text-text-primary mb-6 text-balance leading-tight">
-              We&apos;re building the delivery intelligence layer engineering teams have been missing.
+              Engineering leaders commit to product roadmaps they cannot yet see. We built the forecast that fixes that.
             </h1>
             <p className="text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
-              SprintHelm exists to eliminate the information gap between what teams plan and what they can
+              SprintHelm closes the gap between the roadmap leadership commits to and what the team can
               actually deliver. Not a project management tool. Not another dashboard. A simulation engine
-              that turns uncertainty into a number you can act on.
+              that turns that uncertainty into a number you can commit to.
             </p>
           </div>
         </section>
@@ -56,20 +57,28 @@ export default function AboutPage() {
                 spillover, an incident, or a conversation nobody wanted to have.
               </p>
               <p>
-                We&apos;d seen this in fast-growing startups and in engineering orgs with hundreds of
-                engineers. The root cause was always the same, teams were making commitment decisions
-                without a simulation layer. They had velocity data. They had backlogs. They had estimates.
-                But they had no way to ask: <em>&quot;If we add this, what actually breaks?&quot;</em>
+                It occurred to me last year, sitting in my own office, watching the same failure repeat
+                across the organisations and dev teams I had worked with: capable people committing to
+                roadmaps nobody had actually tested. This was not a people problem. It was a missing tool.
+                I took the idea to several founders and engineering leaders, and every one of them
+                recognised it instantly. (We will name them here as soon as they are ready to be named.)
               </p>
               <p>
-                SprintHelm was founded in 2025 to answer that question. We built a Monte Carlo engine on
-                top of real delivery patterns, a priority scoring model that reflects business objectives
-                rather than gut feel, and an AI layer that turns the output into something a stakeholder
-                can read in 30 seconds.
+                The root cause was always the same. Teams were making commitment decisions without a
+                simulation layer. They had velocity data. They had backlogs. They had estimates. But they
+                had no way to ask: <em>&quot;If we add this, what actually breaks?&quot;</em> And above the
+                team the question only gets bigger: with the people we have, across every project, what
+                ships, what slips, and what does forcing one more in actually cost?
               </p>
               <p>
-                The result: teams walk into planning with a delivery forecast they can stand behind. No
-                guesswork. No surprises.
+                SprintHelm was founded in 2025 to answer that. We built a Monte Carlo engine on top of
+                real delivery patterns, a priority scoring model that reflects business objectives rather
+                than gut feel, a portfolio layer that prices the cost of over-commitment, and an AI layer
+                that turns the output into something a stakeholder can read in 30 seconds.
+              </p>
+              <p>
+                The result: leaders walk into the planning room with a delivery forecast they can stand
+                behind. No guesswork. No surprises.
               </p>
             </div>
           </div>
@@ -94,7 +103,7 @@ export default function AboutPage() {
         <section className="py-20 px-6 text-center">
           <div className="mx-auto max-w-xl">
             <h2 className="text-h2 font-bold text-text-primary mb-4">Ready to stop planning blind?</h2>
-            <p className="text-text-secondary mb-8">Free to start. No credit card. Results in under 60 seconds.</p>
+            <p className="text-text-secondary mb-8">Start for free, no payment cards required. Results in under 60 seconds.</p>
             <a
               href="https://app.sprinthelm.com/signup?plan=free"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-colors duration-200"

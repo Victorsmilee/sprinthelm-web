@@ -51,7 +51,9 @@ export default function OurStoryPage() {
             <p>
               That number was always a gut call dressed up as a commitment. I watched it happen enough
               times to stop blaming the team and start blaming the tools. Our software could track what
-              we promised. Nothing could tell us whether the promise was real.
+              we promised. Nothing could tell us whether the promise was real. When I described it to
+              other founders and engineering leaders, every one of them had lived the same thing. (We will
+              name them here once they are ready to be named.)
             </p>
           </Chapter>
 
@@ -183,7 +185,7 @@ export default function OurStoryPage() {
         <section className="py-20 px-6 text-center border-t border-border-subtle">
           <div className="mx-auto max-w-xl">
             <h2 className="text-h2 font-bold text-text-primary mb-4">See your first sprint before you live it.</h2>
-            <p className="text-text-secondary mb-8">Free to start. No credit card. Results in under 60 seconds.</p>
+            <p className="text-text-secondary mb-8">Start for free, no payment cards required. Results in under 60 seconds.</p>
             <a
               href={APP_SIGNUP}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-colors duration-200"
