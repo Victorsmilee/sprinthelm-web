@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { ArrowRight, Layers, Scale, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -37,13 +37,7 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="section-padding bg-bg-surface border-y border-border-subtle">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <Reveal className="text-center mb-16">
           <p className="text-label font-semibold text-accent uppercase tracking-wider mb-3">
             Portfolio Simulator
           </p>
@@ -56,16 +50,12 @@ export function Portfolio() {
             happens next, across the whole portfolio, so the three hardest questions in
             engineering leadership get answers with math that traces.
           </p>
-        </motion.div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {QUESTIONS.map((item, i) => (
-            <motion.div
+        <Reveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {QUESTIONS.map((item) => (
+            <div
               key={item.question}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
               className="relative group p-6 rounded-xl bg-bg-primary border border-border-subtle hover:border-accent/50 transition-all duration-200 hover:-translate-y-1"
             >
               <div className="mb-4 inline-flex p-2.5 rounded-lg bg-accent/10 text-accent">
@@ -75,17 +65,11 @@ export function Portfolio() {
                 {item.question}
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed">{item.answer}</p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </Reveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <Reveal className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" asChild>
             <a
               href={PORTFOLIO_DEMO_URL}
@@ -100,7 +84,7 @@ export function Portfolio() {
           <p className="text-caption text-text-disabled">
             Available on Team and Enterprise plans. Pre-loaded demo, no account needed.
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

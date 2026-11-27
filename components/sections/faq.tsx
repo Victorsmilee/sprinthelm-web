@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Reveal from "@/components/motion/Reveal";
 
 const FAQS = [
   {
@@ -91,31 +92,23 @@ export function Faq() {
   return (
     <section id="faq" className="section-padding">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <Reveal className="text-center mb-12">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             Frequently asked questions.
           </h2>
-        </motion.div>
+        </Reveal>
 
-        <div className="mx-auto max-w-3xl bg-bg-surface rounded-xl border border-border-subtle px-6 md:px-10">
+        {/* The accordion card itself had no entrance (only the heading and the
+            footer CTA did). Reveal it as one block — a single settle reads as
+            more composed than 9 border-divided rows staggering in, and the rows
+            keep their own click-to-expand motion. */}
+        <Reveal className="mx-auto max-w-3xl bg-bg-surface rounded-xl border border-border-subtle px-6 md:px-10">
           {FAQS.map((faq) => (
             <FaqItem key={faq.q} q={faq.q} a={faq.a} />
           ))}
-        </div>
+        </Reveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto max-w-3xl mt-10 p-8 rounded-xl border border-border-subtle bg-bg-surface text-center"
-        >
+        <Reveal className="mx-auto max-w-3xl mt-10 p-8 rounded-xl border border-border-subtle bg-bg-surface text-center">
           <p className="text-text-primary font-semibold mb-1">Still have questions?</p>
           <p className="text-sm text-text-secondary mb-6">
             Our team is happy to walk you through SprintHelm, discuss your use case, or help you evaluate the right plan.
@@ -126,7 +119,7 @@ export function Faq() {
           >
             Talk to us at hello@sprinthelm.com
           </a>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

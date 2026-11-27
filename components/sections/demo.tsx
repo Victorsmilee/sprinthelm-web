@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { ArrowRight, BarChart2, Gauge, Brain, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -40,13 +40,7 @@ export function Demo() {
   return (
     <section id="demo" className="section-padding bg-bg-surface border-y border-border-subtle">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
-        >
+        <Reveal className="text-center mb-10">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             See your whole portfolio, not just one sprint.
           </h2>
@@ -56,16 +50,10 @@ export function Demo() {
             See what ships on time, what slips, and what it costs when leadership forces
             one more project in.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Preview card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-xl border border-border-subtle shadow-elevated overflow-hidden"
-        >
+        <Reveal className="rounded-xl border border-border-subtle shadow-elevated overflow-hidden">
           {/* Window chrome */}
           <div className="flex items-center justify-between px-4 py-3 bg-bg-elevated border-b border-border-subtle">
             <div className="flex items-center gap-2">
@@ -86,13 +74,9 @@ export function Demo() {
               Portfolio forecast · Acme Platform · 4 projects, one team
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              {DEMO_HIGHLIGHTS.map((item, i) => (
-                <motion.div
+              {DEMO_HIGHLIGHTS.map((item) => (
+                <div
                   key={item.label}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="p-4 rounded-xl bg-bg-surface border border-border-subtle text-center"
                 >
                   <div className="inline-flex p-2 rounded-lg bg-accent/10 text-accent mb-3">
@@ -101,7 +85,7 @@ export function Demo() {
                   <p className="text-caption text-text-disabled mb-1">{item.label}</p>
                   <p className="text-base font-bold text-text-primary">{item.value}</p>
                   <p className="text-caption text-text-disabled mt-0.5">{item.sub}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -124,7 +108,7 @@ export function Demo() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

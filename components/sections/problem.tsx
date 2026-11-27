@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { AlertTriangle, Users, TrendingDown } from "lucide-react";
 
 const PROBLEMS = [
@@ -25,13 +25,7 @@ export function Problem() {
   return (
     <section id="problem" className="section-padding">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <Reveal className="text-center mb-16">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             The Velocity Trap is real.{" "}
             <span className="text-danger">
@@ -41,26 +35,16 @@ export function Problem() {
           <p className="text-text-secondary max-w-prose mx-auto">
             These are not execution failures. They are information failures.
           </p>
-        </motion.div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PROBLEMS.map((problem, i) => (
-            <motion.div
+        <Reveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {PROBLEMS.map((problem) => (
+            <div
               key={problem.title}
-              initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
-              whileInView={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15, ease: [0, 0, 0.2, 1] }}
               className="relative group p-6 rounded-xl bg-bg-surface border border-border-subtle hover:border-border-active transition-all duration-200 hover:-translate-y-1 overflow-hidden"
             >
-              {/* Left border that grows on entrance */}
-              <motion.div
-                initial={{ height: 0 }}
-                whileInView={{ height: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 + 0.2 }}
-                className="absolute left-0 top-0 w-0.5 bg-danger"
-              />
+              {/* Static danger accent down the left edge. */}
+              <div className="absolute left-0 top-0 h-full w-0.5 bg-danger" />
 
               <div className="mb-4 inline-flex p-2.5 rounded-lg bg-danger/10 text-danger">
                 <problem.icon size={20} />
@@ -72,9 +56,9 @@ export function Problem() {
               <p className="text-text-secondary text-sm leading-relaxed">
                 {problem.body}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

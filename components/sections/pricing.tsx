@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { Check, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -160,13 +160,7 @@ export function Pricing(): React.JSX.Element {
   return (
     <section id="pricing" className="section-padding">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <Reveal className="text-center mb-12">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             Simple plans. Start free.
           </h2>
@@ -174,16 +168,12 @@ export function Pricing(): React.JSX.Element {
             Every paid plan starts with a 7-day free trial. Cancel any time before it
             ends and you won&apos;t be charged. The Portfolio Simulator ships with Team and Enterprise.
           </p>
-        </motion.div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {TIERS.map((tier, i) => (
-            <motion.div
+        <Reveal stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {TIERS.map((tier) => (
+            <div
               key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
               className={cn(
                 "relative flex flex-col p-6 rounded-xl border transition-all duration-200",
                 tier.popular
@@ -192,17 +182,11 @@ export function Pricing(): React.JSX.Element {
               )}
             >
               {tier.popular && (
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 }}
-                  className="absolute -top-3 left-1/2 -translate-x-1/2"
-                >
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="bg-accent text-white text-label font-semibold px-3 py-1 rounded-full whitespace-nowrap">
                     Most Popular
                   </span>
-                </motion.div>
+                </div>
               )}
 
               <div className="mb-6">
@@ -244,9 +228,9 @@ export function Pricing(): React.JSX.Element {
                   <FeatureRow key={j} feature={feature} />
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </Reveal>
 
         <p className="text-center text-caption text-text-disabled mt-8">
           Free is free forever, no card needed. Paid plans start with a 7-day trial: we take

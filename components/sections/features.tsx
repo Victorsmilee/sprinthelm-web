@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { BarChart2, Cpu, Gauge, Sparkles, Calendar, TrendingUp, AlertTriangle, DollarSign, LayoutGrid } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -87,26 +87,16 @@ export function Features() {
   return (
     <section id="features" className="section-padding">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <Reveal className="text-center mb-16">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             Ship the right things. Finish what you start, across every project.
           </h2>
-        </motion.div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {FEATURES.map((feature, i) => (
-            <motion.div
+        <Reveal stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {FEATURES.map((feature) => (
+            <div
               key={feature.title}
-              initial={{ opacity: 0, y: 24, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 200, damping: 20, delay: i * 0.07 }}
               className={`p-6 rounded-xl border transition-all duration-200 hover:-translate-y-1 ${
                 feature.soon
                   ? "bg-bg-surface border-border-subtle opacity-70 hover:opacity-90"
@@ -138,9 +128,9 @@ export function Features() {
               <p className="text-sm text-text-secondary leading-relaxed">
                 {feature.body}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

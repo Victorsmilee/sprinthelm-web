@@ -84,7 +84,10 @@ export default function DocsPage(): React.JSX.Element {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search documentation…"
-                className="w-full pl-11 pr-5 py-3.5 rounded-xl bg-bg-surface border border-border-subtle text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:border-accent/60 transition-colors duration-150"
+                // scroll-mt clears the fixed 64px header when this input is
+                // scrolled into view (focus, deep-link, or an automated
+                // cy.type()). Without it the header covers the field.
+                className="w-full scroll-mt-24 pl-11 pr-5 py-3.5 rounded-xl bg-bg-surface border border-border-subtle text-sm text-text-primary placeholder:text-text-disabled focus:outline-none focus:border-accent/60 transition-colors duration-150"
               />
             </div>
             {query.trim() && (
