@@ -228,6 +228,42 @@ describe("Support — topic link modal", () => {
     // Must use the two-arg form — cy.contains(text) returns the deepest match (a <span>), not the button.
     cy.contains("button", "How to import your backlog").should("exist");
   });
+
+  /**
+   * EVERY topic link must open an article.
+   *
+   * THE BUG THIS EXISTS FOR (found 2026-11-27): the labels are duplicated by
+   * hand between the page's TOPICS array and SUPPORT_CONTENT, matched with
+   * `===`. "What\u2019s included in Free vs Pro" was written with a
+   * typographic apostrophe on the page and a straight one in the article, so
+   * findEntry never matched and the link silently did nothing in production.
+   * `openDoc`'s `if (entry)` swallows the miss — no error, no console warning.
+   *
+   * The three tests above only ever sampled three of the fourteen links,
+   * which is why a dead one survived. This walks all of them.
+   */
+  it("every support topic link opens an article", () => {
+    cy.get("main")
+      .find("button")
+      .then(($buttons) => {
+        // Topic buttons are the ones inside the topic card lists.
+        const labels = Cypress.$($buttons)
+          .filter((_, el) => (el.closest("li") !== null))
+          .map((_, el) => Cypress.$(el).text().trim())
+          .get()
+          .filter((s) => s.length > 0);
+
+        expect(labels.length, "found the topic links").to.be.greaterThan(10);
+
+        labels.forEach((label: string) => {
+          cy.contains("button", label).click();
+          // Fails loudly on a label mismatch instead of the page doing nothing.
+          cy.get("dialog[open]").should("exist");
+          cy.get("button[aria-label='Close document']").click();
+          cy.get("dialog[open]").should("not.exist");
+        });
+      });
+  });
 });
 
 // ─── Email .com enforcement ────────────────────────────────────────────────

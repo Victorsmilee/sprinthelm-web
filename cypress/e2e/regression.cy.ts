@@ -1,27 +1,38 @@
 /**
- * Regression tests — guard against specific bugs that were fixed in this PR.
+ * Regression tests — specific bugs that were fixed, guarded so they stay fixed.
  *
- * 1. Section order: FAQ must appear before CTA on the homepage
- * 2. Hero CTAs point to the correct app URLs (not old /signup or Streamlit)
- * 3. Footer has no Changelog link
- * 4. Footer has no duplicate Support / Help Centre entries pointing to /support
- * 5. globals.css section-padding: desktop sections should not be smaller than mobile
+ *   1. FAQ must appear before the CTA section on the homepage
+ *   2. CTAs point at the live app, never the old /signup page or Streamlit
+ *   3. Footer has no Changelog link
+ *   4. Footer has no duplicate Support / Help Centre entries
+ *   5. Footer links to every page it claims to
+ *
+ * REWRITTEN 2026-11-27. Three of these tests located their target by matching
+ * the sentence "Run your first simulation", which no longer exists — the hero
+ * was redesigned to lead on the portfolio, so its buttons are now "See your
+ * portfolio forecast, free" / "Watch the portfolio demo", and "Run your first
+ * forecast, free" moved to the closing CTA section. The tests were therefore
+ * not just failing, they were pointed at the wrong section of the page.
+ *
+ * They also asserted `href === "https://app.sprinthelm.com/signup"` while the
+ * real links carry a plan: `?plan=free`. Fixed to assert the prefix plus the
+ * plan, so adding a tracking param does not break the build but dropping the
+ * plan does.
+ *
+ * Targets are now section ids (#hero, #faq, #cta) rather than copy.
  */
 
-describe("Regression — homepage section order", () => {
-  it("FAQ section appears before CTA section in DOM", () => {
-    cy.visit("/");
+const APP_SIGNUP = "https://app.sprinthelm.com/signup";
 
-    cy.get("#faq").then(($faq) => {
-      // Find the CTA section — it contains the "Stop making €500k" heading
-      cy.contains("Stop making €500k delivery decisions on intuition")
-        .closest("section")
-        .then(($cta) => {
-          // FAQ's DOM position (offsetTop) must be less than CTA's
-          const faqTop = $faq[0].getBoundingClientRect().top + window.scrollY;
-          const ctaTop = $cta[0].getBoundingClientRect().top + window.scrollY;
-          expect(faqTop, "FAQ renders above CTA").to.be.lessThan(ctaTop);
-        });
+describe("Regression — homepage section order", () => {
+  it("FAQ section appears before the CTA section in the DOM", () => {
+    cy.visit("/");
+    cy.document().then((doc) => {
+      const faq = doc.querySelector("#faq") as HTMLElement | null;
+      const cta = doc.querySelector("#cta") as HTMLElement | null;
+      expect(faq, "#faq is in the DOM").to.not.equal(null);
+      expect(cta, "#cta is in the DOM").to.not.equal(null);
+      expect(faq!.offsetTop, "FAQ renders above CTA").to.be.lessThan(cta!.offsetTop);
     });
   });
 });
@@ -29,48 +40,68 @@ describe("Regression — homepage section order", () => {
 describe("Regression — hero CTA URLs", () => {
   beforeEach(() => cy.visit("/"));
 
-  it("primary CTA links to app.sprinthelm.com/signup", () => {
-    cy.contains("Run your first simulation")
-      .closest("a")
-      .should("have.attr", "href", "https://app.sprinthelm.com/signup");
-  });
-
-  it("secondary CTA links to app.sprinthelm.com with ?source=website", () => {
-    cy.contains("See a live demo")
-      .closest("a")
-      .should("have.attr", "href", "https://app.sprinthelm.com/?source=website");
-  });
-
-  it("primary CTA does NOT link to the old /signup page", () => {
-    cy.contains("Run your first simulation")
-      .closest("a")
-      .should("not.have.attr", "href", "/signup");
-  });
-
-  it("secondary CTA does NOT link to Streamlit", () => {
-    cy.contains("See a live demo")
-      .closest("a")
+  it("the hero signup CTA points at the app, with a plan", () => {
+    cy.get("#hero")
+      .find('a[href*="/signup"]')
+      .first()
       .invoke("attr", "href")
-      .should("not.include", "streamlit");
+      .should((href) => {
+        expect(href).to.contain(APP_SIGNUP);
+        expect(href, "carries a plan so the funnel knows what was clicked").to.match(
+          /[?&]plan=(free|pro|team)/,
+        );
+      });
+  });
+
+  it("the hero signup CTA does NOT point at the old relative /signup page", () => {
+    cy.get("#hero")
+      .find('a[href*="/signup"]')
+      .each(($a) => {
+        expect($a.attr("href"), "absolute app URL, not a relative path").to.not.match(
+          /^\/signup/,
+        );
+      });
+  });
+
+  it("the hero demo CTA opens the app in website-demo mode", () => {
+    cy.get("#hero")
+      .find('a[href*="source=website"]')
+      .first()
+      .invoke("attr", "href")
+      .should((href) => {
+        expect(href).to.contain("app.sprinthelm.com");
+        expect(href).to.contain("source=website");
+      });
+  });
+
+  it("no CTA anywhere on the homepage points at Streamlit", () => {
+    // The original bug: the demo links went to a Streamlit prototype.
+    cy.get('a[href^="http"]').each(($a) => {
+      expect($a.attr("href") ?? "", "no Streamlit links remain").to.not.include("streamlit");
+    });
   });
 });
 
-describe("Regression — CTA section URLs", () => {
+describe("Regression — closing CTA section URLs", () => {
   beforeEach(() => cy.visit("/"));
 
-  it("CTA section primary button links to app.sprinthelm.com/signup", () => {
-    cy.contains("Stop making €500k delivery decisions on intuition")
-      .closest("section")
-      .contains("Run your first simulation")
-      .closest("a")
-      .should("have.attr", "href", "https://app.sprinthelm.com/signup");
+  it("the CTA section signup button points at the app, with a plan", () => {
+    cy.get("#cta").scrollIntoView();
+    cy.get("#cta")
+      .find('a[href*="/signup"]')
+      .first()
+      .invoke("attr", "href")
+      .should((href) => {
+        expect(href).to.contain(APP_SIGNUP);
+        expect(href).to.match(/[?&]plan=(free|pro|team)/);
+      });
   });
 
-  it("CTA section demo link does NOT point to Streamlit", () => {
-    cy.contains("Stop making €500k delivery decisions on intuition")
-      .closest("section")
-      .contains("See a live demo")
-      .closest("a")
+  it("the CTA section demo link does NOT point at Streamlit", () => {
+    cy.get("#cta").scrollIntoView();
+    cy.get("#cta")
+      .find('a[href*="source=website"]')
+      .first()
       .invoke("attr", "href")
       .should("not.include", "streamlit");
   });
@@ -117,7 +148,6 @@ describe("Regression — Help Centre / Support footer deduplication", () => {
     cy.get("footer")
       .find('a[href="/support"]')
       .then(($links) => {
-        // Only one link to /support is allowed (Help Centre)
         expect($links.length, "only one /support link in footer").to.equal(1);
       });
   });

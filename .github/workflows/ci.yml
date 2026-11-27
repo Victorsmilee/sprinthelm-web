@@ -1,0 +1,103 @@
+# CI for the marketing site.
+#
+# WHY THIS EXISTS: this repo had no workflows at all. Its Cypress specs had
+# therefore never run anywhere, and by 2026-11-26 eleven of forty-two
+# assertions were failing on `main` against copy that no longer existed. The
+# site was fine; the safety net was fiction, which is worse than no net —
+# a real regression would have been indistinguishable from the standing noise.
+#
+# Two jobs: Typecheck is seconds and catches most of what breaks a Vercel
+# build, so it runs first for fast feedback. Cypress needs a production build
+# and a server, so it runs on its own.
+#
+# NO LINT JOB, deliberately. `npm run lint` is `next lint`, and ESLint has
+# never been configured in this repo — the command drops into an interactive
+# "How would you like to configure ESLint?" prompt, which in CI either hangs
+# or fails on the first run. Shipping that would reproduce the exact disease
+# this file is curing: a red pipeline nobody trusts. Configuring ESLint is a
+# follow-up of its own (and `next lint` is deprecated in Next 16 in favour of
+# the ESLint CLI, so that follow-up should go straight to the CLI).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A new push to the same PR makes the previous run irrelevant.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit
+
+  cypress:
+    name: Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npx cypress install
+
+      - run: npm run build
+
+      # The server is started and polled EXPLICITLY rather than through
+      # cypress-io/github-action's `start` + `wait-on`. That combination failed
+      # here twice, both times 17ms after "start server command" with
+      # "Socket closed before the connection was established" — before the
+      # server could have bound a port, and identically for `localhost` and
+      # `127.0.0.1`, so it was not the IPv4/IPv6 mismatch it looked like.
+      # wait-on was treating its first probe as fatal instead of retrying, and
+      # the action gave no server output to diagnose from.
+      #
+      # This version owns both halves: it keeps the server's stdout, polls with
+      # curl until the page actually answers, and on timeout PRINTS THE LOG, so
+      # a failure here is self-diagnosing instead of opaque.
+      - name: Start the production server
+        run: |
+          PORT=3001 npm run start > /tmp/next-start.log 2>&1 &
+          echo "server pid $!"
+
+      - name: Wait for the server to answer
+        run: |
+          for i in $(seq 1 60); do
+            if curl -sf -o /dev/null http://127.0.0.1:3001/; then
+              echo "server answered after $((i * 2))s"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "::error::server did not answer on :3001 within 120s"
+          echo "----- next start log -----"
+          cat /tmp/next-start.log || true
+          exit 1
+
+      - run: npx cypress run
+
+      # Screenshots are the only way to see what a headless failure looked
+      # like; the server log is the only way to see a server-side cause.
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-failure-artifacts
+          path: |
+            cypress/screenshots
+            /tmp/next-start.log
+          if-no-files-found: ignore
+          retention-days: 7
