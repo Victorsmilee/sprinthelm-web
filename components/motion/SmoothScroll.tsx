@@ -11,7 +11,9 @@
  *
  * ACCESSIBILITY IS NOT OPTIONAL: anyone with `prefers-reduced-motion: reduce`
  * gets native scrolling and no hijack. This is honoured at runtime, so a change
- * in OS settings is respected without a reload.
+ * in OS settings is respected without a reload. Automated browsers (Cypress)
+ * also get native scroll — hijacked scroll makes E2E scroll assertions flake,
+ * and smooth scroll is a pure enhancement a test should never have to fight.
  *
  * Mounted once in the root layout, around the whole app.
  */
@@ -20,6 +22,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motionDisabled } from "./motionEnv";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -37,14 +40,16 @@ export default function SmoothScroll({
   children: React.ReactNode;
 }): React.JSX.Element {
   // Default to native scroll on the server and first paint; opt into smooth
-  // only after we've confirmed the user hasn't asked to reduce motion. Starting
-  // "off" is the safe failure mode — a hydration hiccup leaves native scroll,
-  // never a broken hijacked one.
+  // only after we've confirmed motion is allowed (not reduced-motion, not an
+  // automated browser). Starting "off" is the safe failure mode — a hydration
+  // hiccup leaves native scroll, never a broken hijacked one.
   const [smooth, setSmooth] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const apply = (): void => setSmooth(!mq.matches);
+    // motionDisabled() folds in both the reduced-motion check and automation
+    // detection; re-evaluated on OS setting change so no reload is needed.
+    const apply = (): void => setSmooth(!motionDisabled());
     apply();
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);

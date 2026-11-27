@@ -20,6 +20,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { motionDisabled } from "./motionEnv";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -42,8 +43,10 @@ export default function Reveal({
 
   useGSAP(
     () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce || !ref.current) return; // visible by default; do nothing
+      // Visible by default, no animation, when motion must stand down —
+      // reduced-motion OR an automated browser (Cypress). The content is
+      // already in the DOM; we simply never hide it. See motionEnv.ts.
+      if (motionDisabled() || !ref.current) return;
 
       const targets = stagger ? Array.from(ref.current.children) : ref.current;
 
@@ -54,6 +57,13 @@ export default function Reveal({
         delay,
         ease: "power2.out",
         stagger: stagger ? 0.08 : 0,
+        // Strip the inline opacity/transform GSAP leaves behind once the
+        // entrance is done, so the element reverts to its natural CSS. Without
+        // this, the residual inline `transform` overrides Tailwind hover
+        // transforms (e.g. `hover:-translate-y-1` on cards) and silently kills
+        // the lift. The end state is identical either way — this just hands
+        // control back to the stylesheet.
+        clearProps: "opacity,transform",
         scrollTrigger: {
           trigger: ref.current,
           start: "top 85%",
