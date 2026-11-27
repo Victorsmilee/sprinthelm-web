@@ -20,8 +20,7 @@ export function Cta() {
             Stop making €500k delivery decisions on intuition.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto mb-8">
-            Start free. No credit card, no Jira required.
-            Upgrade when the forecast saves your first deadline.
+            Start for free, no payment cards required. Upgrade when the forecast saves your first deadline.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" asChild>
@@ -31,11 +30,11 @@ export function Cta() {
               </a>
             </Button>
             <Button size="xl" variant="ghost" asChild>
-              <a href="https://app.sprinthelm.com/?source=website" target="_blank" rel="noopener noreferrer">See a live demo</a>
+              <a href="https://app.sprinthelm.com/portfolio?source=website" target="_blank" rel="noopener noreferrer">See a live portfolio in 60s</a>
             </Button>
           </div>
           <p className="text-caption text-text-disabled mt-6">
-            No credit card. No Jira connection required. Results in under 60 seconds.
+            No payment card. No Jira connection required. Results in under 60 seconds.
           </p>
           </div>
         </Reveal>

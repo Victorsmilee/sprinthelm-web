@@ -68,7 +68,7 @@ describe("Sanity — homepage content", () => {
 
   it("the hero asks the question the product answers", () => {
     cy.get("#hero").within(() => {
-      cy.get("h1").should("contain.text", "deliver the roadmap");
+      cy.get("h1").should("contain.text", "deliver the product roadmap");
     });
   });
 

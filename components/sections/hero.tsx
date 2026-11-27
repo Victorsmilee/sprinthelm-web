@@ -46,7 +46,7 @@ export function Hero() {
               transition={{ duration: 0.7, ease: [0, 0, 0.2, 1], delay: 0.1 }}
               className="text-display font-bold text-text-primary text-balance mb-6 leading-tight"
             >
-              Can you deliver the roadmap?{" "}
+              Can you deliver the product roadmap?{" "}
               <span className="text-gradient-accent">
                 Know before you commit to it.
               </span>
@@ -54,28 +54,28 @@ export function Hero() {
 
             {/* Subheadline */}
             <motion.p {...fadeUp(0.2)} className="text-lg text-text-secondary max-w-lg mb-10 text-balance">
-              SprintHelm predicts delivery across every team and project before the work starts. See what slips, whether you can take on another project, and what it costs when leadership forces one more in. The portfolio answer your CTO needs, with math they can trace.
+              SprintHelm runs every project against the real team you have and shows what ships, what slips, and what it costs when leadership forces one more in. Not a dashboard of the past. A forecast you can commit to, with math your CFO can trace.
             </motion.p>
 
             {/* CTAs */}
             <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-4">
               <Button size="xl" asChild>
                 <a href="https://app.sprinthelm.com/signup?plan=free" className="flex items-center gap-2">
-                  See your portfolio forecast, free
+                  Forecast your product roadmap free
                   <ArrowRight size={18} />
                 </a>
               </Button>
               <Button size="xl" variant="secondary" asChild>
                 <a href="https://app.sprinthelm.com/portfolio?source=website" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Play size={16} />
-                  Watch the portfolio demo
+                  See a live portfolio in 60s
                 </a>
               </Button>
             </motion.div>
 
             {/* Trust caption */}
             <motion.p {...fadeUp(0.35)} className="text-caption text-text-disabled">
-              No credit card. No Jira connection required. Results in under 60 seconds.
+              Start for free, no payment cards required. No Jira connection required. Results in under 60 seconds.
             </motion.p>
 
           </div>

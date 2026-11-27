@@ -25,17 +25,17 @@ export const metadata: Metadata = {
   // absolute URL, and link previews / canonicals break.
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: "/" },
-  title: "SprintHelm, Delivery Decision Intelligence",
+  title: "SprintHelm, Portfolio Delivery Forecasting Before You Commit",
   description:
-    "Score your backlog across six weighted factors, run a Monte Carlo simulation, and generate a C-level summary, before the sprint begins. Stop guessing. Start delivering.",
+    "Forecast delivery across every project against your real team capacity. Know what ships, what slips, and what one more project costs, before you commit to the product roadmap. Start for free, no payment card.",
   keywords: [
-    "sprint planning",
-    "backlog scoring",
-    "Monte Carlo simulation",
-    "delivery intelligence",
-    "engineering team",
-    "Jira",
-    "agile",
+    "delivery forecasting",
+    "engineering capacity planning",
+    "portfolio delivery risk",
+    "product roadmap planning",
+    "Monte Carlo delivery simulation",
+    "sprint capacity planning",
+    "Jira delivery forecasting",
   ],
   authors: [{ name: "SprintHelm" }],
   icons: {
@@ -44,18 +44,18 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "SprintHelm, Delivery Decision Intelligence",
+    title: "Can you deliver the product roadmap? Know before you commit.",
     description:
-      "Your sprint plan looks fine. Your deadline doesn't know that yet.",
+      "Portfolio delivery forecasting for engineering leaders. See what ships, what slips, and what one more project costs, before you commit. Start for free, no payment card.",
     url: "https://sprinthelm.com",
     siteName: "SprintHelm",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SprintHelm, Delivery Decision Intelligence",
+    title: "Can you deliver the product roadmap? Know before you commit.",
     description:
-      "Your sprint plan looks fine. Your deadline doesn't know that yet.",
+      "Portfolio delivery forecasting for engineering leaders. See what ships, what slips, and what one more project costs, before you commit. Start for free, no payment card.",
   },
   robots: {
     index: true,
