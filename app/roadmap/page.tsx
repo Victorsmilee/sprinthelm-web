@@ -4,7 +4,8 @@ import { CheckCircle, Clock, Lightbulb } from "lucide-react";
 
 export const metadata = {
   title: "Roadmap, SprintHelm",
-  description: "What's shipping, what's in progress, and what's coming to SprintHelm.",
+  description:
+    "What's shipped, what's in progress (delivery-history intelligence), and what's planned (team and industry benchmarking) for SprintHelm.",
 };
 
 const SHIPPED = [
@@ -72,8 +73,9 @@ export default function RoadmapPage() {
               What&apos;s coming to SprintHelm.
             </h1>
             <p className="text-lg text-text-secondary">
-              We build in public. Here&apos;s what&apos;s shipped, what we&apos;re working on,
-              and what&apos;s on the horizon.
+              We build in public, and we ship. Here&apos;s what&apos;s live today, what&apos;s in
+              progress (delivery-history intelligence from your own Jira data), and what&apos;s next
+              (benchmarking across your teams and your industry).
             </p>
           </div>
         </section>
