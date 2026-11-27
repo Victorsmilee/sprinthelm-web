@@ -16,6 +16,13 @@
 
   html {
     scroll-behavior: smooth;
+    /* The header is `fixed top-0` and 64px (h-16) tall, so it floats over the
+       top of the page. Without a scroll inset, every anchor jump (the nav's
+       own /#pricing, /#features, …) and every programmatic scrollIntoView
+       lands its target *under* the header. This reserves clearance so a
+       scrolled-to element sits just below the header, not behind it. 5rem =
+       64px header + a little breathing room. */
+    scroll-padding-top: 5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
