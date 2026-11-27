@@ -53,8 +53,8 @@ describe("Sanity — homepage sections", () => {
   });
 
   it("renders the CTA section", () => {
-    cy.contains("Stop making $500k delivery decisions on intuition").scrollIntoView();
-    cy.contains("Stop making $500k delivery decisions on intuition").should("exist");
+    cy.contains("Stop making €500k delivery decisions on intuition").scrollIntoView();
+    cy.contains("Stop making €500k delivery decisions on intuition").should("exist");
   });
 });
 

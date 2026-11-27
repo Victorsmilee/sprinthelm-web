@@ -20,7 +20,7 @@ export function Cta() {
           }}
         >
           <h2 className="text-h2 font-bold text-text-primary mb-4 text-balance">
-            Stop making $500k delivery decisions on intuition.
+            Stop making €500k delivery decisions on intuition.
           </h2>
           <p className="text-text-secondary max-w-prose mx-auto mb-8">
             Start free. No credit card, no Jira required.
