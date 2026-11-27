@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
+import ScrollProgress from "@/components/motion/ScrollProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-bg-primary text-text-primary antialiased">
+        <ScrollProgress />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

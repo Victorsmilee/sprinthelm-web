@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Reveal from "@/components/motion/Reveal";
 
 const FAQS = [
   {
@@ -103,11 +104,15 @@ export function Faq() {
           </h2>
         </motion.div>
 
-        <div className="mx-auto max-w-3xl bg-bg-surface rounded-xl border border-border-subtle px-6 md:px-10">
+        {/* The accordion card itself had no entrance (only the heading and the
+            footer CTA did). Reveal it as one block — a single settle reads as
+            more composed than 9 border-divided rows staggering in, and the rows
+            keep their own click-to-expand motion. */}
+        <Reveal className="mx-auto max-w-3xl bg-bg-surface rounded-xl border border-border-subtle px-6 md:px-10">
           {FAQS.map((faq) => (
             <FaqItem key={faq.q} q={faq.q} a={faq.a} />
           ))}
-        </div>
+        </Reveal>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

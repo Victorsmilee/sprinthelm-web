@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import Reveal from "@/components/motion/Reveal";
 
 // Only list what connects today. Jira is the one shipped integration (one-way
 // backlog import); CSV and JSON are real entry paths in the app. Linear,
@@ -54,8 +55,11 @@ export function SocialProof() {
   return (
     <section className="border-y border-border-subtle bg-bg-elevated py-14 overflow-hidden">
       <div className="mx-auto max-w-content px-6 space-y-10">
-        {/* Integration logos — marquee */}
-        <div className="text-center">
+        {/* Integration logos — marquee. This header block had no scroll
+            entrance (the stats below did), so it's the natural home for the
+            shared Reveal primitive: one quiet settle, the marquee keeps looping
+            inside it untouched. */}
+        <Reveal className="text-center">
           <p className="text-sm font-semibold text-text-secondary mb-6 uppercase tracking-widest">
             Works with tools your team already uses
           </p>
@@ -71,7 +75,7 @@ export function SocialProof() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border-subtle pt-10">
