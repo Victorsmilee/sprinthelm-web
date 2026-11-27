@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -8,17 +8,14 @@ export function Cta() {
   return (
     <section id="cta" className="section-padding">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-2xl border border-border-active bg-bg-surface overflow-hidden p-12 md:p-16 text-center"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(92,107,192,0.1) 0%, transparent 70%), #1A1D27",
-          }}
-        >
+        <Reveal>
+          <div
+            className="relative rounded-2xl border border-border-active bg-bg-surface overflow-hidden p-12 md:p-16 text-center"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(92,107,192,0.1) 0%, transparent 70%), #1A1D27",
+            }}
+          >
           <h2 className="text-h2 font-bold text-text-primary mb-4 text-balance">
             Stop making €500k delivery decisions on intuition.
           </h2>
@@ -40,7 +37,8 @@ export function Cta() {
           <p className="text-caption text-text-disabled mt-6">
             No credit card. No Jira connection required. Results in under 60 seconds.
           </p>
-        </motion.div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

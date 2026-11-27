@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Reveal from "@/components/motion/Reveal";
@@ -78,14 +77,10 @@ export function SocialProof() {
         </Reveal>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border-subtle pt-10">
+        <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border-subtle pt-10">
           {STATS.map((stat) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
               className="text-center"
             >
               <p className="text-h3 font-bold text-text-primary">
@@ -96,9 +91,9 @@ export function SocialProof() {
                 />
               </p>
               <p className="text-caption text-text-secondary mt-1">{stat.label}</p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </Reveal>
         <p className="text-caption text-text-disabled text-center pt-4">
           First three figures: PMI / State of Product Leadership, 2025
         </p>

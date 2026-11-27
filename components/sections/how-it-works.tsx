@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import { BarChart2, Cpu, FileText } from "lucide-react";
 
 const STEPS = [
@@ -37,13 +37,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="section-padding bg-bg-surface border-y border-border-subtle">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <Reveal className="text-center mb-16">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             From backlog to boardroom in three steps.
           </h2>
@@ -51,19 +45,16 @@ export function HowItWorks() {
             No configuration marathons. Score the work, simulate one team or the whole
             portfolio, and share the answer.
           </p>
-        </motion.div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div className="relative">
           {/* Connector line (desktop) */}
           <div className="hidden md:block absolute top-10 left-[calc(33.33%+1rem)] right-[calc(33.33%+1rem)] h-px bg-border-subtle" />
 
-          {STEPS.map((step, i) => (
-            <motion.div
+          <Reveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {STEPS.map((step) => (
+            <div
               key={step.step}
-              initial={{ opacity: 0, x: step.xOffset }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0, 0, 0.2, 1] }}
               className="flex flex-col items-start"
             >
               {/* Step number + icon */}
@@ -88,8 +79,9 @@ export function HowItWorks() {
               <p className="text-text-secondary text-sm leading-relaxed">
                 {step.body}
               </p>
-            </motion.div>
+            </div>
           ))}
+          </Reveal>
         </div>
       </div>
     </section>

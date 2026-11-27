@@ -92,17 +92,11 @@ export function Faq() {
   return (
     <section id="faq" className="section-padding">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <Reveal className="text-center mb-12">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             Frequently asked questions.
           </h2>
-        </motion.div>
+        </Reveal>
 
         {/* The accordion card itself had no entrance (only the heading and the
             footer CTA did). Reveal it as one block — a single settle reads as
@@ -114,13 +108,7 @@ export function Faq() {
           ))}
         </Reveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto max-w-3xl mt-10 p-8 rounded-xl border border-border-subtle bg-bg-surface text-center"
-        >
+        <Reveal className="mx-auto max-w-3xl mt-10 p-8 rounded-xl border border-border-subtle bg-bg-surface text-center">
           <p className="text-text-primary font-semibold mb-1">Still have questions?</p>
           <p className="text-sm text-text-secondary mb-6">
             Our team is happy to walk you through SprintHelm, discuss your use case, or help you evaluate the right plan.
@@ -131,7 +119,7 @@ export function Faq() {
           >
             Talk to us at hello@sprinthelm.com
           </a>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

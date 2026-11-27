@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 
 const FINDINGS = [
   {
@@ -21,26 +21,16 @@ export function Testimonials() {
   return (
     <section className="section-padding bg-bg-surface border-y border-border-subtle">
       <div className="mx-auto max-w-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <Reveal className="text-center mb-12">
           <h2 className="text-h2 font-bold text-text-primary mb-4">
             What teams find after their first simulation.
           </h2>
-        </motion.div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Reveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {FINDINGS.map((finding, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, filter: "blur(6px)", y: 16 }}
-              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: i * 0.12 }}
               className="p-6 rounded-xl bg-bg-elevated border border-border-subtle relative"
             >
               <span className="text-4xl text-accent/20 font-serif absolute top-4 left-5 leading-none select-none">
@@ -49,9 +39,9 @@ export function Testimonials() {
               <p className="text-text-secondary text-sm leading-relaxed pt-4 relative z-10">
                 {finding.quote}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </Reveal>
 
         <p className="text-center text-caption text-text-disabled mt-8">
           Based on internal testing across 12 simulated team scenarios.
